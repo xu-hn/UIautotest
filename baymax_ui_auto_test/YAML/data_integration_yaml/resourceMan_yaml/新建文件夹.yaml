@@ -1,0 +1,44 @@
+testinfo:
+- id: test019
+  title: 校验“新建资源目录的文件夹”页面
+  launch: 1
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据标准’前的文件夹，展开文件夹
+- element_info: 数据标准
+  find_type: name
+  operate_type: click
+  info: 点击‘数据标准’文字，选中‘数据标准’
+  is_time: 1
+- element_info: //em[@name="auto_dir"]
+  find_type: xpath
+  operate_type: click
+  info: 点击树‘auto_dir’文字，选中‘auto_dir’
+  is_time: 0.5
+- element_info: //button/span[contains(text(), '目录')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘目录’按钮
+  is_time: 0.5
+- element_info: //ul//*[contains(text(), "新建目录")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘新建目录’按钮
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: dir+随机数
+  is_time: 1
+  info: 输入要新建文件夹的随机名称
+- element_info: //*[contains(text(), '确定')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’按钮
+check:
+- element_info: dir+随机数
+  v_index: 0
+  find_type: name
+  info: 断言“dir+随机数”文件夹存在

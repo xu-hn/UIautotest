@@ -1,0 +1,56 @@
+testinfo:
+- id: test026
+  title: 校验“元数据-移动schema”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="元数据"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘元数据’文件夹图标
+- element_info: auto_schema
+  find_type: name
+  operate_type: click
+  info: 点击‘auto_schema'的文字
+- element_info: //tr//*[contains(text(), "schema_")]
+  find_type: xpaths
+  index: -1
+  operate_type: get_text
+  info: 获取列表中最后一条'schema_'是title
+  is_time: 1
+- element_info: //*[contains(text(), '%s')]/ancestor::td/preceding-sibling::td[1]+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info: 勾选列表中最后一条'schema_'
+- element_info: bm-ch-resMan-resourceman-move-button
+  find_type: id
+  operate_type: click
+  info: 点击‘移动'按钮
+  is_time: 0.7
+- element_info: //*[@id="dataTree"]//*[@name="元数据"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-元数据”文件夹按钮
+- element_info: //*[@id="dataTree"]//*[@name="move_to"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-move_to”文字
+- element_info: bm-ch-resourceMan-submitResourceTree-ResourceTree-ok
+  find_type: name
+  operate_type: click
+  info: 点击弹出树的‘确定'按钮
+- element_info: //div[@aria-label="提示"]//*[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定'按钮
+  is_time: 0.8
+- element_info: //*[@id="bm-ch-nav2"]//em[@name="move_to"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘move_to'文字
+check:
+- element_info: //*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“此条shcema”已经被移动到move_to文件夹

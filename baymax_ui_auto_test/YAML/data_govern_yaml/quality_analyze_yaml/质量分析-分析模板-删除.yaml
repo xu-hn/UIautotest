@@ -1,0 +1,48 @@
+testinfo:
+- id: test149
+  title: 校验“质量分析-分析模板-删除”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[contains(text(),"auto_analyze_template_")]
+  find_type: xpath
+  operate_type: get_text
+  info: 获取要删除的以auto_analyze_template_开头的分析模板
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[contains(text(),"auto_analyze_template_")]/ancestor::td/preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info: 在分析模板‘勾选’auto_analyze_template_
+- element_info: bm-qa-analysisTemplate-btns-del
+  find_type: name
+  operate_type: click
+  info: 在分析模板列表，点击‘删除'按钮
+  is_time: 0.5
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 在提示弹框点击“确定”按钮
+  is_time: 1
+check:
+- element_info: //*[contains(text(), "恭喜你，删除已成功！")]
+  find_type: xpath
+  info: 断言“恭喜你，删除已成功！”出现
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[text()="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  check_time: 2
+  info: 断言被删除的以auto_analyze_template_开头的分析模板 不存在
+- element_info: bm-qa-analysisTemplate-btns-new
+  find_type: name
+  info: 断言“新建”按钮存在
+- element_info: //*[@id="bm-qa-qualityAnalysis"]//button/span[contains(text(), "分析模板")]
+  find_type: xpath
+  info: 断言“分析模板”按钮存在
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/qualityAnalysis/analysisTemplate拼接值后+前host+拼接
+  info: 断言“url符合预期”
+
+

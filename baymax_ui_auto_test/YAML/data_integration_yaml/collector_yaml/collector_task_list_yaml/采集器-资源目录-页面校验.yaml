@@ -1,0 +1,33 @@
+testinfo:
+- id: test072
+  title: 校验“采集器-资源目录-页面校验”
+  launch: 0
+  info: 先进入"采集器"
+testcase:
+- is_time: 1
+  info: 刷新页面后等待1秒
+- element_info: //span[text()="autoui83"]
+  find_type: xpath
+  operate_type: click
+  info: 点击名称为‘autoui83’的采集器 进入采集器详情信息页
+  is_time: 0.8
+- element_info: //button/span[contains(text(), "采集器详细信息")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘采集器详细信息'按钮
+  is_time: 0.5
+- element_info: //li/a[contains(text(), "采集器资源目录")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"采集器资源目录"按钮 进入 采集器资源目录
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-ch-collector-detailDir-table"]/div[4]//td/div[text()="dbs_collector_orcl_info3"]//ancestor::td/following-sibling::td//button/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 元数据同步
+  info: 断言“元数据同步”按钮存在
+- element_info: //*[@id="bm-ch-collector-detailDir-table"]/div[3]//td/div[text()="dbs_collector_orcl_info3"]
+  find_type: xpath
+  info: 存在数据源‘dbs_collector_orcl_info3’

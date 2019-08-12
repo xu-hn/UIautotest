@@ -1,0 +1,28 @@
+testinfo:
+- id: test_a235
+  title: 校验“流程管理-workflow-计划-点击名称”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- info: 等待1秒
+  is_time: 1
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a/a
+  find_type: xpath
+  operate_type: click
+  info: 点击第一行计划的名称
+  is_time: 1
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/hippo/schedule/detail/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: bm-hippo-schedule-name
+  find_type: id
+  info: 断言“调度名称”存在
+- element_info: bm-hippo-schedule-flowName
+  find_type: id
+  operate_type: get_value
+  check: current_equal_expect
+  expect_value: work_flow_shell
+  info: 断言“flow”名字等于“work_flow_shell”
+

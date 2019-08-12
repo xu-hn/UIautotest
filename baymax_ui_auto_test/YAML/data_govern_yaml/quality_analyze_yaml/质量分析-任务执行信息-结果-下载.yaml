@@ -1,0 +1,26 @@
+testinfo:
+- id: test138
+  title: 校验“质量分析-任务执行信息-结果-下载”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span[text()="结果"]
+  find_type: xpath
+  operate_type: click
+  info: 点击第一条任务的“结果”
+  is_time: 1
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//td/div/a[text()="model-rule-字段不能为空"]
+  find_type: xpath
+  operate_type: move_scrollbar_bottom
+  info: 移动进度条到模板规则“model-rule-字段不能为空”
+  is_time: 0.5
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//td/div/a[text()="model-rule-字段不能为空"]/ancestor::td/following-sibling::td//a[text()="下载"]
+  find_type: xpath
+  operate_type: click
+  info: 点击模板规则“model-rule-字段不能为空”的 “下载”按钮
+  is_time: 2
+check:
+- check: time_difference
+  info: 断言“本地的下载目录”最新下载的文件的创建时间小于现在5秒

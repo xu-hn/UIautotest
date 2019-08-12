@@ -1,0 +1,35 @@
+testinfo:
+- id: test002
+  title: 校验“资源目录”页面
+  launch: 1
+  info: 成功登录
+testcase:
+- element_info: //*[@test-id="/dataIntegration"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘数据集成’标签
+  is_time: 0.5
+- element_info: //*[@test-id="/resourceMan"]
+  find_type: xpath
+  operate_type: click
+  info: 点击资源目录
+- operate_type: move_by_offset
+  move_to: (0, 0)
+  info: 移送鼠标到0,0像素
+  is_time: 1
+check:
+- element_info: 数据源
+  find_type: name
+  info: 检查“数据源按钮是否存在”
+- element_info: 元数据
+  find_type: name
+  info: 检查“元数据按钮是否存在”
+- element_info: 数据集
+  find_type: name
+  info: 检查“数据集按钮是否存在”
+- element_info: 数据标准
+  find_type: name
+  info: 检查“数据标准按钮是否存在”
+- element_info: //*[contains(text(),'目录')]
+  find_type: xpath
+  info: 检查“目录按钮是否存在”

@@ -1,0 +1,49 @@
+testinfo:
+- id: test094
+  title: 运维监控-数据源状态-查看全部_详情_删除
+  launch: 0
+  info: 先进入"运维监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[text()="查看全部"]
+  find_type: xpath
+  operate_type: click
+  info: 在“数据源状态”上点击“查看全部” 按钮
+  is_time: 1
+- element_info: bm-hippo-data-status-draw-datasource-detail
+  find_type: id
+  operate_type: click
+  info: 点击“详情” 按钮
+  is_time: 1
+- element_info: bm-hippo-data-statuslist-searchInput
+  find_type: id
+  operate_type: send_keys
+  msg: 0
+  info: 筛选输入框里输入“0”
+- element_info: bm-hippo-data-statuslist-searchInput-btn
+  find_type: id
+  operate_type: click
+  info: 点击“搜索” 按钮
+  is_time: 0.3
+- element_info: //*[@id="bm-hippo-data-statuslist-table"]/div[3]//tr[1]/td//label
+  find_type: xpath
+  operate_type: click
+  info: 勾选第一行
+- element_info: //*[@id="bm-hippo-data-statuslist-table"]/div[3]/table/tbody/tr[1]/td[5]/div
+  find_type: xpath
+  operate_type: get_text
+  info: 获取第一行的时间值
+- element_info: bm-hippo-data-statuslist-del
+  find_type: id
+  operate_type: click
+  info: 点击删除按钮
+check:
+- element_info: //*[text()="恭喜你，删除已成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，删除已成功！”吐词出现
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/data/statuslist拼接值后+前host+拼接
+  info: 断言“当前获取的url”与预期的相等

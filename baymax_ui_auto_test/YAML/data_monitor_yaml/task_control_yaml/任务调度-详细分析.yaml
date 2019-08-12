@@ -1,0 +1,25 @@
+testinfo:
+- id: test115
+  title: 任务调度-详细分析
+  launch: 0
+  info: 先进入"任务监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: bm-hippo-taskcontrol-detail-ana
+  find_type: id
+  operate_type: click
+  info: 点击“详细分析” 按钮
+  is_time: 1
+check:
+- element_info: //*[@id="bm-hippo-schedule-container"]//*[text()="分析"]
+  find_type: xpath
+  operate_type: get_attr
+  attr: class
+  check: current_equal_expect
+  expect_value: rLinkLi router-link-exact-active router-link-active
+  info: 断言“分析”tab被选中
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/analyze拼接值后+前host+拼接
+  info: 断言“/#/hippo/analyze”与预期的相等

@@ -1,0 +1,40 @@
+testinfo:
+- id: test101
+  title: 任务监控-任务完成情况-成功-删除
+  launch: 0
+  info: 先进入"任务监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: bm-hippo-taskcontrol-success
+  find_type: id
+  operate_type: click
+  info: 点击“成功” 按钮
+  is_time: 1
+- element_info: //*[@id="bm-hippo-monitor-success-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label
+  find_type: xpath
+  operate_type: click
+  info: 勾选第一条内容
+- element_info: //*[@id="bm-hippo-monitor-success-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a
+  find_type: xpath
+  operate_type: get_text
+  info: 获取第一条内容的名称
+- element_info: bm-hippo-monitor-success-del
+  find_type: id
+  operate_type: click
+  info: 点击“删除” 按钮
+- element_info: /html/body/div[@aria-label="提示"]//*[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“确定”
+check:
+- element_info: //*[contains(text(), "恭喜你，删除已成功！")]
+  find_type: xpath
+  check: displayed
+  info: 恭喜你，删除已成功！"
+- element_info: //*[@id="bm-hippo-monitor-success-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a
+  find_type: xpath
+  operate_type: get_text
+  check: vessel_not_contain_current
+  expect_index: 0
+  info: 对比当前第一条内容的名称 不等于删除前的 第一条内容

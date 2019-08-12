@@ -1,0 +1,84 @@
+testinfo:
+- id: test051
+  title: 校验文件管理“上传”
+  launch: 0
+  info: 先进入"数据导入"目录
+testcase:
+- element_info: //*[text()='wac2']
+  find_type: xpath
+  operate_type: move_scrollbar_bottom
+  info: 移动进度条 底部显示 wac2 行
+  is_time: 0.5
+- element_info: //*[text()='wac2']
+  find_type: xpath
+  operate_type: click
+  info: 点击进入 wac2文件夹
+  is_time: 0.5
+- element_info: //*[text()='data_import_initial_data']
+  find_type: xpath
+  operate_type: click
+  info: 点击进入 data_import_initial_data文件夹
+  is_time: 0.5
+- element_info: //*[text()='upload']
+  find_type: xpath
+  operate_type: click
+  info: 点击进入 upload文件夹
+  is_time: 0.5
+- element_info: bm-ch-file-container-create-button
+  find_type: id
+  operate_type: click
+  info: 点击“创建”按钮
+  is_time: 0.5
+- element_info: //*[@id="bm-ch-container-form"]//input
+  find_type: xpath
+  operate_type: send_keys
+  msg: data_import_+随机数
+  info: 输入“创建的文件夹”的名称
+- element_info: //*[@id="pane-first"]/div[4]/div/div[3]/div/button[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击“确定”按钮
+  is_time: 0.5
+- element_info: //*[text()='%s']+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info: 点击进入 upload文件夹
+  is_time: 0.5
+- element_info: tab-second
+  find_type: id
+  operate_type: click
+  info: 点击“文件上传”tab
+  is_time: 0.5
+- element_info: select-files
+  find_type: id
+  operate_type: click
+  info: 点击“预览文件”tab
+- operate_type: upload_file
+  file_name: '上传文件.exe'
+  info: 执行“上传文件脚本”
+- element_info: bm-ch-file-container-upload-button
+  find_type: id
+  operate_type: click
+  info: 点击“上传”按钮
+  is_time: 1
+- element_info: //*[@id="pane-second"]/div[4]/div/div[3]/span/button[1]/span
+  find_type: xpath
+  operate_type: click
+  info: 点击“确定”按钮
+  is_time: 2
+- element_info: tab-first
+  find_type: id
+  operate_type: click
+  info: 点击“文件列表”按钮
+  is_time: 0.3
+- element_info: //*[text()="刷新"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“确定”按钮
+  is_time: 0.5
+check:
+- element_info: //*[@id="pane-first"]//span[text()="dirName_is_required.png"]
+  find_type: xpath
+  check: displayed
+  info: 断言“新建的”目录在列表中显示存在

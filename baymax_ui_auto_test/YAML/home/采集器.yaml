@@ -1,0 +1,35 @@
+testinfo:
+- id: test006
+  title: 校验“采集器”页面
+  launch: 1
+  info: 成功登录
+testcase:
+- element_info: //*[@test-id="/dataIntegration"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘数据集成’标签
+  is_time: 0.5
+- element_info: //*[@test-id="/collector"]
+  find_type: xpath
+  operate_type: click
+  info: 点击采集器
+- operate_type: move_by_offset
+  move_to: (0, 0)
+  info: 移送鼠标到0,0像素
+check:
+- element_info: bm-ch-col-template-create-button
+  find_type: id
+  info: 检查“创建按钮是否存在”
+- element_info: //button/*[contains(text(),'采集器')]
+  find_type: xpath
+  info: 检查“采集器按钮是否存在”
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/collector/collectorTemplate拼接值后+前host+拼接
+  info: 检查"采集器的URL"是否正确
+- element_info: //*[contains(text(),'主键')]
+  find_type: xpath
+  info: 检查“列表字段 主键”是否存在
+- element_info: //*[contains(text(),'主机地址')]
+  find_type: xpath
+  info: 检查“列表字段 主机地址”是否存在

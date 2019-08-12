@@ -1,0 +1,39 @@
+testinfo:
+- id: test_a217
+  title: 校验“流程管理-flow-step-提交”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- info: 等待0.5秒
+  is_time: 0.5
+- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘根目录'文件夹图标
+- element_info: //em[@name="initial_flow_dir"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘initial_flow_dir'的文字
+  is_time: 0.5
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr/td/div/span[text()="work_flow_shell"]
+  find_type: xpath
+  operate_type: click
+  info:  点击“work_flow_shell”flow的名字
+  is_time: 0.5
+- element_info: designSubmit
+  find_type: id
+  operate_type: click
+  info:  点击“提交”按钮
+- element_info: //*[@id="designSubmitDialog"]//button[@name="footer-sure"]
+  find_type: xpath
+  operate_type: click
+  info: 在执行计划设置页，点击‘确定'按钮
+check:
+- element_info: //*[text()="提交成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“提交成功！”吐词出现
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/design/designDrawing/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值

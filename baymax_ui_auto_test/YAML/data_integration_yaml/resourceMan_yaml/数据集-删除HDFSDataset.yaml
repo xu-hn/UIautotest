@@ -1,0 +1,45 @@
+testinfo:
+- id: test037
+  title: 校验“数据集-删除HDFSDataset”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据集'文件夹图标
+- element_info: movo_to_HDFSdataset
+  find_type: name
+  operate_type: click
+  info: 点击‘movo_to_HDFSdataset'的文字
+- element_info: //div[3]//tr//div/span[contains(text(), "HDFSDBdataset_")]
+  find_type: xpaths
+  index: -1
+  operate_type: get_text
+  info: 获取列表中最后一条'HDFSdataset_'是title
+  is_time: 1
+- element_info: //div[3]//*[text()='%s']/ancestor::td/preceding-sibling::td[1]+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info: 勾选列表中最后一条'HDFSdataset_'
+- element_info: bm-ch-resMan-resourceman-delete-beiruanModel-button
+  find_type: id
+  operate_type: click
+  info: 点击‘删除'按钮
+  is_time: 0.7
+- element_info: //*[@aria-label="提示"]//*[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定'按钮
+check:
+- element_info: //*[contains(text(), "恭喜你，删除已成功")]
+  find_type: xpath
+  info: 断言“恭喜你，删除已成功！”出现
+  is_time: 1
+- element_info: //*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  info: 断言“此条DBdataset_”被删除
+  check_time: 0.5

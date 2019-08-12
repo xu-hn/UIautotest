@@ -1,0 +1,56 @@
+testinfo:
+- id: test159
+  title: 校验“质量分析-评估结果统计-取消勾选-质量评价-坏数据占比”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: 等待0.5秒
+  is_time: 0.5
+- element_info: //*[@id="bm-qa-erStatistics"]//label/span[text()= "质量评级"]/ancestor::label
+  find_type: xpath
+  operate_type: click
+  info: 点击“质量评级” 取消勾选
+- element_info: //*[@id="bm-qa-erStatistics"]//label/span[text()= "坏数据占比"]/ancestor::label
+  find_type: xpath
+  operate_type: click
+  info: 点击“坏数据占比” 取消勾选
+  is_time: 1
+check:
+- element_info: //*[@id="bm-qa-erStatistics-table"]/div[3]/table/tbody/tr/td[1]/div[contains(text(), "Total")]
+  find_type: xpath
+  check: displayed
+  info: 断言“主键Total”存在
+- element_info: //*[@id="bm-qa-erStatistics"]//label/span[text()= "质量评级"]/ancestor::label
+  find_type: xpath
+  operate_type: get_attr
+  attr: class
+  check: current_equal_expect
+  expect_value: el-checkbox
+  info: 断言“质量评级”没有勾选的
+- element_info: //*[@id="bm-qa-erStatistics"]//label/span[text()= "坏数据占比"]/ancestor::label
+  find_type: xpath
+  operate_type: get_attr
+  attr: class
+  check: current_equal_expect
+  expect_value: el-checkbox
+  info: 断言“坏数据占比”没有勾选的
+- element_info: //*[@id="bm-qa-erStatistics-table"]/div[3]/table/tbody/tr/td[3]/div/span
+  find_type: xpath
+  check: contrary
+  check_time: 2
+  info: 断言“质量评级 总数”数值不存在
+- element_info: //*[@id="bm-qa-erStatistics-table"]/div[3]/table/tbody/tr/td[4]/div/span
+  find_type: xpath
+  check: contrary
+  check_time: 0.5
+  info: 断言“质量评级 平均值”数值不存在
+- element_info: //*[@id="bm-qa-erStatistics-table"]/div[3]/table/tbody/tr/td[8]/div/span
+  find_type: xpath
+  check: contrary
+  check_time: 0.5
+  info: 断言“坏数据占比 总数”数值不存在
+- element_info: //*[@id="bm-qa-erStatistics-table"]/div[3]/table/tbody/tr/td[9]/div/span
+  find_type: xpath
+  check: contrary
+  check_time: 0.5
+  info: 断言“坏数据占比 平均值”数值不存在

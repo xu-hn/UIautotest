@@ -1,0 +1,38 @@
+testinfo:
+- id: test057
+  title: 校验“数据导入”删除任务
+  launch: 0
+  info: 先进入"数据导入"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]//tr[1]/td[2]/div/a
+  find_type: xpath
+  operate_type: get_text
+  info: 获取'第一条任务'的任务名
+- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]//*[contains(text(), "%s")]/ancestor::td/preceding-sibling::td[1]//label+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info: 在数据导入首页‘勾选’第一条任务
+- element_info: bm-ch-sys-syschronization-delete-button
+  find_type: id
+  operate_type: click
+  info: 在数据导入页，点击‘删除'按钮
+  is_time: 0.5
+- element_info: //div[@aria-label="提示"]//span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“确定” 按钮
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]//*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  check_time: 1
+  info: 断言“已删除的数据导入任务” 不存在
+- element_info: bm-ch-syschronization-table
+  find_type: id
+  check: displayed
+  info: 断言“列表table”为 显示存在

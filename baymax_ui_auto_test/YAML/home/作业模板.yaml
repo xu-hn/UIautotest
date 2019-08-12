@@ -1,0 +1,28 @@
+testinfo:
+- id: test016
+  title: 校验“作业模板”页面
+  launch: 1
+  info: 成功登录
+testcase:
+- element_info: //*[text()="实时计算"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘实时计算’标签
+- element_info: //*[text()="作业模板"]
+  find_type: xpath
+  operate_type: click
+  info: 点击作业模板
+- operate_type: move_by_offset
+  move_to: (0, 0)
+  info: 移送鼠标到0,0像素
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/jobTemplate拼接值后+前host+拼接
+  info: 检查"作业模板"的URL是否正确
+- element_info: //button/span[text()='创建']
+  find_type: xpath
+  info: 检查“创建”按钮是否存在
+- element_info: //button/span[text()='刷新']
+  find_type: xpath
+  info: 检查“刷新”按钮是否存在

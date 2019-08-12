@@ -1,0 +1,79 @@
+testinfo:
+- id: test030
+  title: 校验“新建Dataset数据集”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据集'文件夹图标
+- element_info: auto_dataset
+  find_type: name
+  operate_type: click
+  info: 点击‘auto_dataset'的文字
+- element_info: '//*[@id="bm-ch-res-table"]//*[@class="el-loading-mask"and @style="display: none;"]'
+  find_type: xpath
+  info: 等待加载圈消失
+- element_info: bm-ch-resMan-resourceman-create-button
+  find_type: id
+  operate_type: click
+  info: 点击‘新建’按钮
+  is_time: 0.8
+- element_info: bm-ch-resMan-resourceman-DBdataset-dropdown-menu
+  find_type: id
+  operate_type: click
+  info: 点击‘数据库’按钮
+  is_time: 1
+- element_info: bm-sh-r-data-db1-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: DBdataset_+随机数
+  info: 输入"DB数据集"名称
+- element_info: bm-sh-r-data-db1-dataSourceInquire-button
+  find_type: name
+  operate_type: click
+  is_time: 0.8
+  info: 点击‘数据源搜索’按钮
+- element_info: //*[@id="bm-sh-r-data-db2-form"]//*[@name="数据源"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 弹框中 树的‘数据源’文件夹图标
+- element_info: //*[@id="bm-sh-r-data-db2-form"]//*[@name="auto_initial_data_source"]
+  find_type: xpath
+  operate_type: click
+  info: 点击 弹框中 树的‘auto_initial_data_source’文字
+  is_time: 1
+- element_info: //*[contains(text(), 'dbs_mysql_info5')]/ancestor::td/preceding-sibling::td[1]
+  find_type: xpath
+  operate_type: click
+  info: 勾选列表中'dbs_mysql_info5'数据源
+- element_info: bm-ch-resMan-dbdataset-submitDataSource-dataSource-ok
+  find_type: name
+  operate_type: click
+  is_time: 0.8
+  info: 点击‘确定’按钮
+- element_info: bm-sh-r-data-db1-storageConfigurations-table-select
+  find_type: name
+  operate_type: click
+  is_time: 0.5
+  info: 点击‘选择表’输入框
+- element_info: c_1_in
+  find_type: name
+  operate_type: click
+  info: 点击‘选择表’输入框
+  is_time: 0.5
+- element_info: bm-ch-resMan-dbdataset-submitDataSource-save-ok
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+  is_time: 1
+check:
+- element_info: bm-ch-5-el-pagination
+  find_type: name
+  check: displayed
+  info: 断言‘分页器’是显示状态
+- element_info: //*[@id="bm-ch-resourceMan-table"]//table/tbody//*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“新建的DBdataset存在”出现

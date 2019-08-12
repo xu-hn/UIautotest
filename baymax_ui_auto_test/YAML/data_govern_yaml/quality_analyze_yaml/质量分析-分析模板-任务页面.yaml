@@ -1,0 +1,35 @@
+testinfo:
+- id: test151
+  title: 校验“质量分析-分析模板-任务页面”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: bm-qa-analysisTemplate-search-input
+  find_type: name
+  operate_type: send_keys
+  msg: initial_test_mode
+  info: 在搜索框输入“initial_test_mode”模板名称
+- element_info: bm-qa-analysisTemplate-search-btn
+  find_type: name
+  operate_type: click
+  info: 点击“搜索”按钮
+  is_time: 0.8
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[text()="initial_test_mode"]/ancestor::td/following-sibling::td//span[text()="任务"]
+  find_type: xpath
+  operate_type: click
+  info: 点击initial_test_mode分析模板的“任务”
+  is_time: 0.8
+- operate_type: to_window
+  w_index: -1
+  info: 把handle切换到新打开的“任务”页面
+check:
+- element_info: //*[@id="bm-qa-teInformation-table"]//thead/tr/th/div[text()="任务状态"]
+  find_type: xpath
+  check: displayed
+  info: 断言“任务状态”字段出现
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/qualityAnalysis/teInformation拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值

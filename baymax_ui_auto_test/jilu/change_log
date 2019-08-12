@@ -1,0 +1,30 @@
+# CHANGES 2018-1-31
+## 对框架封装了新的selenium的方法，已经修改了之前遗留的BUG
+-  operate: 添加根据属性字段 获取属性值的方法
+            添加获取页面元素是否显示的方法
+   check：添加了 check 属性值的方法
+           添加 check 页面显示的方法
+           修改了前面版本遗留的bug
+   common: 添加了操作字符串的公共方法
+
+# CHANGES 2018-1-22
+## 整个框架开发
+-   common层管理常用方法
+-   PageObject层管处理页面逻辑
+-  cases 测试用例调用，调用Page层，传入yaml用例
+-  yaml测试用例编写层，基于关键字驱动，主要包含
+    - testinfo. 用例介绍
+    - testcase. 用例操作步骤，用例操作步骤
+    - check. 检查点
+-  runner入口
+-  log运行日志，含截图
+- Report 自动生成excel测试报告
+- 对selenium 查找元素、常用方法的封装 共给page文件调用
+- setupclass+ self.driver.get重定位的方式，避免用例依赖和每个用例重连session
+- 常用的异常封装，不会因为一些异常造成框架无法运行
+- 检查点的支持，支持：
+    - CONTRARY = "contrary" # 相反检查点，表示如果检查元素存在就说明失败，如删除后，此元素依然存在
+    - CONTRARY_GETVAL = "contrary_getval" # 检查点关键字contrary_getval: 相反值检查点，如果对比成功，说明失败
+    - DEFAULT_CHECK = "default_check" # 默认检查点，就是查找页面元素
+    - COMPARE = "compare" # 历史数据和实际数据对比
+- 实时打印日志

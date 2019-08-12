@@ -1,0 +1,40 @@
+testinfo:
+- id: test251
+  title: 项目目录-数据集-新建
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@name="initial_auto_project"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_auto_project项目前面的文件夹
+- element_info: //*[@name="initial_auto_project"]/following-sibling::ul[1]//*[@name="Schemas"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_auto_project项目Schemas
+  is_time: 0.8
+- element_info: //*[text()="新建"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘新建’按钮
+  is_time: 0.8
+- element_info: schemaProject
+  find_type: name
+  operate_type: click
+  info: 点击‘schema’按钮
+  is_time: 1
+- element_info: bm-ch-resourceMan-schema-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: schema_+随机数
+  info:  输入schema名称
+- element_info: bm-ch-resourceMan-schema-form-save-ok
+  find_type: name
+  operate_type: click
+  is_time: 0.8
+  info: 点击‘确定’按钮
+check:
+- element_info: //*[@id="bm-rh-resourceMan-table"]//tbody//span[text()="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“新建的schema存在”出现

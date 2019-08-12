@@ -1,0 +1,19 @@
+testinfo:
+- id: test_a198
+  title: 校验“流程管理-flow-step-执行明细-running输出-schedule”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: 'tab-输出 '
+  find_type: id
+  operate_type: click
+  info: 点击‘tab-输出 '
+  is_time: 1
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/design/executingDetail/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[@id="bm-rh-design-outputs-table"]//*[text()="暂无数据"]
+  find_type: xpath
+  info: 断言“暂无数据”存在

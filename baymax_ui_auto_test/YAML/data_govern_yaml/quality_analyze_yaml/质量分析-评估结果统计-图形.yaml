@@ -1,0 +1,19 @@
+testinfo:
+- id: test160
+  title: 校验“质量分析-评估结果统计-图形”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: 等待0.5秒
+  is_time: 0.5
+- element_info: tab-graphical
+  find_type: id
+  operate_type: click
+  info: 点击“图形”
+check:
+- element_info: chartLine
+  find_type: id
+  info: 断言“chartLine”的div图标标签存在
+- element_info: //*[contains(text(), "聚合类型")]
+  find_type: xpath
+  info: 断言“聚合类型”文字存在

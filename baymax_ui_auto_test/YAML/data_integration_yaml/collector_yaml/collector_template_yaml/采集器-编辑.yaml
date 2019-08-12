@@ -1,0 +1,32 @@
+testinfo:
+- id: test061
+  title: 校验“采集器编辑”任务
+  launch: 0
+  info: 先进入"采集器"目录
+testcase:
+- is_time: 1
+  info: 刷新页面后等待1秒
+- element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui']/ancestor::td/preceding-sibling::td[2]//label
+  find_type: xpath
+  operate_type: click
+  info: 勾选名称为‘collector_autoui’的采集器
+- element_info: bm-ch-col-template-edit-button
+  find_type: id
+  operate_type: click
+  info: 在采集器首页，点击‘编辑'按钮
+  is_time: 0.5
+- element_info: bm-ch-col-edit-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: _edit
+  info: 在名称输入框输入：“_edit”
+- element_info: bm-ch-col-edit-form-ok
+  find_type: name
+  operate_type: click
+  info: 点击确定按钮
+  is_time: 1
+check:
+- element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui_edit']
+  find_type: xpath
+  check: displayed
+  info: 断言“新建的采集器名称存在”

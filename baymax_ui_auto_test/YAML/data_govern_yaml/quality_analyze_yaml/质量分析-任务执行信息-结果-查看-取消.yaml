@@ -1,0 +1,48 @@
+testinfo:
+- id: test137
+  title: 校验“质量分析-任务执行信息-结果-查看-取消”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span[text()="结果"]
+  find_type: xpath
+  operate_type: click
+  info: 点击第一条任务的“结果”
+  is_time: 1
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//td/div/a[text()="model-rule-字段不能为空"]
+  find_type: xpath
+  operate_type: move_scrollbar_bottom
+  info: 移动进度条到模板规则“model-rule-字段不能为空”
+  is_time: 0.5
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//td/div/a[text()="model-rule-字段不能为空"]/ancestor::td/following-sibling::td//a[text()="查看"]
+  find_type: xpath
+  operate_type: click
+  info: 点击模板规则“model-rule-字段不能为空”的 “查看”按钮
+  is_time: 1
+- element_info: //body/*[@id="bm-com-collTask-dataset-dialog"]//*[@name="bm-com-collTask-dataset-cancle-button"]
+  find_type: xpath
+  operate_type: click
+  info: 点击 “取消”按钮
+  is_time: 0.5
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/qualityAnalysis/teInformation/taskresult拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[@id="bm-qa-tasks-taskResult"]/div[1]/span[text()="分析结果"]
+  find_type: xpath
+  info: 断言“分析结果”存在
+- element_info: //*[@id="bm-qa-tasks-taskResult"]/div[1]/span[text()="分析结果"]/following-sibling::button/span[text()="返回"]
+  find_type: xpath
+  info: 断言“返回”按钮存在
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//thead//div[text()="模板规则名称"]
+  find_type: xpath
+  info: 断言“模板规则名称”列存在
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//thead//div[text()="基准规则"]
+  find_type: xpath
+  info: 断言“基准规则”列存在
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//tr/td/div/a[text()="model-rule-字段内容与其它数据集内容相符"]
+  find_type: xpath
+  info: 断言“model-rule-字段内容与其它数据集内容相符”模板规则存在

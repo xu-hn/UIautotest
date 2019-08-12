@@ -1,0 +1,61 @@
+testinfo:
+- id: test_a256
+  title: 校验“项目目录-flow-新建制作json”
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@name="initial_auto_project"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_auto_project项目前面的文件夹
+- element_info: //*[@name="initial_auto_project"]/following-sibling::ul[1]//*[@name="Flows"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_auto_project项目Flows
+  is_time: 0.8
+- element_info: //button/span[text()="操作"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘操作’按钮
+  is_time: 0.5
+- element_info: //li[@name="flowJson"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘制作Json’按钮
+  is_time: 0.5
+- element_info: //textarea[@name="flowJson"]
+  find_type: xpath
+  operate_type: clear
+  info: 清除'输入框'
+- element_info: //textarea[@name="flowJson"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: '{"name":"'
+  info: 输入json的第一段
+- element_info: //textarea[@name="flowJson"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: project_flow_json_+随机数
+  info: 输入json的第一段
+- element_info: //textarea[@name="flowJson"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: '","flowType":"dataflow","projectEntity":{"id":"a75165f9-c9fe-4fed-b2c8-619ba961c2bf"},"steps":[],"links":[]}'
+  info: 输入json的后一段
+- element_info: saveFlow-sure
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-rh-resourceMan-table2"]//tbody//span[text()="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言“json新建的flow”存在
+- element_info: //*[@id="bm-rh-resourceMan-table2"]//tbody//span[text()="%s"]/ancestor::td/following-sibling::td[7]/div+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: get_text
+  check: time_difference
+  info: 断言“json新建的flow” 与断言修改时间相差小于5秒

@@ -1,0 +1,32 @@
+testinfo:
+- id: test013
+  title: 校验“任务监控”页面
+  launch: 1
+  info: 成功登录
+testcase:
+- element_info: //*[@test-id="/dataMonitoring"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘数据监控’标签
+  is_time: 0.5
+- element_info: //*[@test-id="/hippo/taskControl"]
+  find_type: xpath
+  operate_type: click
+  info: 点击任务监控
+- operate_type: move_by_offset
+  move_to: (0, 0)
+  info: 移送鼠标到0,0像素
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/taskControl拼接值后+前host+拼接
+  info: 检查"任务监控"的URL是否正确
+- element_info: //*[text()='任务完成情况监控' and @class="title"]
+  find_type: xpath
+  info: 检查“任务完成情况监控”组件是否存在
+- element_info: //*[text()='任务调度' and @class="title"]
+  find_type: xpath
+  info: 检查“任务调度”组件是否存在
+- element_info: //*[text()='任务警告' and @class="title"]
+  find_type: xpath
+  info: 检查“任务警告”组件是否存在

@@ -1,0 +1,26 @@
+testinfo:
+- id: test090
+  title: 运维监控-节点状态-详情分析
+  launch: 0
+  info: 先进入"运维监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //button/span[text()= "详细分析"]
+  find_type: xpath
+  operate_type: click
+  info: 在“节点状态监控”上点击“详细分析” 按钮
+  is_time: 1
+check:
+- element_info: //button/span[contains(text(), "采集器")]
+  find_type: xpath
+  check: displayed
+  info: 断言“采集器”按钮存在
+- element_info: //*[text()= "autoui83"]/ancestor::td/following-sibling::td/div/div[text()= "在线"]
+  find_type: xpath
+  check: displayed
+  info: 存在“autoui83”且状态为在线
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/collector/collectorTemplate拼接值后+前host+拼接
+  info: 断言“当前获取的url”与预期的相等

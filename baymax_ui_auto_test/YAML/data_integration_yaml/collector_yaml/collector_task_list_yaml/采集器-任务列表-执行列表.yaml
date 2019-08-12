@@ -1,0 +1,27 @@
+testinfo:
+- id: test083
+  title: 校验“采集器-任务列表-执行列表”页面校验
+  launch: 0
+  info: 先进入"采集器任务列表"目录
+testcase:
+- is_time: 1
+  info: 刷新页面后等待1秒
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[4]//tr[1]//a[contains(text(), '执行列表')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘第一行导入任务'的执行
+  is_time: 0.5
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/collector/executeList/拼接值后+前host+拼接
+  info: 断言 当前url符合预期
+- element_info: bm-ch-col-sys-execttelist-stop-button
+  find_type: id
+  info: ‘终止’按钮存在
+- element_info: bm-ch-col-sys-execttelist-refresh-button
+  find_type: id
+  info: ‘刷新’按钮存在
+- element_info: bm-ch-col-sys-execttelist-back-button
+  find_type: id
+  info: ‘返回’按钮存在

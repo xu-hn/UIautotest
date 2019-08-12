@@ -1,0 +1,26 @@
+testinfo:
+- id: test126
+  title: 校验“质量分析-任务执行信息-查看日志”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[8]/div/span
+  find_type: xpath
+  operate_type: click
+  info: 点击 第一条任务的“执行日志信息”
+  is_time: 0.8
+check:
+- element_info: tab-application
+  find_type: id
+  info: 断言“tab-application”存在
+- element_info: tab-dataflow_0
+  find_type: id
+  info: 断言“tab-dataflow_0”存在
+- element_info: tab-workflow
+  find_type: id
+  info: 断言“tab-workflow”存在
+- element_info: //*[@id="bm-qa-teInformation"]//button[@aria-label="Close"]
+  find_type: xpath
+  info: 断言“关闭的X”存在

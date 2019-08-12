@@ -1,0 +1,71 @@
+testinfo:
+- id: test_a172
+  title: 校验“流程管理-flow-移动”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘根目录'文件夹图标
+- element_info: //em[@name="auto_flow"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘auto_flow'的文字
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info:  获取列表“第一行的”名字
+  is_time: 0.5
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]//span[text()="%s"]/ancestor::td/preceding-sibling::td//label+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info:  勾选“第一行的”flow
+- element_info: //button/span[text()="操作"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘操作’按钮
+  is_time: 0.5
+- element_info: flowMove
+  find_type: name
+  operate_type: click
+  info: 点击‘移动’按钮
+  is_time: 0.5
+- element_info: //*[@name="Flows"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 在弹框中，点击‘Flows'文件夹图标
+  is_time: 0.3
+- element_info: //*[@id="dataTree"]//*[@name="auto_move"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘auto_move'的文字
+- element_info: resourceTree-sure
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"提示框中的确定"按钮
+  is_time: 0.5
+check:
+- element_info: addFlowBtn
+  find_type: name
+  info: 断言‘新建’按钮存在
+- element_info: //*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  check_time: 1
+  info: 断言“被移动的flow”不存在
+- element_info: //*[@id="bm-designTreeMenu"]//*[@name="auto_move"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘auto_move'的文字
+  is_time: 0.5
+- element_info: //*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“被移动的flow”在auto_move文件夹中存在

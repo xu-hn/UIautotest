@@ -1,0 +1,40 @@
+testinfo:
+- id: test071
+  title: 校验“采集器-导入任务-执行列表-查看错误日志”页面校验
+  launch: 0
+  info: 先进入"导入任务"目录
+testcase:
+- element_info: //*[@name="bm-ch-col-importData-collectorId-searchListTable-search-select"]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: collector_mysql_to_wac4
+  info: 输入框输入“collector_mysql_to_wac4”文字
+- element_info: //*[@name="bm-ch-col-importData-collectorId-searchListTable-search-select"]//button
+  find_type: xpath
+  operate_type: click
+  info: 点击“搜索”按钮
+  is_time: 1
+- element_info: //*[@id="bm-ch-collector-importDatas-table"]//*[contains(text(), 'collector_mysql_to_wac4')]//ancestor::td/following-sibling::td//a[contains(text(), '执行')]
+  find_type: xpath
+  operate_type: click
+  info: 点击名称为“collector_mysql_to_wac4”任务的“执行”
+  is_time: 0.5
+- element_info: //td/div/a[contains(text(), "查看日志")]
+  find_type: xpaths
+  index: 0
+  operate_type: click
+  info: 点击第一条查看日志
+  is_time: 0.5
+- element_info: //*[text()="错误日志"]
+  find_type: xpath
+  operate_type: click
+  info: 点击 错误日志 tab
+  is_time: 0.8
+check:
+- element_info: //*[text()="错误日志"]
+  find_type: xpath
+  operate_type: get_attr
+  attr: aria-selected
+  check: vessel_contain_expect
+  expect: true
+  info: 断言 错误日志被打开

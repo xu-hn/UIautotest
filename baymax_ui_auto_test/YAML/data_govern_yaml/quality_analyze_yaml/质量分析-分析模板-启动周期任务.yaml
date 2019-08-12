@@ -1,0 +1,77 @@
+testinfo:
+- id: test148
+  title: 校验“质量分析-分析模板-启动周期任务”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: bm-qa-analysisTemplate-search-input
+  find_type: name
+  operate_type: send_keys
+  msg: initial_test_mode
+  info: 在搜索框输入“initial_test_mode”模板名称
+- element_info: bm-qa-analysisTemplate-search-btn
+  find_type: name
+  operate_type: click
+  info: 点击“搜索”按钮
+  is_time: 0.8
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[text()="initial_test_mode"]/ancestor::td/preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info: 在分析模板‘勾选’initial_test_mode
+- element_info: bm-qa-analysisTemplate-btns-cycle
+  find_type: name
+  operate_type: click
+  info: 在分析模板列表，点击‘周期'按钮
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 在提示弹框点击“确定”按钮
+  is_time: 0.5
+- element_info: bm-qa-analysisTemplate-flowName
+  find_type: name
+  operate_type: get_value
+  info: 获取‘执行计划flow名称'
+- element_info: bm-qa-analysisTemplate-year
+  find_type: name
+  operate_type: click
+  info: 点击‘执行周期'下拉框
+  is_time: 0.5
+- element_info: /html/body/div//ul/li/span[text()="年"]
+  find_type: xpath
+  operate_type: click
+  info: 在下拉框，点击“年”
+  is_time: 0.5
+- element_info: bm-qa-analysisTemplate-sure
+  find_type: name
+  operate_type: move_scrollbar_bottom
+  info: 进度条移动到确定键
+- element_info: bm-qa-analysisTemplate-sure
+  find_type: name
+  operate_type: click
+  info: 在执行计划设置弹框中点击“确定”
+  is_time: 0.5
+check:
+- element_info: //*[text()="恭喜你，运行成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，运行成功！”吐词出现
+  is_time: 1
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/qualityAnalysis/teInformation拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- operate_type: to_url
+  url: /#/hippo/schedule
+  info: 跳转到“任务调度”计划页面
+- element_info: //*[@id="bm-hippo-schedule-list-table"]//table/tbody/tr/td/div/a[contains(text(), "%s")]+随机数
+  v_index: 0
+  find_type: xpath
+  check: displayed
+  info: 断言：提交的任务存在
+- element_info: //*[@id="bm-hippo-schedule-list-table"]//table/tbody/tr/td/div/a[contains(text(), "%s")]/ancestor::td/following-sibling::td//span[text()="周期"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言：提交的任务为“周期”任务

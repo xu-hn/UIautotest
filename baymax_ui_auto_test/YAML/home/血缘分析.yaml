@@ -1,0 +1,26 @@
+testinfo:
+- id: test008
+  title: 校验“血缘分析”页面
+  launch: 1
+  info: 成功登录
+testcase:
+- element_info: //*[@test-id="/dataGovernance"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘数据治理’标签
+  is_time: 0.6
+- element_info: //*[@test-id="/kinship/:id/"]
+  find_type: xpath
+  operate_type: click
+  info: 点击血缘分析
+- operate_type: move_by_offset
+  move_to: (0, 0)
+  info: 移送鼠标到0,0像素
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/kinship/:id/拼接值后+前host+拼接
+  info: 检查"血缘分析的URL"是否正确
+- element_info: bm-ch-zebra-kinship-input
+  find_type: name
+  info: 检查“请选择内容”的搜索框是否存在

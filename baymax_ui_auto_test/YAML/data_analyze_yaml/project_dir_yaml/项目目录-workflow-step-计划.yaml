@@ -1,0 +1,42 @@
+testinfo:
+- id: test_a303
+  title: 项目目录-workflow-step-历史
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘设计'按钮
+  is_time: 1
+- element_info: //*[@name="计划"]/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘计划'的文字
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[4]/div/a[1]/a
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: work_flow_project_shell
+  info: 断言计划的流程名字为“work_flow_project_shell”
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[9]/div/span[1]
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 一次性
+  info: 断言计划的流程名字为“一次性”
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[5]/div
+  find_type: xpath
+  operate_type: get_text
+  check: time_difference
+  max_time: 10
+  info: 最新的计划创建时间距现在小于“10秒”
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td/div/a[2]/button/span[text()="执行列表"]
+  find_type: xpath
+  info: 断言列表中存在“执行列表”
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/project/design/plan/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值

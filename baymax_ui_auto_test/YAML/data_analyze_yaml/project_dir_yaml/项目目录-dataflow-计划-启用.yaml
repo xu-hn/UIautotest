@@ -1,0 +1,36 @@
+testinfo:
+- id: test_a295
+  title: 校验“项目目录-dataflow-计划-启用”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label
+  find_type: xpath
+  operate_type: click
+  info:  勾选“第一行计划”
+  is_time: 0.3
+- element_info: enablePlan
+  find_type: name
+  operate_type: click
+  info: 点击"启动按钮"
+  is_time: 0.5
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"提示框中的确定"按钮
+  is_time: 0.8
+check:
+- element_info: //*[text()="恭喜你，启用已成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，启用已成功！”吐词出现
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/project/design/plan/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[3]/div
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 正常
+  info: 断言 第一行的状态为“正常”

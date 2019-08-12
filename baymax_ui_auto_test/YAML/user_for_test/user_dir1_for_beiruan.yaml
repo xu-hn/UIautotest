@@ -1,0 +1,27 @@
+testinfo:
+- id: test001
+  title: 校验“成功登录”页面
+  launch: 1
+  info: 环境正常
+testcase:
+- element_info: 用户名
+  find_type: name
+  operate_type: send_keys
+  msg: dir1
+  info: 输入账号
+- element_info: 密码
+  find_type: name
+  operate_type: send_keys
+  msg: 123456
+  info: 输入密码
+- element_info: 登录
+  find_type: name
+  operate_type: click
+  info: 点击确定登录
+check:
+- element_info: //*[text()="dir1"]
+  find_type: xpath
+  info: 检查“admin用户名是否存在”
+- element_info: //*[contains(text(),'数据集成')]
+  find_type: xpath
+  info: 检查“数据集成按钮是否存在”

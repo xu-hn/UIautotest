@@ -1,0 +1,59 @@
+testinfo:
+- id: test036
+  title: 校验“数据集-移动HDFSDataset”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据集'文件夹图标
+- element_info: auto_HDFSdataset
+  find_type: name
+  operate_type: click
+  info: 点击‘auto_HDFSdataset'的文字
+  is_time: 1.5
+- element_info: //div[3]//tr//div/span[contains(text(), "HDFSDBdataset_")]
+  find_type: xpaths
+  index: -1
+  operate_type: get_text
+  info: 获取列表中最后一条'HDFSdataset_'是title
+- element_info:  //div[3]//*[text()='%s']/ancestor::td/preceding-sibling::td[1]+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info: 勾选列表中最后一条'HDFSdataset_'
+- element_info: bm-ch-resMan-resourceman-move-button
+  find_type: id
+  operate_type: click
+  info: 点击‘移动'按钮
+  is_time: 0.7
+- element_info: //*[@id="dataTree"]//*[@name="数据集"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-数据集”文件夹按钮
+- element_info: //*[@id="dataTree"]//*[@name="movo_to_HDFSdataset"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-movo_to_HDFSdataset”文字
+- element_info: bm-ch-resourceMan-submitResourceTree-ResourceTree-ok
+  find_type: name
+  operate_type: click
+  info: 点击弹出树的‘确定'按钮
+- element_info: //div[@aria-label="提示"]//*[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定'按钮
+  is_time: 0.8
+- element_info: '//*[@id="bm-ch-res-table"]//*[@class="el-loading-mask"and @style="display: none;"]'
+  find_type: xpath
+  info: 等待加载圈消失
+- element_info: //*[@id="bm-ch-nav2"]//em[@name="movo_to_HDFSdataset"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘movo_to_HDFSdataset'文字
+check:
+- element_info: //*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“此条dataset”已经被移动到movo_to_HDFSdataset文件夹

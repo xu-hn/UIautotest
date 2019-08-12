@@ -1,0 +1,52 @@
+testinfo:
+- id: test_a174
+  title: 校验“流程管理-flow-页面检查”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘根目录'文件夹图标
+- element_info: //em[@name="auto_flow"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘auto_flow'的文字
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info:  获取列表“第一行的”名字
+  is_time: 0.5
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: click
+  info:  点击“第一行”flow的名字
+  is_time: 0.5
+check:
+- element_info: primaryBtn
+  find_type: name
+  info: 按钮‘设计’存在
+- element_info: drawRefresh
+  find_type: id
+  info: 按钮‘重置’存在
+- element_info: drawReturn
+  find_type: id
+  info: 按钮‘返回’存在
+- element_info: designSet
+  find_type: id
+  info: 按钮‘设置’存在
+- element_info: designSave
+  find_type: id
+  info: 按钮‘保存’存在
+- element_info: designMain
+  find_type: id
+  info: ‘design’存在
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/design/designDrawing/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[@title="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 输入框title等于flow名称
+

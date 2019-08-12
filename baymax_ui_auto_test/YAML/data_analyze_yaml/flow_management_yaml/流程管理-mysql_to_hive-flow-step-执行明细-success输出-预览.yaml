@@ -1,0 +1,43 @@
+testinfo:
+- id: test_c009
+  title: 校验“流程管理-mysql_to_hive-flow-step-执行明细-success输出-预览”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: //*[@id="bm-rh-design-outputs-table"]/div[3]//td/div/button/span[contains(text(), "预览")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘预览 '按钮
+  is_time: 1
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/design/executingDetail/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: /html/body/div/div/div/span[text()="数据集预览"]
+  find_type: xpath
+  info: 断言“数据集预览”弹框存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="id"]
+  find_type: xpath
+  info: 断言“id”列存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="name"]
+  find_type: xpath
+  info: 断言“name”列存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="age"]
+  find_type: xpath
+  info: 断言“age”列存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="gender"]
+  find_type: xpath
+  info: 断言“gender”列存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[1]/div[text()="1"]
+  find_type: xpath
+  info: 断言id“1”存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[2]/div[contains(text(), "xiaoming")]
+  find_type: xpath
+  info: 断言name“xiaoming”存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[3]/div[text()="23"]
+  find_type: xpath
+  info: 断言age“23”存在
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[4]/div[contains(text(), "male")]
+  find_type: xpath
+  info: 断言gender“male”存在

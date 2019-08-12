@@ -1,0 +1,165 @@
+xpath:
+  operate:
+# 等待加载圈消失
+ - element_info: '//*[@id="bm-sh-sc-form"]//*[@class="el-loading-mask"and @style="display: none;"]'
+  find_type: xpath
+  info: 等待加载圈消失
+
+    # 提示 ‘确定’ 按钮
+    -在提示弹框，点击‘确定'按钮: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"提示框中的确定"按钮
+  is_time: 0.8
+
+    # 输入框后的 搜索按钮
+- element_info: //input[@name="ruleClass"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击“基类输入框后的”搜索按钮
+
+# 数据集查询：输入框输入内容
+- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: flow_to_id_name_age_gender
+  info: 数据集查询输入“flow_to_id_name_age_gender”
+# 数据集查询：输入框后的搜索按钮
+- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info:  点击“数据集查询输入框后的”搜索按钮
+  is_time: 1
+
+#  点击列表的名字
+- element_info: //*[@id="ch-components-dataSetInq-dataInquire-table"]/div[3]//tbody/tr/td/div[text()="flow_to_id_name_age_gender"]
+  find_type: xpath
+  operate_type: click
+  info:  点击“列表的”名字
+  is_time: 1
+
+#  勾选某个列表前面的选择框
+- element_info: //*[@id="ch-components-dataSetInq-dataInquire-table"]/div[3]//tbody/tr/td/div[text()="flow_to_id_name_age_gender"]/ancestor::td/preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info:  勾选“数据集flow_to_id_name_age_gender”
+  is_time: 0.3
+
+
+
+  ## 点击“弹框的确定按钮”
+  - element_info: footer-sure
+  find_type: name
+  operate_type: click
+  info: 点击“弹框的确定按钮”
+
+  # 移动滚动条
+  - element_info: rule-sure
+  find_type: name
+  operate_type: move_scrollbar_bottom
+  info: 移动“滚动条到确定按钮”
+
+# 点击 树前面的文件夹
+- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 树前面的文件夹图标
+
+
+# 把元素移动到 多少像素
+# 移动位置： （a , b） a 水平位置 正数 右侧 负数 左侧，  b 垂直位置  正数 ：下 负数： 上
+
+- element_info: //*[@id="right"]//h4[text()="source"]
+  find_type: xpath
+  operate_type: drag_el
+  move_to: (-800, 210)
+  info:  拖拽
+  is_time: 0.5
+
+
+# 输入
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: auto_project_dir+随机数
+  info: 输入‘项目名称’按钮
+  is_time: 0.2
+
+# 清除
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: clear
+  info: 清除‘项目名称’按钮
+  is_time: 0.2
+
+
+# 数据集搜索输入框
+- element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: import_id_name_age_gender
+  info: 输入框输入“import_id_name_age_gender”文字
+- element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]//button
+  find_type: xpath
+  operate_type: click
+  info: 点击“搜索”按钮
+  is_time: 1
+
+
+check:
+      #  吐词
+- element_info: //*[text()="恭喜你，删除已成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，删除已成功！”吐词出现
+
+      # 断言 url 包含
+    - operate_type: get_current_url
+      check: current_contain_expect
+      expect_value: /#/qualityAnalysis/analysisRules拼接值后+前host+拼接
+      info: 断言“当前的url”符合预期值
+
+    # 断言 url 等于
+    - operate_type: get_current_url
+      check: current_equal_expect
+      expect_value: /#/qualityAnalysis/analysisRules拼接值后+前host+拼接
+      info: 断言“当前的url”符合预期值
+
+# 获取属性对比值
+- element_info: 名称
+  find_type: name
+  operate_type: get_value
+  check: current_equal_expect
+  expect_value: mysql_to_hdfs
+  info: 断言 名称等于“mysql_to_hdfs”
+
+
+# 刷新页面获得属性待页面变化或超时 返回值 并断言值
+- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+  find_type: xpath
+  operate_type: refresh_get_attr
+  time_out: 180
+  attr: class
+  check: current_contain_expect
+  expect_value: success
+  info: 断言执行历史的进度最终状态为“success”
+
+# 被删除的项目不存在
+- element_info: //*[text="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  check_time: 2
+  info: 断言 被删除的“计划”不存在
+
+# 容器 包含 当前
+- element_info: //*[@id="bm-ch-resourceMan-table"]/div[3]//span[text()="%s"]/ancestor::td/following-sibling::td[1]//span+随机数
+  find_type: xpath
+  operate_type: get_text
+  v_index: 0
+  expect_index: 1
+  check: vessel_contain_current
+  info: 断言“新建的HDFSdataset存在”出现
+
+

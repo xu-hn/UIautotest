@@ -1,0 +1,38 @@
+testinfo:
+- id: test050
+  title: 校验文件管理“下载”
+  launch: 0
+  info: 先进入"数据导入"目录
+testcase:
+- element_info: //*[text()='wac2']
+  find_type: xpath
+  operate_type: move_scrollbar_bottom
+  info: 移动进度条 底部显示 wac2 行
+  is_time: 0.5
+- element_info: //*[text()='wac2']
+  find_type: xpath
+  operate_type: click
+  info: 点击进入 wac2文件夹
+  is_time: 0.5
+- element_info: //*[text()='data_import_initial_data']
+  find_type: xpath
+  operate_type: click
+  info: 点击进入 data_import_initial_data文件夹
+  is_time: 0.5
+- element_info: //*[text()='download']
+  find_type: xpath
+  operate_type: click
+  info: 点击进入 download文件夹
+  is_time: 0.5
+- element_info: //*[text()="download_abc"]/ancestor::td/preceding-sibling::td[1]//label
+  find_type: xpath
+  operate_type: click
+  info: 勾选第一行
+- element_info: bm-ch-file-container-downLoad-button
+  find_type: id
+  operate_type: click
+  info: 点击“下载”按钮
+  is_time: 2
+check:
+- check: time_difference
+  info: 断言“本地的下载目录”最新下载的文件的创建时间小于现在5秒

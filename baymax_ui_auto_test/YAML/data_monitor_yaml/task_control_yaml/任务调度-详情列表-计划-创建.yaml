@@ -1,0 +1,69 @@
+testinfo:
+- id: test107
+  title: 任务调度-详情列表-计划-创建
+  launch: 0
+  info: 先进入"任务监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: bm-hippo-taskcontrol-detail
+  find_type: id
+  operate_type: click
+  info: 点击“详情列表” 按钮
+  is_time: 1
+- element_info: bm-hippo-schedule-list-create
+  find_type: id
+  operate_type: click
+  info: 点击“创建” 按钮
+  is_time: 0.5
+- element_info: bm-hippo-schedule-name
+  find_type: id
+  operate_type: send_keys
+  msg: auto_task_+随机数
+  info: 输入‘scheduler’名称
+- element_info: bm-hippo-schedule-flowName-btn
+  find_type: id
+  operate_type: click
+  info: 点击“预处理flow” 选择按钮
+  is_time: 0.5
+- element_info: //*[@id="bm-flow-dialog-form"]//input[@placeholder="请输入名称"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: mysql_to_hdfs
+  info: 在赛选框 输入‘mysql_to_hdfs’
+- element_info: //*[@id="bm-flow-dialog-form"]//input[@placeholder="请输入名称"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击搜索“按钮”
+- element_info: //*[@id="bm-flow-dialog-form"]//input[@placeholder="请输入名称"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击“搜索”按钮
+- element_info: //*[@id="bm-flow-dialog-form"]//td[2]/div[text()="mysql_to_hdfs"]/ancestor::td//preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info: 勾选“initial_flow”
+- element_info: bm-hippo-schedule-ok
+  find_type: id
+  operate_type: click
+  info: 点击“确定” 按钮
+  is_time: 0.5
+- element_info: //*[@id="bm-hi-s-add-form"]//span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 在创建详情页，点击“确定” 按钮s
+  is_time: 1
+check:
+- element_info: //*[contains(text(), "恭喜你，新增数据已成功")]
+  find_type: xpath
+  check: displayed
+  info: 断言"恭喜你，新增数据已成功"吐词出现
+- element_info: //*[@id="bm-hippo-schedule-list-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言新建的“scheduler”出现
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/schedule拼接值后+前host+拼接
+  info: 断言“当前获取的url”与预期的相等

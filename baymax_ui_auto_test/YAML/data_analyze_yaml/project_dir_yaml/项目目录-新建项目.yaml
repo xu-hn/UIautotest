@@ -1,0 +1,32 @@
+testinfo:
+- id: test_a241
+  title: 校验“项目目录-新建项目”
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@id="bm-rh-secondNav"]//button/span[contains(text(), "目录")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘目录'按钮
+  is_time: 0.3
+- element_info: dir
+  find_type: name
+  operate_type: click
+  info: 点击‘新建项目'的文字
+  is_time: 0.3
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: auto_project_dir+随机数
+  info: 输入‘项目名称’按钮
+  is_time: 0.5
+- element_info: bm-adddir-dialog-form-ok-ok
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+check:
+- element_info: //*[@id="bm-rh-treeMenu"]//em[@name="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言“新建的项目存在”

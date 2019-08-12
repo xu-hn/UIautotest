@@ -1,0 +1,139 @@
+testinfo:
+- id: test043
+  title: 校验“新建数据导入”创建任务
+  launch: 0
+  info: 先进入"数据导入"目录
+testcase:
+- element_info: bm-ch-sys-syschronization-create-button
+  find_type: id
+  operate_type: click
+  info: 在数据导入页，点击‘创建'按钮
+  is_time: 0.5
+- element_info: '//*[@id="bm-ch-syschronization-table"]//*[@class="el-loading-mask"and @style="display: none;"]'
+  find_type: xpath
+  info: 等待加载圈消失
+- element_info: //*[@name="bm-ch-step1Form-datasource-input"]/ancestor::div[1]/div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击数据源“选择”按钮（数据源输入框后面的放大镜按钮）
+  is_time: 0.5
+- element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]//input[@placeholder="请输入名称"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: dbs_mysql_info5
+  info: 数据源查询输入“dbs_mysql_info5”
+- element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]//button
+  find_type: xpath
+  operate_type: click
+  info:  点击“数据源查询输入框后的”搜索按钮
+  is_time: 1
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]//table/tbody/tr/td[1]
+  find_type: xpath
+  operate_type: click
+  info: 勾选列表中dbs_mysql_info5 数据源
+- element_info: bm-ch-step1Form-datasource-ok
+  find_type: name
+  operate_type: click
+  info: 点击弹出树的‘确定'按钮
+  is_time: 0.5
+- element_info: bm-ch-step1Form-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: data_import+随机数
+  info: 输入数据导入‘任务'的名称
+- element_info: bm-ch-step1Form-table-select
+  find_type: name
+  operate_type: click
+  info: 点击‘选择表’的输入框
+- element_info: bm-ch-step1Form-table-select
+  find_type: name
+  operate_type: find_down
+  element_info2: //li[contains(@class, "hover")]/span
+  find_type2: xpath
+  find_v: c_1_in
+  find_time_out: 30
+  info: 下拉菜单中向下查找c_1_in
+- element_info: //*[text()="c_1_in"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘c_1_in’表
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 在数据来源页面，点击‘下一步’按钮
+  is_time: 0.5
+- element_info: //*[@id="bm-ch-step2-form"]//input/ancestor::div[1]/div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击数据集“选择”按钮（数据源输入框后面的放大镜按钮）
+  is_time: 0.5
+- element_info: //*[@id="dataTree"]//*[@name="数据集"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-数据集”文件夹按钮
+- element_info: //*[@id="dataTree"]//em[@name="auto_initial_dataset"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-auto_initial_dataset”文字
+- element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: import_id_name_age_gender
+  info: 输入框输入“import_id_name_age_gender”文字
+- element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]//button
+  find_type: xpath
+  operate_type: click
+  info: 点击“搜索”按钮
+  is_time: 1
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[contains(text(), 'import_id_name_age_gender')]/ancestor::td/preceding-sibling::td[1]
+  find_type: xpath
+  operate_type: click
+  info: 勾选列表中import_id_name_age_gender 数据集
+- element_info: bm-ch-step2Form-dataset-ok
+  find_type: name
+  operate_type: click
+  info: 点击弹出树的‘确定'按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 在数据目的页面，点击‘下一步’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(), '原样匹配')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘原样匹配’按钮
+  is_time: 0.5
+- element_info: //*[@aria-label="提示"]//*[contains(text(), '确定')]
+  find_type: xpath
+  operate_type: click
+  info: 点击弹出树的‘确定'按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 在字段映射页面，点击‘下一步’按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 在任务设置页面，点击‘下一步’按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]/ancestor::button/following-sibling::button[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘完成’按钮
+  is_time: 1
+check:
+- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]/table/tbody//a[contains(text(), %s)]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言“新建的数据导入任务存在”
+- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]/table/tbody//a[contains(text(), %s)]/ancestor::td/following-sibling::td[6]/div/div+随机数
+  find_type: xpath
+  operate_type: get_text
+  v_index: 0
+  check: current_equal_expect
+  expect_value: 已创建
+  info: 断言“新建的数据导入任务的状态”为 已创建

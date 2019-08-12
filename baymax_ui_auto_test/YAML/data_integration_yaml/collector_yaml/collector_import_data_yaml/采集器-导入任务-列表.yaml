@@ -1,0 +1,24 @@
+testinfo:
+- id: test063
+  title: 校验“采集器-导入任务”页面校验
+  launch: 0
+  info: 先进入"采集器"目录
+testcase:
+- element_info: //button//span[contains(text(), '采集器 ')]
+  find_type: xpath
+  operate_type: click
+  info: 在采集器首页，点击‘采集器'按钮
+  is_time: 0.5
+- element_info: //li[2]/a[text()='导入任务']
+  find_type: xpath
+  operate_type: click
+  info: 点击‘导入任务'按钮
+  is_time: 0.5
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/collector/importData拼接值后+前host+拼接
+  info: url地址正确
+- element_info: bm-ch-col-importData-collectorId-select
+  find_type: name
+  info: 采集器ID“筛选框”存在

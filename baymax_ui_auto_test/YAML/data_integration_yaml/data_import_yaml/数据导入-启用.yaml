@@ -1,0 +1,28 @@
+testinfo:
+- id: test053
+  title: 校验“新建数据导入”启用任务
+  launch: 0
+  info: 先进入"数据导入"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]//tr[1]/td[1]//span
+  find_type: xpath
+  operate_type: click
+  info: 在数据导入首页‘勾选’第一条任务
+- element_info: bm-ch-sys-syschronization-start-button
+  find_type: id
+  operate_type: click
+  info: 在数据导入页，点击‘启用'按钮
+  is_time: 0.5
+check:
+- element_info: //*[text()="恭喜你，任务已启用！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，任务已启用！”吐词出现
+- element_info:  //*[@id="bm-ch-syschronization-table"]/div[3]//tr[1]/td[8]/div/div
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 已部署
+  info: 断言“启动后的数据导入任务的状态”为 已部署

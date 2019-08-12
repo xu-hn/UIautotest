@@ -1,0 +1,71 @@
+testinfo:
+- id: test_a300
+  title: 项目目录-workflow-step-重置
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@name="initial_auto_project"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_auto_project项目前面的文件夹
+- element_info: //*[@name="initial_auto_project"]/following-sibling::ul[1]//*[@name="Flows"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_auto_project项目Flows
+  is_time: 0.8
+- element_info: addFlowBtn
+  find_type: name
+  operate_type: click
+  info: 点击‘新建’按钮
+  is_time: 0.5
+- element_info: addFlowName
+  find_type: name
+  operate_type: send_keys
+  msg: project_work_flow_+随机数
+  info: 输入project_work_flow名称
+- element_info: //*[@id="bm-pro-addflow-form"]//input[@placeholder="请选择流程类型"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘流程类型'弹出下拉菜单
+  is_time: 0.5
+- element_info: /html/body/div/div/div/ul/li[@name="workflow"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘workflow'
+  is_time: 0.5
+- element_info: addFlow-sure
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+- element_info: //*[@id="bm-rh-resourceMan-table2"]/div[3]/table/tbody/tr/td/div/span[text()="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info:  点击“第一行”flow的名字
+  is_time: 0.5
+- element_info: //*[@id="right"]//div[contains(text(), "Process")]
+  find_type: xpath
+  operate_type: click
+  info:  点击“Process”tab
+  is_time: 0.5
+- element_info: //*[@id="right"]//h4[text()="shell"]
+  find_type: xpath
+  operate_type: drag_el
+  move_to: (-800, 210)
+  info:  拖拽
+  is_time: 0.5
+- element_info: drawRefresh
+  find_type: id
+  operate_type: click
+  info:  点击“重置”按钮
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"提示框中的确定"按钮
+  is_time: 0.5
+check:
+- element_info: //*[@id="designMain"]//div/h4[text()="shell_1"]
+  find_type: xpath
+  check: contrary
+  check_time: 1
+  info: 断言“拖拽过去的shell_1”重置后在design里不存在

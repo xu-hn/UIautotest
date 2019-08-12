@@ -1,0 +1,63 @@
+testinfo:
+- id: test029
+  title: 校验“元数据-分析下-新建schema”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="元数据"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘元数据’文件夹图标
+- element_info: auto_fenxi_schema
+  find_type: name
+  operate_type: click
+  info: 点击‘auto_fenxi_schema'的文字
+- element_info: bm-ch-resMan-resourceman-analysis-button
+  find_type: id
+  operate_type: click
+  info: 点击‘分析’按钮
+  is_time: 0.5
+- element_info: bm-ch-resMan-analysis-create-button
+  find_type: id
+  operate_type: click
+  is_time: 0.5
+  info: 点击分析页中的‘新建’按钮
+- element_info: //div[@aria-label="提示"]//input
+  find_type: xpath
+  operate_type: send_keys
+  msg: fenxi_schema_+随机数
+  info: 输入schema名称
+- element_info: //body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“确定”按钮
+  is_time: 0.8
+- element_info: //*[@id="%s"]//i[2]+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info: 点击‘添加schema字段’按钮
+- element_info: bm-ch-resourceMan-analysis-id-input
+  find_type: name
+  operate_type: send_keys
+  msg: id_+随机数
+  info: 输入schema的随机地址名字名称
+- element_info: bm-ch-resMan-analysis-fieldConfirm-ok
+  find_type: name
+  operate_type: click
+  is_time: 0.3
+  info: 点击‘确定’按钮
+- element_info: bm-ch-resMan-analysis-save-button
+  find_type: id
+  operate_type: click
+  is_time: 0.3
+  info: 点击‘保存’按钮
+check:
+- element_info: //*[contains(text(), "保存失败 schemas 下，字段不能为空")]
+  find_type: xpath
+  check: contrary
+  check_time: 0.7
+  info: 断言“没有异常的吐词”出现
+- element_info: //*[contains(text(), "保存成功")]
+  find_type: xpath
+  info: 断言“没有异常的吐词”出现

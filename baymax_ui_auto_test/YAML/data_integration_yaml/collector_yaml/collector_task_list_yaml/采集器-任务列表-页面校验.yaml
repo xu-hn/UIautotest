@@ -1,0 +1,54 @@
+testinfo:
+- id: test075
+  title: 校验“采集器-任务列表-页面校验”
+  launch: 0
+  info: 先进入"采集器详细信息"页
+testcase:
+- is_time: 1
+  info: 刷新页面后等待1秒
+- element_info: //button/span[contains(text(), "采集器详细信息")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘采集器详细信息'按钮
+  is_time: 0.5
+- element_info: //li/a[contains(text(), "采集器任务列表")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"采集器任务列表"按钮 进入 采集器任务列表
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-ch-col-tasklist-create-button"]/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 创建
+  info: 断言“创建”按钮存在
+- element_info: //*[@id="bm-ch-col-tasklist-copy-button"]/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 复制
+  info: 断言“复制”按钮存在
+- element_info: //*[@id="bm-ch-col-tasklist-start-button"]/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 启用
+  info: 断言“启用”按钮存在
+- element_info: //*[@id="bm-ch-col-tasklist-stop-button"]/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 停用
+  info: 断言“停用”按钮存在
+- element_info: //*[@id="bm-ch-col-tasklist-delete-button"]/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 删除
+  info: 断言“删除”按钮存在
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]/table/tbody
+  find_type: xpath
+  info: 断言“列表”存在
+
+

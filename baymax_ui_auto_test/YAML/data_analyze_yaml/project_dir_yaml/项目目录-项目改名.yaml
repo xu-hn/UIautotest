@@ -1,0 +1,65 @@
+testinfo:
+- id: test_a242
+  title: 校验“项目目录-项目改名”
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[contains(@name,"auto_project_dir")]
+  find_type: xpath
+  operate_type: click
+  info: 点击 auto_project_dir项目文字
+- element_info: //*[contains(@name,"auto_project_dir")]
+  find_type: xpath
+  operate_type: get_text
+  info: 获取项目名称
+- element_info: //*[@id="bm-rh-secondNav"]//button/span[contains(text(), "目录")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘目录'按钮
+  is_time: 0.3
+- element_info: reNameDir
+  find_type: name
+  operate_type: click
+  info: 点击‘项目改名'的文字
+  is_time: 3
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: click
+  info: 点击弹框中的‘项目名称’
+  is_time: 0.2
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: key_operate
+  key_s: CONTROL
+  key_c: a
+  info: 键盘操作 control+a 全选输入框
+  is_time: 0.2
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: key_operate
+  key_s: DELETE
+  info: 键盘操作 DELETE删除输入框
+  is_time: 0.2
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: auto_project_dir+随机数
+  info: 输入‘项目名称’按钮
+  is_time: 0.2
+- element_info: bm-adddir-dialog-form-ok-ok
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+  is_time: 1
+check:
+- element_info: //*[@id="bm-rh-treeMenu"]//em[@name="%s"]+随机数
+  find_type: xpath
+  v_index: 1
+  check: displayed
+  info: 断言“被改名的项目存在”
+- element_info: //*[@id="bm-rh-treeMenu"]//em[@name="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  info: 断言“改名前的的项目不存在”
+  check_time: 1

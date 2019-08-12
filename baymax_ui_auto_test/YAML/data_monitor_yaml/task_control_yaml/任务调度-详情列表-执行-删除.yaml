@@ -1,0 +1,45 @@
+testinfo:
+- id: test114
+  title: 任务调度-详情列表-执行-删除
+  launch: 0
+  info: 先进入"任务监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: bm-hippo-taskcontrol-detail
+  find_type: id
+  operate_type: click
+  info: 点击“详情列表” 按钮
+  is_time: 1
+- element_info: //*[@id="bm-hippo-schedule-container"]//li/a[text()='执行']
+  find_type: xpath
+  operate_type: click
+  info: 点击“执行” tab
+  is_time: 0.5
+- element_info: //*[@id="bm-hippo-execute-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a
+  find_type: xpath
+  operate_type: get_text
+  info: 获取第一条执行任务的名称
+- element_info: //*[@id="bm-hippo-execute-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label
+  find_type: xpath
+  operate_type: click
+  info: 勾选第一个执行任务
+- element_info: bm-hippo-execute-del
+  find_type: id
+  operate_type: click
+  info: 点击“删除”按钮
+check:
+- element_info: //*[text()="恭喜你，删除已成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言"恭喜你，删除已成功！"吐词出现
+- element_info: //*[@id="bm-hippo-execute-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a
+  find_type: xpath
+  operate_type: get_text
+  check: vessel_not_contain_current
+  expect_index: 0
+  info: 断言当前“第一条”执行任务名称 不等于 停止前的任务名称
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/execute拼接值后+前host+拼接
+  info: 断言“/#/hippo/execute”与预期的相等

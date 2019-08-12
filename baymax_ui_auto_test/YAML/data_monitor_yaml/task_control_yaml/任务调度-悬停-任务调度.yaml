@@ -1,0 +1,47 @@
+testinfo:
+- id: test116
+  title: 任务调度-悬停-任务调度
+  launch: 0
+  info: 先进入"任务监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-nav"]//*[text()="数据监控"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停在"数据监控"
+  is_time: 1
+- element_info: //*[@id="childNav"]//*[text()="任务监控"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停在"任务监控"
+  is_time: 1
+- element_info: //*[@id="childNav"]//*[text()="任务调度"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“任务调度”
+  is_time: 1
+check:
+- element_info: //*[@id="bm-hippo-schedule-container"]//*[contains(text(), "计划")]
+  find_type: xpath
+  check: displayed
+  info: 断言“计划”出现
+- element_info:  //*[@id="bm-hippo-schedule-container"]//*[contains(text(), "计划")]
+  find_type: xpath
+  operate_type: get_attr
+  attr: class
+  check: current_equal_expect
+  expect_value: rLinkLi router-link-exact-active router-link-active
+  info: 断言 运行中 标签被选中
+- element_info: bm-hippo-schedule-list-create
+  find_type: id
+  check: displayed
+  info: 断言“创建”按钮出现
+- element_info: bm-hippo-schedule-list-run
+  find_type: id
+  check: displayed
+  info: 断言“启动”按钮出现
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/schedule拼接值后+前host+拼接
+  info: 断言“当前获取的url”与预期的相等

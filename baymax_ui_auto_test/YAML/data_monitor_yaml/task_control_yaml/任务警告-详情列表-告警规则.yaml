@@ -1,0 +1,38 @@
+testinfo:
+- id: test118
+  title: 任务警告-详情列表-告警规则
+  launch: 0
+  info: 先进入"任务监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: bm-hippo-taskcontrol-warning
+  find_type: id
+  operate_type: click
+  info: 点击“详情列表”
+  is_time: 1
+- element_info: //*[@id="bm-hippo-alarm-container-ul"]//*[text()="告警规则"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“告警规则”
+  is_time: 1
+check:
+- element_info: //*[@id="bm-hippo-alarm-container-ul"]//*[text()="告警规则"]
+  find_type: xpath
+  operate_type: get_attr
+  attr: class
+  check: current_equal_expect
+  expect_value: rLinkLi router-link-exact-active router-link-active
+  info: 断言 “告警信息” tab被选中
+- element_info: bm-hippo-alarm-rule-create-btn
+  find_type: id
+  check: displayed
+  info: 断言“创建”按钮出现
+- element_info: bm-hippo-alarm-rule-del-btn
+  find_type: id
+  check: displayed
+  info: 断言“删除”按钮出现
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/alarm/rule拼接值后+前host+拼接
+  info: 断言“当前获取的url”与预期的相等

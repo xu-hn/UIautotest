@@ -1,0 +1,44 @@
+testinfo:
+- id: test130
+  title: 校验“质量分析-任务执行信息-结果-返回”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span[text()="结果"]
+  find_type: xpath
+  operate_type: click
+  info: 点击第一条任务的“结果”
+  is_time: 1
+- element_info: //*[@id="bm-qa-tasks-taskResult"]/div[1]/span[text()="分析结果"]/following-sibling::button/span[text()="返回"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“返回”按钮
+  is_time: 1
+check:
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: initial_test_mode
+  info: 断言“第一行的模板”为 initial_test_mode
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/qualityAnalysis/teInformation拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span
+  find_type: xpath
+  info: 断言“执行结果”存在
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[9]/div
+  find_type: xpath
+  operate_type: get_text
+  check: current_not_equal_expect
+  expect_value: None
+  info: 断言“数据质量等级”为 不为空
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[10]/div
+  find_type: xpath
+  operate_type: get_text
+  check: current_not_equal_expect
+  expect_value: None
+  info: 断言“第一行坏数据占比”为 不为空

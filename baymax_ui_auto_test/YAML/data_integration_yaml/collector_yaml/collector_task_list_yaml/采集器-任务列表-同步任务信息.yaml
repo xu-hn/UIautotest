@@ -1,0 +1,26 @@
+testinfo:
+- id: test081
+  title: 校验“采集器-任务列表-同步任务信息”页面校验
+  launch: 0
+  info: 先进入"采集器任务列表"目录
+testcase:
+- is_time: 1
+  info: 刷新页面后等待1秒
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘第一行导入任务'的名称
+  is_time: 0.5
+check:
+- element_info: bm-collectorname-form
+  find_type: id
+  info: ‘任务详情1’模块存在
+- element_info: //h3[text()='字段映射']
+  find_type: xpath
+  info: ‘字段映射’模块存在
+- element_info: bm-collectorname-datasol-form
+  find_type: id
+  info: ‘数据源’模块存在
+- element_info: bm-collectorname-dataset-form
+  find_type: id
+  info: ‘数据集’模块存在

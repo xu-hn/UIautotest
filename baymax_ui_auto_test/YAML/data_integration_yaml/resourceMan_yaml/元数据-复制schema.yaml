@@ -1,0 +1,43 @@
+testinfo:
+- id: test027
+  title: 校验“元数据-复制schema”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="元数据"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘元数据’文件夹图标
+- element_info: auto_schema
+  find_type: name
+  operate_type: click
+  info: 点击‘auto_schema'的文字
+- element_info: '//*[@class="dn-content"]//*[@class="el-loading-mask" and @style="display: none;"]'
+  find_type: xpath
+  info: 等待加载圈消失
+- element_info: //tr//*[contains(text(), "schema_")]
+  find_type: xpaths
+  index: 0
+  operate_type: get_text
+  info: 获取列表中第一条'schema_'是title
+  is_time: 1
+- element_info: //*[contains(text(), '%s')]/ancestor::td/preceding-sibling::td[1]+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info: 勾选列表中第一条'schema_'
+- element_info: bm-ch-resMan-resourceman-copyschema-button
+  find_type: id
+  operate_type: click
+  info: 点击‘复制'按钮
+  is_time: 0.7
+- element_info: //*[@id="bm-ch-resMan-schema-tmp"]//*[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定'按钮
+check:
+- element_info: //*[contains(text(), "%s")]+拼接
+  find_type: xpath
+  v_index: 0
+  join_value: _copy
+  info: 断言“此条shcema”列表中存在

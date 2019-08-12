@@ -1,0 +1,47 @@
+testinfo:
+- id: test128
+  title: 校验“质量分析-任务执行信息-任务状态”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[4]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info: 获取第一条任务的“状态”
+check:
+#- check: vessel_contain_expect
+#  expect_index: 0
+#  expect_value: READY
+#  info: 断言“当前状态为READY”
+#- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[4]/div/span
+#  find_type: xpath
+#  operate_type: refresh_get_text
+#  time_out: 300
+#  check: current_contain_expect
+#  expect_value: RUNNING
+#  info: 断言“实时刷新页面，300秒内任务状态由READY变为RUNNING”
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[4]/div/span
+  find_type: xpath
+  operate_type: refresh_get_text_is_expect
+  time_out: 300
+  expect_values: ['READY', 'RUNNING', 'SUCCEEDED']
+  check: current_contain_expect
+  expect_value: SUCCEEDED
+  info: 断言“实时刷新页面，300秒内任务状态由RUNNING变为SUCCEEDED”
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span
+  find_type: xpath
+  info: 断言“SUCCEEDED”状态时“执行结果”存在
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[9]/div
+  find_type: xpath
+  operate_type: get_text
+  check: current_not_equal_expect
+  expect_value: None
+  info: 断言“第一行SUCCEEDED”状态时“数据质量等级”为 不为空
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[10]/div
+  find_type: xpath
+  operate_type: get_text
+  check: current_not_equal_expect
+  expect_value: None
+  info: 断言“第一行SUCCEEDED”状态时“坏数据占比”为 不为空

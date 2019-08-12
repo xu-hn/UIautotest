@@ -1,0 +1,26 @@
+testinfo:
+- id: test046
+  title: 校验文件管理“返回上一级”文件夹
+  launch: 0
+  info: 先进入"数据导入"目录
+testcase:
+- element_info: //*[text()='wac2']
+  find_type: xpath
+  operate_type: move_scrollbar_bottom
+  info: 移动进度条 然底部显示 wac2 行
+  is_time: 0.5
+- element_info: //*[text()='wac2']
+  find_type: xpath
+  operate_type: click
+  info: 点击进入 wac2文件夹
+  is_time: 0.5
+- element_info: bm-ch-file-container-lastLevel-button
+  find_type: id
+  operate_type: click
+  info: 点击“上一级”按钮
+  is_time: 0.5
+check:
+- element_info: //*[text()='/']
+  find_type: xpath
+  check: displayed
+  info: 断言“/”路径元素存在

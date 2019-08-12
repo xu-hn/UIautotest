@@ -1,0 +1,137 @@
+testinfo:
+- id: test076
+  title: 校验“采集器-任务列表-新建任务”
+  launch: 0
+  info: 先进入"采集器详细信息"页
+testcase:
+- is_time: 1
+  info: 刷新页面后等待1秒
+- element_info: //button/span[contains(text(), "采集器详细信息")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘采集器详细信息'按钮
+  is_time: 0.5
+- element_info: //li/a[contains(text(), "采集器任务列表")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"采集器任务列表"按钮 进入 采集器任务列表
+  is_time: 0.5
+- element_info: bm-ch-col-tasklist-create-button
+  find_type: id
+  operate_type: click
+  info: 点击“创建”按钮
+  is_time: 0.5
+- element_info: bm-ch-step1Form-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: auto_collecter+随机数
+  info: 数据来源页写入“任务名称”
+- element_info: //*[@name="bm-ch-step1Form-datasource-input"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击“数据源”后面的搜索按钮
+  is_time: 0.5
+- element_info: //*[@id="dataTree"]//*[@name="数据源"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-数据源”文件夹按钮
+- element_info: //*[@id="dataTree"]//*[@name="default"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-default”文件夹按钮
+- element_info: //*[@id="dataTree"]//*[@name="autoui83"]
+  find_type: xpath
+  operate_type: click
+  info: 点击“弹出树-autoui83”文字
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[text()="dbs_collector_mysql_info5"]/ancestor::td/preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info: 勾选“dbs_collector_mysql_info5”数据源
+- element_info: bm-ch-step1Form-datasource-ok
+  find_type: name
+  operate_type: click
+  info: 点击弹出树的‘确定'按钮
+  is_time: 0.5
+- element_info: bm-ch-step1Form-table-select
+  find_type: name
+  operate_type: click
+  info: 点击表选择输入框
+- element_info: bm-ch-step1Form-table-select
+  find_type: name
+  operate_type: send_keys
+  msg: c_1_in
+  info: 表选择输入框中输入 c_1_in
+  is_time: 1
+- element_info: //li/span[text()="c_1_in"]
+  find_type: xpath
+  operate_type: click
+  info: 点击表 C_IN_1
+  is_time: 1
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 数据来源页，点击“下一步”
+  is_time: 1
+- element_info: //*[@name="bm-ch-step2Form-dataStore-name-input"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击“数据集”后面的搜索按钮
+  is_time: 0.5
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]//input[@placeholder="请输入名称"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: wac4
+  info: 在弹框搜索输入框中输入 wac4
+  is_time: 0.3
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]//input[@placeholder="请输入名称"]/following-sibling::div//button
+  find_type: xpath
+  operate_type: click
+  info: 点击弹框中 搜索输入框 后面的搜索按钮
+  is_time: 0.8
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[text()="wac4"]/ancestor::td/preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info: 勾选“wac4”数据集
+- element_info: bm-ch-step2Form-dataset-ok
+  find_type: name
+  operate_type: click
+  info: 点击 数据集弹出树的‘确定'按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 数据目的页，点击“下一步”
+  is_time: 0.5
+- element_info: bm-ch-step3Form-autoMatch-button
+  find_type: name
+  operate_type: click
+  info: 点击自动匹配
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 字段映射页，点击“下一步”
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 任务设置页，点击“下一步”
+  is_time: 0.5
+- element_info: //*[text()="下一步"]/ancestor::button/following-sibling::button/span[text()="完成"]
+  find_type: xpath
+  operate_type: click
+  info: 任务设置页，点击“完成”
+  is_time: 1
+check:
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]/table/tbody//a[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言“新建的采集器任务存在”
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]/table/tbody//a[contains(text(), "%s")]/ancestor::td/following-sibling::td[5]/div/div+随机数
+  find_type: xpath
+  operate_type: get_text
+  v_index: 0
+  check: current_equal_expect
+  expect_value: 已创建
+  info: 断言“新建的采集器任务的状态”为 已创建

@@ -1,0 +1,52 @@
+testinfo:
+- id: test080
+  title: 校验“采集器-任务列表-删除”任务
+  launch: 0
+  info: 先进入"采集器任务列表"
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//a[contains(text(), "auto_collecter")]/ancestor::td/preceding-sibling::td[1]//label
+  find_type: xpaths
+  index: 0
+  operate_type: click
+  info: 在采集器任务列表‘勾选’第一条名字包含auto_collecter任务
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//a[contains(text(), "auto_collecter")]
+  find_type: xpaths
+  index: 0
+  operate_type: get_text
+  info: 获取-采集器任务列表“第一条名字包含auto_collecter任务”的名字
+  is_time: 1
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//a[contains(text(), "auto_collecter")]/ancestor::td/preceding-sibling::td[1]//label
+  find_type: xpaths
+  index: 1
+  operate_type: click
+  info: 在采集器任务列表‘勾选’第二条名字包含auto_collecter任务
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//a[contains(text(), "auto_collecter")]
+  find_type: xpaths
+  index: 1
+  operate_type: get_text
+  info: 获取-采集器任务列表“第二条名字包含auto_collecter任务”的名字
+- element_info: bm-ch-col-tasklist-delete-button
+  find_type: id
+  operate_type: click
+  info: 在采集器任务列表页，点击‘删除'按钮
+  is_time: 0.5
+- element_info: //div[@aria-label="提示"]//span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“确定” 按钮
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//a[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  check_time: 1
+  info: 断言“已删除的采集器任务1” 不存在
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//a[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 1
+  check: contrary
+  check_time: 1
+  info: 断言“已删除的采集器任务1” 不存在

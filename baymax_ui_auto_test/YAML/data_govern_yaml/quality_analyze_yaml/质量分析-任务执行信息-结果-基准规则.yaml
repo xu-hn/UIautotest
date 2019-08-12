@@ -1,0 +1,50 @@
+testinfo:
+- id: test131
+  title: 校验“质量分析-任务执行信息-结果-基准规则”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span[text()="结果"]
+  find_type: xpath
+  operate_type: click
+  info: 点击第一条任务的“结果”
+  is_time: 1
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]//td/div/a[text()="model-rule-字段不能为空"]
+  find_type: xpath
+  operate_type: move_scrollbar_bottom
+  info: 移动进度条到模板规则“model-rule-字段不能为空”
+  is_time: 0.8
+- element_info: //*[@id="bm-qa-tasks-taskResult-table"]/div[3]//a[contains(text(), "字段不能为空")]
+  find_type: xpaths
+  index: -1
+  operate_type: click
+  info: 点击基准规则“字段不能为空”
+  is_time: 0.5
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/qualityAnalysis/analysisRules/edit拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: outputField
+  find_type: name
+  operate_type: get_attr
+  attr: disabled
+  check: current_equal_expect
+  expect_value: "true" #!!str true
+  info: 断言“输出字段”输入框是不可操作的
+- element_info: rule-sure
+  find_type: name
+  operate_type: get_attr
+  attr: disabled
+  check: current_equal_expect
+  expect_value: !!str true
+  info: 断言“确定”按钮是不可操作的
+- element_info: rule-cancel
+  find_type: name
+  operate_type: get_attr
+  attr: disabled
+  check: current_equal_expect
+  expect_value: None
+  info: 断言“取消”按钮是可操作的

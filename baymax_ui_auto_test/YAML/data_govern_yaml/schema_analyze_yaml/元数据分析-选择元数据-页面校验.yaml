@@ -1,0 +1,39 @@
+testinfo:
+- id: test165
+  title: 校验“元数据分析-选择元数据-页面校验”任务
+  launch: 0
+  info: 先进入"元数据分析"目录
+testcase:
+- info: 等待“0.5”秒
+  is_time: 0.5
+- element_info: //input[@placeholder="请选择内容"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击“元数据分析输入框后的”搜索按钮
+  is_time: 4
+- element_info: //*[@id="bm-main"]//input[@placeholder="请输入名称"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: schema_analyze
+  info: 元数据查询输入“schema_analyze”
+- element_info: //*[@id="bm-main"]//input[@placeholder="请输入名称"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info:  点击“元数据查询输入框后的”搜索按钮
+  is_time: 1
+- element_info: //*[@id="bm-main"]/section/div/div/section/div[1]/div/div[2]/div/div[2]/form/div/div[2]/div[2]/div[1]/div[2]/table/thead/tr/th[1]/div/label
+  find_type: xpath
+  operate_type: click
+  info:  勾选“元数据查询 全选 按钮”
+- element_info: //*[@id="bm-main"]/section/div/div/section/div[1]/div/div[2]/div/div[3]/div/button[1]/span[text()="确定"]
+  find_type: xpath
+  operate_type: click
+  info:  在“弹框中点击确定按钮”
+  is_time: 0.5
+check:
+- element_info: //*[@id="canvas"]//h3/b[text()="schema_analyze_2"]
+  find_type: xpath
+  info: 断言被打开的元数据“schema_analyze_2”存在
+- element_info: //*[@id="canvas"]//h3/b[text()="schema_analyze_1"]
+  find_type: xpath
+  info: 断言被打开的元数据“schema_analyze_2”存在

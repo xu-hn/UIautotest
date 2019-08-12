@@ -1,0 +1,49 @@
+testinfo:
+- id: test153
+  title: 校验“质量分析-分析模板-删除-EL规则”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- element_info: 表达式
+  find_type: name
+  operate_type: click
+  info: 点击“表达式”树
+  is_time: 0.8
+- element_info: //*[@id="bm-qa-analysisRules-table"]/div[3]/table/tbody/tr/td[2]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info: 获取第一行"el规则的名称"
+  is_time: 1
+- element_info: //*[@id="bm-qa-analysisRules-table"]/div[3]/table/tbody/tr/td[2]/div/span/ancestor::td/preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info: 勾选第一行"el规则的名称"
+- element_info: btnInfo
+  find_type: name
+  operate_type: click
+  info: 点击“删除”按钮
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"提示框中的确定"按钮
+check:
+- element_info: //*[text()="恭喜你，删除已成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，删除已成功！”吐词出现
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/qualityAnalysis/analysisRules拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+  is_time: 0.6
+- element_info: 表达式
+  find_type: name
+  operate_type: click
+  info: 点击“表达式”树
+  is_time: 0.8
+- element_info: //*[@id="bm-qa-analysisRules-table"]/div[3]/table/tbody/tr/td[2]/div/span[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  check_time: 2
+  info: 断言被删除的“规则”不存在

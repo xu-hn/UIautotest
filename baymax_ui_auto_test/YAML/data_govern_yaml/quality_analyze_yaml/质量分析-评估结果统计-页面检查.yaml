@@ -1,0 +1,43 @@
+testinfo:
+- id: test158
+  title: 校验“质量分析-评估结果统计-页面检查”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: 等待0.5秒
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-qa-qualityAnalysis"]/div/div/button/span[contains(text(), "评估结果统计")]
+  find_type: xpath
+  check: displayed
+  info: 断言“评估结果统计”存在
+- element_info: tab-dataList
+  find_type: id
+  check: displayed
+  info: 断言“数据列表tab”存在
+- element_info: tab-graphical
+  find_type: id
+  check: displayed
+  info: 断言“图形tab”存在
+- element_info: //*[@id="bm-qa-erStatistics-table"]/div[3]/table/tbody/tr/td[1]/div[contains(text(), "Total")]
+  find_type: xpath
+  check: displayed
+  info: 断言“主键Total”存在
+- element_info: //*[@id="bm-qa-erStatistics"]//label/span[text()= "质量评级"]/ancestor::label
+  find_type: xpath
+  operate_type: get_attr
+  attr: class
+  check: current_equal_expect
+  expect_value: el-checkbox is-checked
+  info: 断言“质量评级”默认是被勾选的
+- element_info: //*[@id="bm-qa-erStatistics"]//label/span[text()= "坏数据占比"]/ancestor::label
+  find_type: xpath
+  operate_type: get_attr
+  attr: class
+  check: current_equal_expect
+  expect_value: el-checkbox is-checked
+  info: 断言“坏数据占比”默认是被勾选的
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/qualityAnalysis/erStatistics拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值

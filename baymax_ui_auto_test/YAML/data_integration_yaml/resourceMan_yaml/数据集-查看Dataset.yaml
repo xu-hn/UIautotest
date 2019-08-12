@@ -1,0 +1,44 @@
+testinfo:
+- id: test034
+  title: 校验“数据集-查看Dataset”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据集'文件夹图标
+- element_info: auto_dataset
+  find_type: name
+  operate_type: click
+  info: 点击‘auto_dataset'的文字
+  is_time: 1
+- element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: DB_oracle_dataset
+  info: 搜索输入框输入‘DB_oracle_dataset'文字
+- element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]//button
+  find_type: xpath
+  operate_type: click
+  is_time: 1
+  info: 点击搜索按钮
+- element_info: //div[3]//tr//div/span[contains(text(), "DB_oracle_dataset")]
+  find_type: xpaths
+  index: 0
+  operate_type: get_text
+  info: 获取列表中第一条'DB_oracle_dataset'是title
+- element_info: //*[@id="bm-ch-resourceMan-table"]/div[4]//span[contains(text(), "查看")]
+  find_type: xpaths
+  index: 0
+  operate_type: click
+  info: 点击列表中第一条'DBdataset'的 查看按钮
+  is_time: 1
+check:
+- element_info: //div[@id="relation_coniner"]/div/div/h3/span[3]
+  find_type: xpath
+  operate_type: get_text
+  expect_index: 0
+  check: vessel_contain_current
+  info: 断言查看页里的数据集是点击的数据集
+

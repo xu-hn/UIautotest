@@ -1,0 +1,33 @@
+testinfo:
+- id: test124
+  title: 校验“质量分析-任务执行信息-查看任务信息”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[3]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info: 获取第一条任务的“执行任务名”
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[3]/div/span
+  find_type: xpath
+  operate_type: click
+  info: 点击 第一条任务的“执行任务名”
+  is_time: 0.8
+check:
+- element_info: bm-qa-tasks-taskCarry-form
+  find_type: id
+  info: 断言“执行任务信息”from存在
+- element_info: //*[@id="bm-qa-tasks-taskCarry-form"]//input[@name="modelName"]
+  find_type: xpath
+  info: 断言“模板输入框存在”
+- element_info: //*[@id="bm-qa-tasks-taskCarry-form"]//input[@name="name"]
+  find_type: xpath
+  operate_type: get_value
+  check: vessel_contain_current
+  expect_index: 0
+  info: 断言执行任务名与执行列表的执行任务名称一致
+- element_info: goBack
+  find_type: name
+  info: 断言“返回”按钮存在

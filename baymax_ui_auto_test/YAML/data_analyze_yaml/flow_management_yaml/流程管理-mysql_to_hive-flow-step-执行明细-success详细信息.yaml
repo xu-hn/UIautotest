@@ -1,0 +1,45 @@
+testinfo:
+- id: test_c007
+  title: 校验“流程管理-mysql_to_hive-flow-step-执行明细-success详细信息”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行历史'按钮
+  is_time: 1
+- element_info: //*[@name="执行详细 "]/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行详细'的文字
+  is_time: 0.5
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/design/executingDetail/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[@id="bm-rh-design-detail-detailForm"]/div[1]/label
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: ID
+  info: 详情信息存在“ID”列
+- element_info: //*[@id="bm-rh-design-detail-detailForm"]/div[2]/label
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 名称
+  info: 详情信息存在“名称”列
+- element_info: //*[@id="bm-rh-design-detail-detailForm"]/div[3]/label
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: EID
+  info: 详情信息存在“EID”列
+- element_info: //*[@id="bm-rh-design-detail-detailForm"]/div[5]/label
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 状态
+  info: 详情信息存在“状态”列

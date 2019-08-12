@@ -1,0 +1,28 @@
+testinfo:
+- id: test079
+  title: 校验“采集器-任务列表-停用”任务
+  launch: 0
+  info: 先进入"采集器任务列表"
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//tr[1]/td[1]//label
+  find_type: xpath
+  operate_type: click
+  info: 在采集器任务列表‘勾选’第一条任务
+- element_info: bm-ch-col-tasklist-stop-button
+  find_type: id
+  operate_type: click
+  info: 在采集器任务列表，点击“停用”按钮
+  is_time: 0.5
+check:
+- element_info: //*[text()="恭喜你，任务已停用！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，任务已停用！”吐词出现
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//tr[1]/td[7]/div/div
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 已停止
+  info: 断言“启动后的采集器任务的状态”为 已停止

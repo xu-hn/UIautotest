@@ -1,0 +1,41 @@
+testinfo:
+- id: test143
+  title: 校验“质量分析-分析模板-规则-查看”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]/table/tbody/tr/td[2]/div/span[contains(text(), "auto_analyze_template_")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“auto_analyze_template_”开头的分析模板
+  is_time: 0.5
+- element_info: template-edit-unlock
+  find_type: name
+  operate_type: click
+  info: 在分析模板信息页，点击‘解锁'按钮
+  is_time: 0.3
+- element_info: edit
+  find_type: name
+  operate_type: click
+  info: 在分析模板信息页，点击‘编辑规则'按钮
+  is_time: 0.5
+- element_info: template-rules-see
+  find_type: name
+  operate_type: click
+  info: 在规则页，点击‘查看'按钮
+  is_time: 0.5
+check:
+- element_info: bm-qa-template-edit-form
+  find_type: id
+  info: 断言“模板信息”from存在
+- element_info: //*[@id="bm-qa-template-edit-form"]//input[@name="id"]
+  find_type: xpath
+  info: 断言“主键输入框存在”
+- element_info: //*[@id="bm-qa-template-edit-form"]//input[@name="name"]
+  find_type: xpath
+  info: 断言“名称输入框存在”
+- element_info: template-edit-unlock
+  find_type: name
+  info: 断言“解锁”按钮存在

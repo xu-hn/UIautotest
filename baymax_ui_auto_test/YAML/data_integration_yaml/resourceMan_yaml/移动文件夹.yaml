@@ -1,0 +1,77 @@
+testinfo:
+- id: test021
+  title: 校验“移动资源目录的文件夹”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- info: 等待‘1’秒
+  is_time: 1
+- element_info: '//*[@id="bm-com-datatree-secondNav-table"]//*[@class="el-loading-mask"and @style="display: none;"]'
+  find_type: xpath
+  info: 等待加载圈消失
+- element_info: 数据标准
+  find_type: name
+  operate_type: click
+  info: 点击‘数据标准'的文字
+- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据标准’前的文件夹
+- element_info: //button/span[contains(text(), '目录')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘目录’按钮
+  is_time: 1
+- element_info: //ul//*[contains(text(), "新建目录")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘新建目录’按钮
+- element_info: bm-adddir-dialog-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: move_dir+随机数
+  is_time: 0.3
+  info: 输入要新建文件夹的随机名称
+- element_info: bm-adddir-dialog-form-ok-ok
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+  is_time: 1
+- element_info: dir+随机数
+  v_index: 0
+  find_type: name
+  operate_type: click
+  info: 点击刚刚创建的文件夹
+- element_info: //button/span[contains(text(), '目录')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘目录’按钮
+  is_time: 1
+- element_info: //ul[@name="bm-rm-dropdpwn-name1"]//*[contains(text(), "移动目录")]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘移动目录’按钮
+- element_info: //*[@id="dataTree"]//*[@name="数据标准"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击弹框中‘数据标准’前的文件夹
+- element_info: //*[@id="dataTree"]//*[@name="box2019"]
+  find_type: xpath
+  operate_type: click
+  info: 点击文件夹box2019
+- element_info: //*[@id="bm-ch-resMan-resourceman-tmp"]/div[1]/div[2]/div/div[3]/div/button[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’按钮
+- element_info: /html/body/div[2]/div/div[3]/button[2]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’按钮
+  is_time: 2.5
+check:
+- element_info: //em[@name="数据标准"]/following-sibling::ul/*[@name='%s']+随机数
+  v_index: 0
+  find_type: xpath
+  check: contrary
+  check_time: 1
+  info: 断言“被移动的文件夹”再此页面不存在

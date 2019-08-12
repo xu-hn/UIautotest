@@ -1,0 +1,55 @@
+testinfo:
+- id: test_a168
+  title: 校验“流程管理-新建-workflow”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘根目录'文件夹图标
+- element_info: //em[@name="auto_flow"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘auto_flow'的文字
+- element_info: addFlowBtn
+  find_type: name
+  operate_type: click
+  info: 点击‘新建’按钮
+  is_time: 0.5
+- element_info: addFlowName
+  find_type: name
+  operate_type: send_keys
+  msg: work_flow_+随机数
+  info: 输入work_flow名称
+- element_info: //*[@id="bm-addflow-dialog-form"]//input[@placeholder="请选择流程类型"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘流程类型'弹出下拉菜单
+  is_time: 0.5
+- element_info: /html/body/div/div/div/ul/li[@name="workflow"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘workflow'
+  is_time: 0.5
+- element_info: addFlow-sure
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+check:
+- element_info: //*[text()="恭喜你，新增已成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，新增已成功！”吐词出现
+- element_info: addFlowBtn
+  find_type: name
+  info: 断言‘新建’按钮存在
+- element_info: //*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“新建的workflow存在”出现
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[7]/div
+  find_type: xpath
+  operate_type: get_text
+  check: time_difference
+  info: 断言“新建的workflow” 与断言时间相差小于5秒

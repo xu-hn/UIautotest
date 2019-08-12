@@ -1,0 +1,40 @@
+testinfo:
+- id: test_a296
+  title: 校验“项目目录-dataflow-计划-删除”
+  launch: 0
+  info: 先进入流程管理
+testcase:
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a/a
+  find_type: xpath
+  operate_type: get_text
+  info:  获取第一行“计划”的名称
+- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label
+  find_type: xpath
+  operate_type: click
+  info:  勾选“第一行计划”
+  is_time: 0.3
+- element_info: delTable
+  find_type: name
+  operate_type: click
+  info: 点击"删除按钮"
+  is_time: 0.5
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 点击"提示框中的确定"按钮
+  is_time: 0.8
+check:
+- element_info: //*[text()="恭喜你，删除已成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，删除已成功！”吐词出现
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/project/design/plan/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[text="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: contrary
+  check_time: 2
+  info: 断言 被删除的“计划”不存在

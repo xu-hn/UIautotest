@@ -1,0 +1,39 @@
+testinfo:
+- id: test122
+  title: 校验“质量分析-任务执行信息-查看模板信息”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info: 获取第一条任务的“模板名称”
+- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: click
+  info: 点击 第一条任务的“模板名称”
+  is_time: 0.8
+check:
+- element_info: bm-qa-template-edit-form
+  find_type: id
+  info: 断言“模板信息”from存在
+- element_info: //*[@id="bm-qa-template-edit-form"]//input[@name="id"]
+  find_type: xpath
+  info: 断言“主键输入框存在”
+- element_info: //*[@id="bm-qa-template-edit-form"]//input[@name="name"]
+  find_type: xpath
+  operate_type: get_value
+  check: vessel_contain_current
+  expect_index: 0
+  info: 断言模板名称与执行列表的模板名称一致
+- element_info: //*[@id="bm-qa-template-edit-form"]//input[@name="name"]
+  find_type: xpath
+  operate_type: get_value
+  check: current_equal_expect
+  expect_value: initial_test_mode
+  info: 断言模板名称为：“initial_test_mode”
+- element_info: cancle
+  find_type: name
+  info: 断言“返回”按钮存在

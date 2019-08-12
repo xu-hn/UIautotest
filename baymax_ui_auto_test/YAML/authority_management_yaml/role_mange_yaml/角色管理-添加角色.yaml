@@ -1,0 +1,29 @@
+testinfo:
+- id: test_01
+  title: 校验“创建角色”
+  launch: 0
+  info: 先进入角色管理页面
+testcase:
+- element_info: //*[@id="operationPanel"]/div[2]/div/button[4]/span
+  find_type: xpath
+  operate_type: click
+  info: 点击‘添加角色'按钮
+- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/form/div[1]/div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: test_role_name_+随机数
+  info: 向‘角色名称输入框‘中输入角色名称
+- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/form/div[2]/div/div/div[1]/div/label/span/span
+  find_type: xpath
+  operate_type: click
+  info: 选择'数据集成'权限
+  is_time: 0.5
+- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/form/div[3]/div/button[1]/span
+  find_type: xpath
+  operate_type: click
+  info: 点击'确定'按钮
+check:
+- element_info: //*[text()="请求处理成功"]
+  find_type: xpath
+  check: displayed
+  info: 断言“success，保存成功！”吐词出现

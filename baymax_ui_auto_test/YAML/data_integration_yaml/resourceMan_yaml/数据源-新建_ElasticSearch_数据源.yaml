@@ -1,0 +1,66 @@
+testinfo:
+- id: test_b008
+  title: 校验“数据源-新建_ElasticSearch_数据源”
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="数据源"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据源'文件夹图标
+- element_info: //em[@name="auto_DataSource"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘auto_DataSource'的文字
+- element_info: bm-ch-resMan-resourceman-create-button
+  find_type: id
+  operate_type: click
+  info: 点击‘新建’按钮
+  is_time: 0.5
+- element_info: bm-ch-resMan-resourceman-esSource-dropdown-menu
+  find_type: id
+  operate_type: click
+  info: 点击‘ElasticSearch’按钮
+  is_time: 0.5
+- element_info: bm-ch-resourceMan-essource-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: es_source_+随机数
+  info: 输入es_source名称
+- element_info: bm-ch-resourceMan-essource-attributes-clusterName-input
+  find_type: name
+  operate_type: send_keys
+  msg: es85
+  info: 输入"集群名称"
+- element_info: bm-ch-resourceMan-essource-attributes-ipAddresses-input
+  find_type: name
+  operate_type: send_keys
+  msg: 192.168.1.85:9200
+  info: 输入"地址"
+- element_info: bm-ch-resourceMan-essource-attributes-index-input
+  find_type: name
+  operate_type: send_keys
+  msg: test
+  info: 输入"索引"
+- element_info: bm-ch-resourceMan-essource-attributes-indexType-input
+  find_type: name
+  operate_type: send_keys
+  msg: test
+  info: 输入"索引类型"
+- element_info: bm-ch-resourceMan-essource-save-ok
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+check:
+- element_info: bm-ch-resMan-resourceman-create-button
+  find_type: id
+  info: 断言‘新建’按钮存在
+- element_info: //*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“新建的es_source数据源存在”出现
+- element_info: //*[@id="bm-ch-resourceMan-table"]/div[3]/table/tbody/tr/td[4]/div
+  find_type: xpath
+  operate_type: get_text
+  check: time_difference
+  info: 断言“新建的es_source数据源” 与断言时间相差小于5秒

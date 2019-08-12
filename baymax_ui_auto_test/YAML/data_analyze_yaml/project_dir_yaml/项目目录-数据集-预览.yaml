@@ -1,0 +1,58 @@
+testinfo:
+- id: test250
+  title: 项目目录-数据集-预览
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@name="initial_auto_project"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_auto_project项目前面的文件夹
+- element_info: //*[@name="initial_auto_project"]/following-sibling::ul[1]//*[@name="Datasets"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_auto_project项目Datasets
+  is_time: 0.8
+- element_info: //div[3]//tr//div/span[contains(text(), "HDFSDBdataset_")]/ancestor::td/following-sibling::td//button/span[contains(text(), '预览')]
+  find_type: xpaths
+  index: 0
+  operate_type: click
+  info: 点击列表中第一条'HDFSDBdataset_'的预览
+  is_time: 1
+check:
+- element_info: /html/body/div/div/div/span[text()='数据集预览']
+  find_type: xpath
+  check: displayed
+  info: 断言“数据集预览”标题出现
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='id']
+  find_type: xpath
+  check: displayed
+  info: 断言“id”列出现
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='name']
+  find_type: xpath
+  check: displayed
+  info: 断言“name”列出现
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='age']
+  find_type: xpath
+  check: displayed
+  info: 断言“age”列出现
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='gender']
+  find_type: xpath
+  check: displayed
+  info: 断言“gender”列出现
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//tbody/tr/td/div[text()='xiaoming']
+  find_type: xpath
+  check: displayed
+  info: 断言“xiaoming”列出现
+- element_info: //button/span[text()="确定"]
+  find_type: xpath
+  check: displayed
+  info: 断言“确定”按钮出现
+- element_info: //button/span[text()="刷新"]
+  find_type: xpath
+  check: displayed
+  info: 断言“刷新”按钮出现
+- element_info: //button/span[text()="取消"]
+  find_type: xpath
+  check: displayed
+  info: 断言“取消”按钮出现

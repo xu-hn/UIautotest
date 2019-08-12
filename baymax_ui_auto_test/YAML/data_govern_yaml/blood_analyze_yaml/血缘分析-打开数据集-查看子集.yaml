@@ -1,0 +1,43 @@
+testinfo:
+- id: test162
+  title: 校验“血缘分析-打开数据集-查看子集”任务
+  launch: 0
+  info: 先进入"血缘分析"目录
+testcase:
+- element_info: //input[@placeholder="请选择内容"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击“血缘分析输入框后的”搜索按钮
+  is_time: 1
+- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: flow_to_id_name_age_gender
+  info: 数据集查询输入“flow_to_id_name_age_gender”
+- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]/following-sibling::div/button
+  find_type: xpath
+  operate_type: click
+  info:  点击“数据集查询输入框后的”搜索按钮
+  is_time: 1
+- element_info: //*[@id="ch-components-dataSetInq-dataInquire-table"]/div[3]//tbody/tr/td/div[text()="flow_to_id_name_age_gender"]/ancestor::td/preceding-sibling::td//label
+  find_type: xpath
+  operate_type: click
+  info:  勾选“数据集flow_to_id_name_age_gender”
+- element_info: ze-kinship-ok-button
+  find_type: name
+  operate_type: click
+  info:  在“弹框中点击确定按钮”
+  is_time: 0.5
+- element_info:  //*[@id="flow_to_id_name_age_gender"]/h3/span[2]/button
+  find_type: xpath
+  operate_type: click
+  info:  在数据集“flow_to_id_name_age_gender”点击右侧的箭头 打开子集
+check:
+- element_info: //*[text()="已经没有 子集 了 ！！！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“恭喜你，删除已成功！”吐词出现
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/kinship/:id/拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值

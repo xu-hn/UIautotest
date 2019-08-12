@@ -1,0 +1,54 @@
+testinfo:
+- id: test044
+  title: 校验“文件导入-复制”任务
+  launch: 0
+  info: 先进入"文件导入"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-ch-fileSys-table"]/div[3]//tr[1]/td[1]//label
+  find_type: xpath
+  operate_type: click
+  info: 在文件导入首页‘勾选’第一条任务
+- element_info: bm-ch-col-filesys-copy-button
+  find_type: id
+  operate_type: click
+  info: 在文件导入页，点击‘复制'按钮
+  is_time: 0.5
+- element_info: bm-ch-file-step1Form-name-input
+  find_type: name
+  operate_type: get_value
+  info: 获取'拷贝任务'的任务名
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 在数据来源页面，点击‘下一步’按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 在数据目的页，点击‘下一步’按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]
+  find_type: xpath
+  operate_type: click
+  info: 在任务设置页，点击‘下一步’按钮
+  is_time: 0.5
+- element_info: //*[text()="下一步"]/ancestor::button/following-sibling::button[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘完成’按钮
+  is_time: 1
+check:
+- element_info: //*[@id="bm-ch-fileSys-table"]/div[3]/table/tbody//a[contains(text(), '%s')]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言“复制的文件导入任务存在”
+- element_info: //*[@id="bm-ch-fileSys-table"]/div[3]/table/tbody//a[contains(text(), '%s')]/ancestor::td/following-sibling::td[5]/div/div+随机数
+  find_type: xpath
+  operate_type: get_text
+  v_index: 0
+  check: current_equal_expect
+  expect_value: 已创建
+  info: 断言“复制的文件导入任务的状态”为 已创建

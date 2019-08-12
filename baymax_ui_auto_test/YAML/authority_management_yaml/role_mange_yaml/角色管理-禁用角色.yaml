@@ -1,0 +1,24 @@
+testinfo:
+- id: test_disable_role
+  title: 校验“禁用角色”
+  launch: 0
+  info: 先进入角色管理页面
+testcase:
+- element_info: //*[@id="bm-com-table-tableList-btn-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label/span
+  find_type: xpath
+  operate_type: click
+  info: 选择一个角色名称
+- element_info: //*[@id="operationPanel"]/div[2]/div/button[3]/span
+  find_type: xpath
+  operate_type: click
+  info: 点击'禁用'按钮
+  is_time: 0.5
+- element_info: /html/body/div[2]/div/div[3]/button[2]/span
+  find_type: xpath
+  operate_type: click
+  info: 弹出的提示框中点击'确定'按钮
+check:
+- element_info: //*[text()="修改成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“修改成功！”吐词出现

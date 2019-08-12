@@ -1,0 +1,36 @@
+testinfo:
+- id: test073
+  title: 校验“采集器-资源目录-同步”
+  launch: 0
+  info: 先进入"采集器"
+testcase:
+- element_info: //td[not(contains(@class,"hidden"))]/div[text()="dbs_collector_mysql_info5"]/ancestor::td/following-sibling::td[7]/div
+  find_type: xpath
+  operate_type: get_text
+  info: 获取数据源“dbs_collector_mysql_info5” 最后同步时间
+- element_info: //div[text()="dbs_collector_mysql_info5"]//ancestor::td/following-sibling::td[not(contains(@class,"hidden"))]//button/span
+  find_type: xpath
+  operate_type: click
+  info: 点击“元数据同步” 按钮
+  is_time: 1
+- element_info: bm-ch-col-dataStore-submitDatasetPara-button
+  find_type: name
+  operate_type: click
+  info: 点击“同步”按钮
+check:
+- element_info: //*[@name="bm-ch-col-dataStore-log-dialog"]//span[text()="同步进度展示"]
+  find_type: xpath
+  info: 断言‘同步进度展示’出现
+- element_info: //*[@name="bm-ch-col-dataStore-log-progress"]//div[text()="100%"]
+  find_type: xpath
+  check_time: 300
+  info: 断言‘5分钟内进度条能走到100%’
+- operate_type: refresh
+  info: 刷新当前页面
+  is_time: 1
+- element_info: //td[not(contains(@class,"hidden"))]/div[text()="dbs_collector_mysql_info5"]/ancestor::td/following-sibling::td[7]/div
+  find_type: xpath
+  operate_type: get_text
+  check: vessel_not_contain_current
+  expect_index: 0
+  info: 断言：‘最后同步时间’有更新

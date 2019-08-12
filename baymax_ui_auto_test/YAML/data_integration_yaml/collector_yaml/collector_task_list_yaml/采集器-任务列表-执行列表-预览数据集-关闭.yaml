@@ -1,0 +1,32 @@
+testinfo:
+- id: test087
+  title: 校验“采集器-任务列表-预览数据集-关闭”页面校验
+  launch: 0
+  info: 先进入"采集器任务列表"目录
+testcase:
+- element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: collector_mysql_to_wac4
+  info: 输入框输入“collector_mysql_to_wac4”文字
+- element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]//button
+  find_type: xpath
+  operate_type: click
+  info: 点击“搜索”按钮
+  is_time: 1
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[4]//table/tbody/tr[1]/td/div/a[contains(text(), '预览数据集')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘第一行导入任务'的预览
+  is_time: 0.5
+- element_info: //span[text()='数据集预览']/following-sibling::button
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据集预览’右上角的关闭按钮
+  is_time: 0.5
+check:
+- element_info: /html/body/div/div/div]/span[text()='数据集预览']
+  find_type: xpath
+  check: contrary
+  check_time: 1
+  info: ‘数据集预览’被关闭

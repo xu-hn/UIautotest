@@ -1,0 +1,48 @@
+testinfo:
+- id: test145
+  title: 校验“质量分析-分析模板-规则-停止”任务
+  launch: 0
+  info: 先进入"质量分析"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]/table/tbody/tr/td[2]/div/span[contains(text(), "auto_analyze_template_")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“auto_analyze_template_”开头的分析模板
+  is_time: 0.5
+- element_info: template-edit-unlock
+  find_type: name
+  operate_type: click
+  info: 在分析模板信息页，点击‘解锁'按钮
+  is_time: 0.3
+- element_info: edit
+  find_type: name
+  operate_type: click
+  info: 在分析模板信息页，点击‘编辑规则'按钮
+  is_time: 0.5
+- element_info: //*[@id="bm-qa-template-ruels-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label
+  find_type: xpath
+  operate_type: click
+  info: 勾选第一行“模板规则”
+- element_info: template-rules-stop
+  find_type: name
+  operate_type: click
+  info: 在规则页，点击‘停止'按钮
+  is_time: 0.5
+- element_info: /html/body/div[@aria-label="提示"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 在提示弹框，点击‘确定'按钮
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-qa-template-ruels-table"]/div[3]/table/tbody/tr[1]/td[3]/div/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 未启用
+  info: 断言 “第一行模板规则启停状态为 未启用”
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/qualityAnalysis/analysisTemplate/rules拼接值后+前host+拼接
+  info: 断言“url符合预期”

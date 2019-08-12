@@ -1,0 +1,80 @@
+testinfo:
+- id: test247
+  title: 项目目录-数据集-新建HDFS数据集
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@name="initial_auto_project"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_auto_project项目前面的文件夹
+- element_info: //*[@name="initial_auto_project"]/following-sibling::ul[1]//*[@name="Datasets"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_auto_project项目Datasets
+  is_time: 0.8
+- element_info: //*[text()="新建"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘新建’按钮
+  is_time: 0.8
+- element_info: datasetProject
+  find_type: name
+  operate_type: click
+  info: 点击‘存储’按钮
+  is_time: 1
+- element_info: bm-ch-resourceMan-name-input
+  find_type: name
+  operate_type: send_keys
+  msg: HDFSDBdataset_+随机数
+  info: 输入"HDFSDBdataset数据集"名称
+- element_info: //*[@name="bm-ch-resourceMan-schema-name-input"]/following-sibling::div[1]/button
+  find_type: xpath
+  operate_type: click
+  is_time: 1
+  info: 点击‘schema搜索’按钮
+- element_info: //*[@id="bm-sh-sc-form"]//*[@id="dataTree"]//em[contains(text(), '元数据')]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 弹框中 树的‘元数据’文件夹图标
+- element_info: //*[@id="bm-sh-sc-form"]//*[@id="dataTree"]//em[contains(text(), "auto_initial_schema")]
+  find_type: xpath
+  operate_type: click
+  info: 点击 弹框中 树的‘auto_initial_schema’文字
+  is_time: 1
+- element_info: //div[text()="schema_id_name_age_gender"]
+  find_type: xpath
+  operate_type: get_text
+  info: 获取schema名称
+- element_info: //div[text()="schema_id_name_age_gender"]/ancestor::td/preceding-sibling::td[1]
+  find_type: xpath
+  operate_type: click
+  info: 勾选列表中'schema_id_name_age_gender'schema
+- element_info: bm-ch-resMan-storageConfigurations-submitSchemaData-ok
+  find_type: name
+  operate_type: click
+  is_time: 0.8
+  info: 点击‘确定’按钮
+- element_info: bm-ch-resourceMan-storageConfigurations-HDFS-storageConfigurationsPath-input
+  find_type: name
+  operate_type: send_keys
+  msg: /wac/auto/create_hdfsdataset/test_id_name_age_gender.csv
+  info: 输入HDFS的地址
+- element_info: bm-ch-resMan-storageConfigurations-schema-ok
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+  is_time: 0.5
+check:
+- element_info: //*[@id="bm-rh-resourceMan-table"]/div[3]//span[text()="%s"]+随机数
+  find_type: xpath
+  v_index: 0
+  check: displayed
+  info: 断言“新建的HDFSdataset存在”出现
+- element_info: //*[@id="bm-rh-resourceMan-table"]/div[3]//span[text()="%s"]/ancestor::td/following-sibling::td[1]//span+随机数
+  find_type: xpath
+  operate_type: get_text
+  v_index: 0
+  expect_index: 1
+  check: vessel_contain_current
+  info: 断言“新建的HDFSdataset存在”出现

@@ -1,0 +1,25 @@
+testinfo:
+- id: test065
+  title: 校验“采集器-导入任务-数据源中的表预览”页面校验
+  launch: 0
+  info: 先进入"采集器"目录
+testcase:
+- element_info: //*[@id="bm-ch-collector-importDatas-table"]/div[3]/table/tbody/tr[1]/td[4]/div/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘第一行导入任务'的同步对象
+  is_time: 0.5
+check:
+- element_info: //section[@id="bm-ch-col-importData-tmp"]//span[text()="数据源中的表预览"]
+  find_type: xpath
+  info: ‘数据源中的表预览’存在
+  #//section[@id="bm-ch-col-importData-tmp"]/div[not(contains(@style,"none"))]//button/span[text()="确定"]
+- element_info: "//section[@id='bm-ch-col-importData-tmp']/div[@style!='display: none']//button/span[text()='确定']"
+  find_type: xpath
+  info: ‘确定按钮’存在
+- element_info: //section[@id="bm-ch-col-importData-tmp"]//table/thead
+  find_type: xpath
+  info: ‘数据源表列’存在
+- element_info: //section[@id="bm-ch-col-importData-tmp"]//table/tbody
+  find_type: xpath
+  info: ‘属于源表内容’存在

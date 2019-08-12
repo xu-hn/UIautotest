@@ -1,0 +1,77 @@
+testinfo:
+- id: test_a303
+  title: 项目目录-workflow-step-历史
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@name="initial_auto_project"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_auto_project项目前面的文件夹
+- element_info: //*[@name="initial_auto_project"]/following-sibling::ul[1]//*[@name="Flows"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_auto_project项目Flows
+  is_time: 0.8
+- element_info: //*[@id="bm-rh-resourceMan-table2"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info:  获取列表“第一行的”名字
+  is_time: 0.5
+- element_info: //*[@id="bm-rh-resourceMan-table2"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: click
+  info:  点击“第一行”flow的名字
+  is_time: 0.5
+- element_info: //*[@id="right"]//div[contains(text(), "Process")]
+  find_type: xpath
+  operate_type: click
+  info:  点击“Process”tab
+  is_time: 0.5
+- element_info: //*[@id="right"]//h4[text()="shell"]
+  find_type: xpath
+  operate_type: drag_el
+  move_to: (-800, 210)
+  info:  拖拽
+  is_time: 0.5
+- element_info: designSave
+  find_type: id
+  operate_type: click
+  info: 在design页 点击“保存”按钮
+  is_time: 1.5
+- element_info: //*[@id="right"]//div[contains(text(), "Process")]
+  find_type: xpath
+  operate_type: click
+  info:  点击“Process”tab
+  is_time: 0.5
+- element_info: //*[@id="right"]//h4[text()="shell"]
+  find_type: xpath
+  operate_type: drag_el
+  move_to: (-1200, 210)
+  info:  拖拽
+  is_time: 0.5
+- element_info: designSave
+  find_type: id
+  operate_type: click
+  info: 在design页 点击“保存”按钮
+  is_time: 0.5
+check:
+- element_info: //*[text()="success，保存成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“success，保存成功！”吐词出现
+  is_time: 3
+- element_info: //*[@id="bm-designdrawing-form"]//button[1]/span[contains(text(), '历史')]
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 历史V2
+  info: 断言“历史V2”按钮 在design里存在
+- element_info: //*[@id="designMain"]//div/h4[text()="shell_1"]
+  find_type: xpath
+  check: displayed
+  info: 断言“shell_1”在design里存在
+- element_info: //*[@id="designMain"]//div/h4[text()="shell_2"]
+  find_type: xpath
+  check: displayed
+  info: 断言“shell_2”在design里存在

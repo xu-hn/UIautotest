@@ -1,0 +1,42 @@
+testinfo:
+- id: test_a261
+  title: 校验“项目目录-flow-导出”
+  launch: 0
+  info: 先进入项目目录
+testcase:
+- element_info: //*[@name="initial_auto_project"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_auto_project项目前面的文件夹
+- element_info: //*[@name="initial_auto_project"]/following-sibling::ul[1]//*[@name="Flows"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_auto_project项目Flows
+  is_time: 0.8
+- element_info: //*[@id="bm-rh-resourceMan-table2"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: get_text
+  info:  获取列表“第一行的”名字
+  is_time: 0.5
+- element_info: //*[@id="bm-rh-resourceMan-table2"]/div[3]//span[text()="%s"]/ancestor::td/preceding-sibling::td//label+随机数
+  find_type: xpath
+  v_index: 0
+  operate_type: click
+  info:  勾选“第一行的”flow
+- element_info: //button/span[text()="操作"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘操作’按钮
+  is_time: 0.5
+- element_info: flowExport
+  find_type: name
+  operate_type: click
+  info: 点击‘导出’按钮
+  is_time: 0.5
+- element_info: flowExport-sure
+  find_type: name
+  operate_type: click
+  info: 点击‘确定’按钮
+check:
+- check: time_difference
+  info: 断言“本地的下载目录”最新下载的文件的创建时间小于现在5秒

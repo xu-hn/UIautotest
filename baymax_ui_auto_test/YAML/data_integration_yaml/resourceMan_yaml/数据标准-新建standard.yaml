@@ -1,0 +1,62 @@
+testinfo:
+- id: test040
+  title: 校验“新建数据标准standard”页面
+  launch: 0
+  info: 先进入资源目录
+testcase:
+- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据标准'文件夹图标
+- element_info: //em[@name="auto_standard"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘auto_standard'的文字
+- element_info: bm-ch-resMan-resourceman-create-button
+  find_type: id
+  operate_type: click
+  info: 点击‘新建’按钮
+  is_time: 0.5
+- element_info: bm-ch-resMan-resourceman-standard-dropdown-menu
+  find_type: id
+  operate_type: click
+  info: 点击新建下拉菜单中的‘标准’按钮
+  is_time: 1
+- element_info: name
+  find_type: name
+  operate_type: send_keys
+  msg: Standard_+随机数
+  info: 输入Standard名称
+- element_info: //button/span[contains(text(), '增加')]
+  find_type: xpath
+  operate_type: click
+  info: 点击 新建Standard页面中的‘增加’按钮
+- element_info: //div[@aria-label="标准配置"]//input[@placeholder="Name"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: id
+  info: 在 标准配置 弹框 name列中 输入“id”
+- element_info: //div[@aria-label="标准配置"]//input[@placeholder="编号"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: 1
+  info: 在 标准配置 弹框 编号 列中 输入“1”
+- element_info: //div[@aria-label="标准配置"]//button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  info: 在 标准配置 弹框 中 点击“确定”按钮
+  is_time: 0.3
+- element_info: //*[@id="bm-ch-resMan-standard-tmp"]//section/button/span[contains(text(), "确定")]
+  find_type: xpath
+  operate_type: click
+  is_time: 2
+  info: 点击 新建Standard页面中的‘确定’按钮
+check:
+- element_info: bm-ch-resMan-resourceman-create-button
+  find_type: id
+  check: displayed
+  info: 断言‘新建’按钮存在
+- element_info: //*[@id="bm-ch-resourceMan-table"]//*[contains(text(), "%s")]+随机数
+  find_type: xpath
+  v_index: 0
+  info: 断言“新建的数据标准存在列表”出现

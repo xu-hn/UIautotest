@@ -1,0 +1,37 @@
+testinfo:
+- id: test086
+  title: 校验“采集器-任务列表-预览数据集”页面校验
+  launch: 0
+  info: 先进入"采集器任务列表"目录
+testcase:
+- element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: collector_mysql_to_wac4
+  info: 输入框输入“collector_mysql_to_wac4”文字
+- element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]//button
+  find_type: xpath
+  operate_type: click
+  info: 点击“搜索”按钮
+  is_time: 1
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[4]//table/tbody/tr[1]/td/div/a[contains(text(), '预览数据集')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘第一行导入任务'的预览
+  is_time: 0.5
+check:
+- element_info: //span[text()='数据集预览']
+  find_type: xpath
+  info: ‘数据集预览’弹出被打开
+- element_info: /html/body/div[2]/div/div[3]/div/button[2]/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 刷新
+  info: 按钮"刷新"存在
+- element_info: /html/body/div[2]/div/div[3]/div/button[3]/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 取消
+  info: 按钮"取消"存在
