@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-###啊啊大撒大撒大苏打撒旦
+###啊
 import unittest, os
 from common.Logger import myLog
 from selenium import webdriver
