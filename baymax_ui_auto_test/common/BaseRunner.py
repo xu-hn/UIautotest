@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-###啊123123
 import unittest, os
 from common.Logger import myLog
 from selenium import webdriver
@@ -50,30 +49,34 @@ def get_driver():
     who = el.get_attribute('name')
     return driver, who
 
+#原理：写好testcase，然后用testloader加载testcase到testsuite，然后由testrunner运行testsuite，运行的结果保存在texttestresult中
 class ParametrizedTestCase(unittest.TestCase):
 
     def __init__(self, methodName='runTest', param=None):
         super(ParametrizedTestCase, self).__init__(methodName)
 
-    @classmethod
-    def setUpClass(cls):
+    @classmethod  #classmethod类方法，不用生成实例，直接调用类中属性和方法
+    #所有测试用例前的设置工作
+    def setUpClass(cls): 
         pass
         cls.driver, cls.who = get_driver()
         cls.logTest = myLog().getLog("chrome")  # 每个设备实例化一个日志记录器
 
+    #该测试用例执行前的设置工作
     def setUp(self):
         pass
 
     @classmethod
+    #所有测试用例执行后的清洗工作
     def tearDownClass(cls):
         cls.driver.close()
         cls.driver.quit()
         pass
-
+    #该测试用例执行后的清理工作
     def tearDown(self):
         pass
 
-    @staticmethod
+    @staticmethod #@staticmethod 不需要传cls参数
     def parametrize(testcase_klass, param=None):
         testloader = unittest.TestLoader()
         testnames = testloader.getTestCaseNames(testcase_klass)
