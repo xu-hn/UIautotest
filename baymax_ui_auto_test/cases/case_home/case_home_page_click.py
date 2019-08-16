@@ -112,7 +112,7 @@ class HomePageTest(ParametrizedTestCase):
         page.check_point()
     
     # 校验“数据分析--交互式查询”
-    @get_url()
+    #@get_url()
 #     def test_a010_project_dir(self):
 #         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/交互式查询.yaml"),
 #                "caseName": sys._getframe().f_code.co_name}
