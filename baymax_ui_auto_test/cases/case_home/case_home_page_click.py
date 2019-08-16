@@ -48,7 +48,7 @@ class HomePageTest(ParametrizedTestCase):
 
     # 校验“数据导入”
     @get_url()
-    def test_a004_data_import(self):
+    def test_a003_data_import(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/数据导入.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = HomePage(app)
@@ -57,7 +57,7 @@ class HomePageTest(ParametrizedTestCase):
 
     # 校验“文件导入”
     @get_url()
-    def test_a005_file_import(self):
+    def test_a004_file_import(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/文件导入.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = HomePage(app)
@@ -66,7 +66,7 @@ class HomePageTest(ParametrizedTestCase):
 
     # 校验“采集器”
     @get_url()
-    def test_a006_file_import(self):
+    def test_a005_file_import(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/采集器.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = HomePage(app)
@@ -75,8 +75,17 @@ class HomePageTest(ParametrizedTestCase):
 
     # 校验 “数据治理--质量分析”
     @get_url()
-    def test_a007_quality_analyze(self):
+    def test_a006_quality_analyze(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/质量分析.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = HomePage(app)
+        page.operate()
+        page.check_point()
+        
+     # 校验 “数据治理--元数据分析”
+    @get_url()
+    def test_a007_metadata_analyze(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/元数据分析.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = HomePage(app)
         page.operate()
@@ -91,16 +100,9 @@ class HomePageTest(ParametrizedTestCase):
         page.operate()
         page.check_point()
 
-    # 校验 “数据治理--血缘分析”
-    @get_url()
-    def test_ba009_schema_analyze(self):
-        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/元数据分析.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = HomePage(app)
-        page.operate()
-        page.check_point()
+   
 
-    # 校验 “数据治理--流程管理”
+    # 校验 “数据分析--流程管理”
     @get_url()
     def test_a009_flow_manage(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/流程管理.yaml"),
@@ -108,24 +110,33 @@ class HomePageTest(ParametrizedTestCase):
         page = HomePage(app)
         page.operate()
         page.check_point()
-
-    # 校验 “数据治理--项目目录”
+    
+    # 校验“数据分析--交互式查询”
     @get_url()
     def test_a010_project_dir(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/交互式查询.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = HomePage(app)
+        page.operate()
+        page.check_point()
+        
+    # 校验 “数据分析--项目目录”
+    @get_url()
+    def test_a011_project_dir(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/项目目录.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = HomePage(app)
         page.operate()
         page.check_point()
 
-    # # 校验 “数据监控--运维管控”
-    # @get_url()
-    # def test_a011_operations_control(self):
-    #     app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/运维管控.yaml"),
-    #            "caseName": sys._getframe().f_code.co_name}
-    #     page = HomePage(app)
-    #     page.operate()
-    #     page.check_point()
+    # 校验 “数据监控--运维管理”
+    @get_url()
+    def test_a011_operations_control(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/运维管控.yaml"),
+                "caseName": sys._getframe().f_code.co_name}
+        page = HomePage(app)
+        page.operate()
+        page.check_point()
 
     # 校验 “数据监控--访问监控yaml”
     @get_url()
