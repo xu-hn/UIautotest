@@ -113,16 +113,16 @@ class HomePageTest(ParametrizedTestCase):
     
     # 校验“数据分析--交互式查询”
     @get_url()
-    def test_a010_project_dir(self):
-        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/交互式查询.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = HomePage(app)
-        page.operate()
-        page.check_point()
+#     def test_a010_project_dir(self):
+#         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/交互式查询.yaml"),
+#                "caseName": sys._getframe().f_code.co_name}
+#         page = HomePage(app)
+#         page.operate()
+#         page.check_point()
         
     # 校验 “数据分析--项目目录”
     @get_url()
-    def test_a011_project_dir(self):
+    def test_a010_project_dir(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/项目目录.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = HomePage(app)
