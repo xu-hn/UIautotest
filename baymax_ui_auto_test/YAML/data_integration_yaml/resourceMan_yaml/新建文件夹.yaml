@@ -18,6 +18,11 @@ testcase:
   operate_type: click
   info: 点击树‘auto_dir’文字，选中‘auto_dir’
   is_time: 0.5
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/ul/li[6]/i
+  find_type: xpath
+  operate_type: click
+  info: 点击树‘auto_dir’文件图标，展开‘auto_dir’列表
+  is_time: 0.5
 - element_info: //button/span[contains(text(), '目录')]
   find_type: xpath
   operate_type: click
@@ -37,6 +42,29 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘确定’按钮
+
+- operate_type: refresh
+  info: 刷新页面--》检查新生成的文件夹是否存在
+- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘数据标准’前的文件夹，展开文件夹
+- element_info: 数据标准
+  find_type: name
+  operate_type: click
+  info: 点击‘数据标准’文字，选中‘数据标准’
+  is_time: 1
+- element_info: //em[@name="auto_dir"]
+  find_type: xpath
+  operate_type: click
+  info: 点击树‘auto_dir’文字，选中‘auto_dir’
+  is_time: 0.5
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/ul/li[6]/i
+  find_type: xpath
+  operate_type: click
+  info: 点击树‘auto_dir’文件图标，展开‘auto_dir’列表
+  is_time: 0.5
+
 check:
 - element_info: dir+随机数
   v_index: 0
