@@ -29,7 +29,7 @@ testcase:
 - element_info: bm-adddir-dialog-name-input
   find_type: name
   operate_type: send_keys
-  msg: move_dir+随机数
+  msg: newmove_dir+随机数
   is_time: 0.3
   info: 输入要新建文件夹的随机名称
 - element_info: bm-adddir-dialog-form-ok-ok
@@ -37,7 +37,12 @@ testcase:
   operate_type: click
   info: 点击‘确定’按钮
   is_time: 1
-- element_info: dir+随机数
+- element_info: 数据标准
+  find_type: name
+  operate_type: click
+  info: 刷新一下，点击‘数据标准'的文字
+ 
+- element_info: newmove_dir+随机数
   v_index: 0
   find_type: name
   operate_type: click
@@ -67,7 +72,13 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘确定’按钮
-  is_time: 2.5
+  is_time: 2
+- element_info: 数据标准
+  find_type: name
+  operate_type: click
+  info: 刷新一下，点击‘数据标准'的文字
+  is_time: 2
+  
 check:
 - element_info: //em[@name="数据标准"]/following-sibling::ul/*[@name='%s']+随机数
   v_index: 0
@@ -75,3 +86,4 @@ check:
   check: contrary
   check_time: 1
   info: 断言“被移动的文件夹”再此页面不存在
+
