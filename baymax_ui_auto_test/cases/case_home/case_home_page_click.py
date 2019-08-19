@@ -112,14 +112,13 @@ class HomePageTest(ParametrizedTestCase):
         page.check_point()
     
     # 校验“数据分析--交互式查询”
-    #@get_url()
-#     def test_a010_project_dir(self):
+#     @get_url()
+#     def test_a014_project_dir(self):
 #         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/交互式查询.yaml"),
-#                "caseName": sys._getframe().f_code.co_name}
+#               "caseName": sys._getframe().f_code.co_name}
 #         page = HomePage(app)
 #         page.operate()
-#         page.check_point()
-        
+#         page.check_point()        
     # 校验 “数据分析--项目目录”
     @get_url()
     def test_a010_project_dir(self):
@@ -138,14 +137,14 @@ class HomePageTest(ParametrizedTestCase):
         page.operate()
         page.check_point()
 
-    # 校验 “数据监控--访问监控yaml”
-    @get_url()
-    def test_a012_inquiry_control(self):
-        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/访问监控1.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = HomePage(app)
-        page.operate()
-        page.check_point()
+#     # 校验 “数据监控--访问监控yaml”
+#     @get_url()
+#     def test_a012_inquiry_control(self):
+#         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/访问监控1.yaml"),
+#                "caseName": sys._getframe().f_code.co_name}
+#         page = HomePage(app)
+#         page.operate()
+#         page.check_point()
 
     # 校验 “数据监控--任务监控.yaml”
     @get_url()
