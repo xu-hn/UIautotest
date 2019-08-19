@@ -8,17 +8,17 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击 树‘数据标准’前的文件夹
-- element_info: //em[@name="box2019"]/preceding-sibling::i[1]
+- element_info: //em[@name="auto_dir"]/preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
-  info: 点击 树‘box2019’前的文件夹
-- element_info: //*[contains(@name, 'move_dir')]
+  info: 点击 树‘auto_dir’前的文件夹
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/ul/li[13]/ul/li[1]/em 
   find_type: xpaths
   index: 0
   operate_type: get_attr
   attr: name
   info: 把第一个包含dir的文件夹 name属性值 放到容器中
-- element_info: //*[contains(@name, 'move_dir')]
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/ul/li[13]/ul/li[1]/em
   find_type: xpaths
   index: 0
   operate_type: click
@@ -39,6 +39,17 @@ testcase:
   operate_type: click
   info: 点击‘确定’按钮
   is_time: 1
+  
+- operate_type: refresh
+  info: 刷新页面--》验证文件已被删除
+- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 树‘数据标准’前的文件夹
+- element_info: //em[@name="auto_dir"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 树‘auto_dir’前的文件夹
 check:
 - element_info: dir+随机数
   v_index: 0
