@@ -129,13 +129,13 @@ class HomePageTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验 “数据监控--运维管理”
-    @get_url()
-    def test_a011_operations_control(self):
-        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/运维管控.yaml"),
-                "caseName": sys._getframe().f_code.co_name}
-        page = HomePage(app)
-        page.operate()
-        page.check_point()
+#     @get_url()
+#     def test_a011_operations_control(self):
+#         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/运维管控.yaml"),
+#                 "caseName": sys._getframe().f_code.co_name}
+#         page = HomePage(app)
+#         page.operate()
+#         page.check_point()
 
 #     # 校验 “数据监控--访问监控yaml”
 #     @get_url()
