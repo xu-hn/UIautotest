@@ -30,7 +30,7 @@ testcase:
   info: 点击确定按钮
   is_time: 1
 check:
-- element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui']
+- element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui'] 
   find_type: xpath
   check: displayed
   info: 断言“新建的采集器名称存在”
@@ -38,7 +38,7 @@ check:
   find_type: xpath
   operate_type: get_text
   check: time_difference
-  max_time: 10
+  max_time: 5
   info: 断言“新建的采集器”与现在的时间差小于5秒
 - element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui']/ancestor::td/following-sibling::td[5]/div
   find_type: xpath
