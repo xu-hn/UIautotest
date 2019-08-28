@@ -39,7 +39,7 @@ testcase:
   operate_type: click
   info: 在任务设置页，点击‘下一步’按钮
   is_time: 0.5
-- element_info: //*[text()="下一步"]/ancestor::button/following-sibling::button[1]
+- element_info: //*[@id="bm-ch-col-index-tmp"]/div[3]/button[3]/span
   find_type: xpath
   operate_type: click
   info: 点击‘完成’按钮
