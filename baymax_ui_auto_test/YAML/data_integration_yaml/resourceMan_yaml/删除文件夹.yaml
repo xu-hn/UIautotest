@@ -12,13 +12,13 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击 树‘auto_dir’前的文件夹
-- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/ul/li[19]/ul/li[1] 
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]//em[contains(text(),'auto_dir')]/following-sibling::ul/li[1] 
   find_type: xpaths
   index: 0
   operate_type: get_attr
   attr: name
   info: 把第一个包含dir的文件夹 name属性值 放到容器中
-- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/ul/li[19]/ul/li[1]
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]//em[contains(text(),'auto_dir')]/following-sibling::ul/li[1]
   find_type: xpaths
   index: 0
   operate_type: click
