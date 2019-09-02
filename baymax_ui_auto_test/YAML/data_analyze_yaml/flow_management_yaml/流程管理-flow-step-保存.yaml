@@ -63,22 +63,22 @@ testcase:
   operate_type: click
   info: 在source弹窗中 点击“数据集”搜索按钮
   is_time: 0.5
-- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]//input[@placeholder="请输入名称"]
   find_type: xpath
   operate_type: send_keys
-  msg: import_mysql_c_1_in
-  info: 数据集查询输入“import_mysql_c_1_in”
-- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]/following-sibling::div/button
+  msg: sjj_ts
+  info: 数据集查询输入“sjj_ts”
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]//input[@placeholder="请输入名称"]/following-sibling::div/button
   find_type: xpath
   operate_type: click
   info:  点击“数据集查询输入框后的”搜索按钮
   is_time: 1
-- element_info: //*[@id="ch-components-dataSetInq-dataInquire-table"]/div[3]//tbody/tr/td/div[text()="import_mysql_c_1_in"]/ancestor::td/preceding-sibling::td//label
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]/div[3]//tbody/tr/td/div[text()="sjj_ts"]/ancestor::td/preceding-sibling::td//label
   find_type: xpath
   operate_type: click
-  info:  勾选“数据集import_mysql_c_1_in”
+  info:  勾选“数据集sjj_ts”
   is_time: 0.3
-- element_info: diFooter-sure
+- element_info: bm-ch-step2Form-dataset-ok
   find_type: name
   operate_type: click
   info: 在数据集弹窗中 点击“确定”按钮
