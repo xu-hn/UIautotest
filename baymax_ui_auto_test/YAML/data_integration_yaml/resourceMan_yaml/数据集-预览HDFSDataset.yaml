@@ -18,8 +18,8 @@ testcase:
 - element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]/input
   find_type: xpath
   operate_type: send_keys
-  msg: output_auto_flow_initial_mysql_to_hdfs
-  info: 在搜索框输入“output_auto_flow_initial_mysql_to_hdfs”
+  msg: flow_to_id_name_age_gender
+  info: 在搜索框输入“flow_to_id_name_age_gender”
 - element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]//button
   find_type: xpath
   operate_type: click
