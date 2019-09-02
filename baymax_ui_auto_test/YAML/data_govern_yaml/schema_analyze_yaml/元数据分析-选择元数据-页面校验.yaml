@@ -14,8 +14,8 @@ testcase:
 - element_info: //*[@id="bm-main"]//input[@placeholder="请输入名称"]
   find_type: xpath
   operate_type: send_keys
-  msg: schema_analyze
-  info: 元数据查询输入“schema_analyze”
+  msg: ysj_ts
+  info: 元数据查询输入“ysj_ts”
 - element_info: //*[@id="bm-main"]//input[@placeholder="请输入名称"]/following-sibling::div/button
   find_type: xpath
   operate_type: click
@@ -31,9 +31,6 @@ testcase:
   info:  在“弹框中点击确定按钮”
   is_time: 0.5
 check:
-- element_info: //*[@id="canvas"]//h3/b[text()="schema_analyze_2"]
+- element_info: //*[@id="canvas"]//h3/b[text()="ysj_ts"]
   find_type: xpath
-  info: 断言被打开的元数据“schema_analyze_2”存在
-- element_info: //*[@id="canvas"]//h3/b[text()="schema_analyze_1"]
-  find_type: xpath
-  info: 断言被打开的元数据“schema_analyze_2”存在
+  info: 断言被打开的元数据“ysj_ts”存在
