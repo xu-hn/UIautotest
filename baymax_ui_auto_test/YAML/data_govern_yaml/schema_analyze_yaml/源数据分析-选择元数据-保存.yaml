@@ -12,8 +12,8 @@ testcase:
 - element_info: //*[@id="bm-main"]//input[@placeholder="请输入名称"]
   find_type: xpath
   operate_type: send_keys
-  msg: schema_analyze
-  info: 元数据查询输入“schema_analyze”
+  msg: ysj_ts
+  info: 元数据查询输入“ysj_ts”
 - element_info: //*[@id="bm-main"]//input[@placeholder="请输入名称"]/following-sibling::div/button
   find_type: xpath
   operate_type: click
