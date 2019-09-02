@@ -9,21 +9,21 @@ testcase:
   operate_type: click
   info: 点击“血缘分析输入框后的”搜索按钮
   is_time: 1
-- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]/div[1]/div/input
   find_type: xpath
   operate_type: send_keys
   msg: flow_to_id_name_age_gender
   info: 数据集查询输入“flow_to_id_name_age_gender”
-- element_info: //*[@id="ch-components-dataSetInq-dataInquire-temp"]//input[@placeholder="请输入名称"]/following-sibling::div/button
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]/div[1]/div/div/button/i
   find_type: xpath
   operate_type: click
   info:  点击“数据集查询输入框后的”搜索按钮
   is_time: 1
-- element_info: //*[@id="ch-components-dataSetInq-dataInquire-table"]/div[3]//tbody/tr/td/div[text()="flow_to_id_name_age_gender"]/ancestor::td/preceding-sibling::td//label
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]/table/tbody/tr/td[1]/div/label/span/span
   find_type: xpath
   operate_type: click
   info:  勾选“数据集flow_to_id_name_age_gender”
-- element_info: ze-kinship-ok-button
+- element_info: bm-ch-step2Form-dataset-ok
   find_type: name
   operate_type: click
   info:  在“弹框中点击确定按钮”
