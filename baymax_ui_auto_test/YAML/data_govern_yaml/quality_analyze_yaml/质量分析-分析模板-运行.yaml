@@ -9,17 +9,17 @@ testcase:
 - element_info: bm-qa-analysisTemplate-search-input
   find_type: name
   operate_type: send_keys
-  msg: initial_test_mode
-  info: 在搜索框输入“initial_test_mode”模板名称
+  msg: mode_test_initial
+  info: 在搜索框输入“mode_test_initial”模板名称
 - element_info: bm-qa-analysisTemplate-search-btn
   find_type: name
   operate_type: click
   info: 点击“搜索”按钮
   is_time: 0.8
-- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[text()="initial_test_mode"]/ancestor::td/preceding-sibling::td//label
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[text()="mode_test_initial"]/ancestor::td/preceding-sibling::td//label
   find_type: xpath
   operate_type: click
-  info: 在分析模板‘勾选’initial_test_mode
+  info: 在分析模板‘勾选’mode_test_initial
 - element_info: bm-qa-analysisTemplate-btns-run
   find_type: name
   operate_type: click
@@ -52,8 +52,8 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: initial_test_mode
-  info: 断言“第一行的模板”为 initial_test_mode
+  expect_value: mode_test_initial
+  info: 断言“第一行的模板”为 mode_test_initial
 - operate_type: get_current_url
   check: current_equal_expect
   expect_value: /#/qualityAnalysis/teInformation拼接值后+前host+拼接
@@ -62,25 +62,25 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: READY
-  info: 断言“第一行此时的状态”为 READY
+  expect_value: PREPARING
+  info: 断言“第一行此时的状态”为 PREPARING
 - element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span
   find_type: xpath
   check: contrary
   check_time: 2
-  info: 断言“READY”状态时“执行结果”不存在
+  info: 断言“PREPARING”状态时“执行结果”不存在
 - element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[9]/div
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
   expect_value: None
-  info: 断言“第一行READY”状态时“数据质量等级”为 空
+  info: 断言“第一行PREPARING”状态时“数据质量等级”为 空
 - element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[10]/div
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
   expect_value: None
-  info: 断言“第一行READY”状态时“坏数据占比”为 空
+  info: 断言“第一行PREPARING”状态时“坏数据占比”为 空
 
 
 
