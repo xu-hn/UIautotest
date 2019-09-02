@@ -32,10 +32,15 @@ testcase:
   find_type: id
   operate_type: click
   info: 点击“重启”按钮
+- element_info: bm-hippo-execute-searchInput-btn
+  find_type: id
+  operate_type: click
+  info: 点击‘搜索刷新’
+  is_time: 1
 check:
 - element_info: //*[text()="恭喜你，重启已成功！"]
   find_type: xpath
-  check: displayed
+  check:  displayed
   info: 断言"恭喜你，重启已成功！"吐词出现
 - element_info: //*[@id="bm-hippo-execute-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a
   find_type: xpath
