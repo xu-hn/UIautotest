@@ -4,6 +4,28 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
+- element_info: //*[@id="bm-designTreeMenu"]/span/i
+  find_type: xpath
+  operate_type: click
+  info: 点击根目录文件夹图标
+- element_info: auto_flow
+  find_type: name
+  operate_type: click
+  info: 点击“auto_flow”名字
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
+  find_type: xpath
+  operate_type: click
+  info: 点击第一个flow名字
+  is_time: 0.5
+- element_info: //*[@id="bm-rh-design-dg-content"]/div/button
+  find_type: xpath
+  operate_type: click
+  info: 点击‘设计’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'执行详细')]
+  find_type: xpath
+  operate_type: click
+  info: 点击"执行详细"标签
 - element_info: 'tab-输出 '
   find_type: id
   operate_type: click
