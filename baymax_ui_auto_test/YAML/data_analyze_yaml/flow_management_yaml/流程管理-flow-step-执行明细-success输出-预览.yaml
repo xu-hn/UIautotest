@@ -4,7 +4,35 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@id="bm-rh-design-outputs-table"]/div[3]//td/div/button/span[contains(text(), "预览")]
+- element_info: //*[@id="bm-designTreeMenu"]/span/i
+  find_type: xpath 
+  operate_type: click
+  info: 点击‘根目录’前的文件夹图标
+- element_info: //*[@id="bm-designTreeMenu"]//*[@name='initial_flow_dir']
+  find_type: xpath 
+  operate_type: click
+  info: 点击'initial_flow_dir'
+- element_info: //*[@id="bm-rh-flowManage-table"]//*[contains(text(),"mysql_to_hdfs")]
+  find_type: xpath 
+  operate_type: click
+  info: 点击'mysql_to_hdfs'
+  is_time: 0.5  
+- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘按钮列表'按钮
+  is_time: 1
+- element_info: /html/body/ul/li[4]/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行详细'按钮
+  is_time: 0.5
+- element_info: 'tab-输出 '
+  find_type: id
+  operate_type: click
+  info: 点击‘tab-输出 '
+  is_time: 1
+- element_info: //*[@id="bm-rh-design-outputs-table"]/div[4]/div[2]/table/tbody/tr/td[11]/div/button
   find_type: xpath
   operate_type: click
   info: 点击‘预览 '按钮
@@ -38,6 +66,6 @@ check:
 - element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[3]/div[text()="23"]
   find_type: xpath
   info: 断言age“23”存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[4]/div[text()="male"]
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[4]/div[text()="boy"]
   find_type: xpath
-  info: 断言gender“male”存在
+  info: 断言gender“boy”存在
