@@ -4,12 +4,15 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
-  find_type: xpath
+- element_info: //*[@id="bm-designTreeMenu"]/span/i
+  find_type: xpath 
   operate_type: click
-  info: 点击‘执行明细'按钮
-  is_time: 1
-- element_info: //*[@name="计划"]/a
+  info: 点击‘根目录’前的文件夹图标
+- element_info: //*[@id="bm-designTreeMenu"]//*[@name='initial_flow_dir']
+  find_type: xpath 
+  operate_type: click
+  info: 点击'initial_flow_dir'
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[10]/div/span
   find_type: xpath
   operate_type: click
   info: 点击‘计划'的文字
@@ -36,25 +39,25 @@ check:
   check: current_equal_expect
   expect_value: mysql_to_hdfs
   info: 断言执行历史的流程名字为“mysql_to_hdfs”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr/td[5]/div
-  find_type: xpath
-  operate_type: get_text
-  check: time_difference
-  max_time: 20
-  info: 最新的计划创建时间距现在小于“20秒”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
-  find_type: xpath
-  operate_type: get_attr
-  attr: class
-  check: current_contain_expect
-  expect_value: RUNNING
-  info: 断言执行历史的进度为“RUNNING”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
-  find_type: xpath
-  operate_type: refresh_get_attr
-  time_out: 180
-  attr: class
-  check: current_contain_expect
-  expect_value: success
-  info: 断言执行历史的进度最终状态为“success”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr/td[5]/div
+#  find_type: xpath
+#  operate_type: get_text
+#  check: time_difference
+ # max_time: 20
+ # info: 最新的计划创建时间距现在小于“20秒”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+ ## find_type: xpath
+ # operate_type: get_attr
+#  attr: class
+ # check: current_contain_expect
+ # expect_value: RUNNING
+ # info: 断言执行历史的进度为“RUNNING”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+#  find_type: xpath
+#  operate_type: refresh_get_attr
+#  time_out: 180
+#  attr: class
+ # check: current_contain_expect
+ # expect_value: success
+ # info: 断言执行历史的进度最终状态为“success”
 
