@@ -3,12 +3,40 @@ testinfo:
   title: 校验“流程管理-workflow-step-执行明细-runnning日志”
   launch: 0
   info: 先进入流程管理
+#testcase:
+#- id: test_a210
+#  title: 校验“流程管理-flow-执行历史-删除”
+##  launch: 0
+#  info: 先进入流程管理
 testcase:
+- element_info: //*[@id="bm-designTreeMenu"]/span/i
+  find_type: xpath 
+  operate_type: click
+  info: 点击‘根目录’前的文件夹图标
+- element_info: //*[@id="bm-designTreeMenu"]//*[@name='initial_flow_dir']
+  find_type: xpath 
+  operate_type: click
+  info: 点击'initial_flow_dir'
+- element_info: //*[@id="bm-rh-flowManage-table"]//*[contains(text(),"mysql_to_hive")]
+  find_type: xpath 
+  operate_type: click
+  info: 点击'mysql_to_hive'
+  is_time: 0.5  
+- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘按钮列表'按钮
+  is_time: 1
+- element_info: /html/body/ul/li[4]/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行详细'按钮
+  is_time: 0.5
 - element_info: 'tab-日志信息 '
   find_type: id
   operate_type: click
   info: 点击‘tab-日志信息 '
-  is_time: 1
+  is_time: 3
 check:
 - operate_type: get_current_url
   check: current_contain_expect
@@ -17,9 +45,9 @@ check:
 - element_info: tab-application
   find_type: id
   info: 断言“application”存在
-- element_info: tab-shell_1
-  find_type: id
-  info: 断言“tab-shell_1”存在
+#- element_info: tab-shell_1
+ # find_type: id
+ # info: 断言“tab-shell_1”存在
 - element_info: tab-monitor
   find_type: id
   info: 断言“tab-monitor”存在
