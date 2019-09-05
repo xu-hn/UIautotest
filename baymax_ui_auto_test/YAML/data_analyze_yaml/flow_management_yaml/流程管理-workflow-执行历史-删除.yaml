@@ -4,16 +4,30 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
+- element_info: //*[@id="bm-designTreeMenu"]/span/i
+  find_type: xpath 
+  operate_type: click
+  info: 点击‘根目录’前的文件夹图标
+- element_info: //*[@id="bm-designTreeMenu"]//*[@name='initial_flow_dir']
+  find_type: xpath 
+  operate_type: click
+  info: 点击'initial_flow_dir'
+- element_info: //*[@id="bm-rh-flowManage-table"]//*[contains(text(),"work_flow_shell")]
+  find_type: xpath 
+  operate_type: click
+  info: 点击'work_flow_shell'
+  is_time: 0.6  
 - element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
   find_type: xpath
   operate_type: click
-  info: 点击‘计划'按钮
+  info: 点击‘按钮列表'按钮
   is_time: 1
-- element_info: //*[@name="执行历史"]/a
+- element_info: /html/body/ul/li[3]/a
   find_type: xpath
   operate_type: click
-  info: 点击‘执行历史'的文字
+  info: 点击‘执行历史’按钮
   is_time: 0.5
+
 - element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a[2]/a
   find_type: xpath
   operate_type: get_text
