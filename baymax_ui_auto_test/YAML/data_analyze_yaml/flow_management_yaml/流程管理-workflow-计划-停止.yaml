@@ -16,7 +16,7 @@ testcase:
   find_type: xpath 
   operate_type: click
   info: 点击'work_flow_shell'
-  is_time: 0.5  
+  is_time: 0.6  
 - element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
   find_type: xpath
   operate_type: click
