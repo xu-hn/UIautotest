@@ -16,7 +16,7 @@ testcase:
   operate_type: click
   info: 点击“搜索”按钮
   is_time: 0.8
-- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//td[2]//span[text()="mode_test_initial"]/ancestor::td/preceding-sibling::td//label
+- element_info: //*[@id="bm-qa-analysisTemplate-table"]/div[3]//table//span[text()="mode_test_initial"]/ancestor::td/preceding-sibling::td//label
   find_type: xpath
   operate_type: click
   info: 在分析模板‘勾选’mode_test_initial
@@ -41,7 +41,7 @@ check:
   is_time: 1
 - operate_type: refresh
   info: 刷新当前页面
-- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[11]/div
+- element_info: //*[@id="bm-qa-teInformation"]/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[11]/div
   find_type: xpath
   operate_type: refresh_time_difference
   check: time_difference
@@ -62,8 +62,8 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: PREPARING
-  info: 断言“第一行此时的状态”为 PREPARING
+  expect_value: READY
+  info: 断言“第一行此时的状态”为 READY
 - element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span
   find_type: xpath
   check: contrary
