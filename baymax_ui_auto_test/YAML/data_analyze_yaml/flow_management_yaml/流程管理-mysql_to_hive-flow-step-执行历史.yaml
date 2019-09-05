@@ -4,21 +4,29 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
+- element_info: //*[@id="bm-designTreeMenu"]/span/i
+  find_type: xpath 
+  operate_type: click
+  info: 点击‘根目录’前的文件夹图标
+- element_info: //*[@id="bm-designTreeMenu"]//*[@name='initial_flow_dir']
+  find_type: xpath 
+  operate_type: click
+  info: 点击'initial_flow_dir'
+- element_info: //*[@id="bm-rh-flowManage-table"]//*[contains(text(),"mysql_to_hive")]
+  find_type: xpath 
+  operate_type: click
+  info: 点击'mysql_to_hive'
+  is_time: 0.6  
 - element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
   find_type: xpath
   operate_type: click
-  info: 点击‘执行明细'按钮
+  info: 点击‘按钮列表'按钮
   is_time: 1
-- element_info: //*[@name="计划"]/a
+- element_info: /html/body/ul/li[3]/a
   find_type: xpath
   operate_type: click
-  info: 点击‘计划'的文字
+  info: 点击‘执行详历史’按钮
   is_time: 0.5
-- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td/div/a[2]/button/span[text()="执行列表"]
-  find_type: xpath
-  operate_type: click
-  is_time: 1
-  info: 点击列表中“执行列表”
 check:
 - operate_type: get_current_url
   check: current_contain_expect
@@ -30,33 +38,33 @@ check:
   check: current_equal_expect
   expect_value: mysql_to_hive
   info: 断言执行历史的流程名字为“mysql_to_hive”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr/td[5]/div
-  find_type: xpath
-  operate_type: get_text
-  check: time_difference
-  max_time: 20
-  info: 最新的计划创建时间距现在小于“20秒”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
-  find_type: xpath
-  operate_type: get_attr
-  attr: class
-  check: current_contain_expect
-  expect_value: READY
-  info: 断言执行历史的进度为“READY”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
-  find_type: xpath
-  operate_type: refresh_get_attr
-  time_out: 360
-  attr: class
-  check: current_contain_expect
-  expect_value: RUNNING
-  info: 断言执行历史的进度最终状态为“RUNNING”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
-  find_type: xpath
-  operate_type: refresh_get_attr
-  time_out: 360
-  attr: class
-  check: current_contain_expect
-  expect_value: success
-  info: 断言执行历史的进度最终状态为“success”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr/td[5]/div
+#  find_type: xpath
+#  operate_type: get_text
+ # check: time_difference
+ # max_time: 20
+ # info: 最新的计划创建时间距现在小于“20秒”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+ # find_type: xpath
+ # operate_type: get_attr
+ # attr: class
+ # check: current_contain_expect
+ # expect_value: READY
+ # info: 断言执行历史的进度为“READY”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+#  find_type: xpath
+#  operate_type: refresh_get_attr
+#  time_out: 360
+ # attr: class
+ # check: current_contain_expect
+#  expect_value: RUNNING
+#  info: 断言执行历史的进度最终状态为“RUNNING”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+ # find_type: xpath
+ # operate_type: refresh_get_attr
+ # time_out: 360
+ # attr: class
+ # check: current_contain_expect
+ # expect_value: success
+ # info: 断言执行历史的进度最终状态为“success”
 
