@@ -1,0 +1,30 @@
+testinfo:
+- id: test_delete_role
+  title: 校验“删除角色”
+  launch: 0
+  info: 先进入角色管理页面
+  
+testcase:
+- element_info: //*[@id="bm-com-table-tableList-btn-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label/span/span
+  find_type: xpath
+  operate_type: click
+  info: 选择第一个角色名称前的勾选框
+  is_time: 0.5
+- element_info: //*[text()='删除']
+  find_type: xpath
+  operate_type: click
+  info: 点击‘删除’按钮
+  is_time: 0.5
+- element_info: /html/body/div[2]/div/div[3]/button[2]/span
+  find_type: xpath
+  operate_type: click
+  info: 点击弹窗的‘确定’按钮
+  is_time: 0.5
+  
+#删除成功！
+
+check:
+- element_info: //*[text()="删除成功！"]
+  find_type: xpath
+  check: displayed
+  info: 断言“删除成功！”吐词出现
