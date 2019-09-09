@@ -56,7 +56,16 @@ check:
 
   info: 断言“新建的角色出现”
   
+- element_info: //*[contains(text(),'js_ts')]/ancestor::td/following-sibling::td[1]/div/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 已启用
+  info: 断言 新建角色的状态为“已启用”  
   
+- element_info: //*[contains(text(),'js_ts')]/ancestor::tr//*[contains(text(),'编辑')]
+  find_type: xpath
+  info: 断言 新建角色的‘编辑’按钮存在
 
 
   
