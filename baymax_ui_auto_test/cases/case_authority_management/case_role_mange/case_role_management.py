@@ -52,9 +52,19 @@ class RoleManagementTest(ParametrizedTestCase):
     # 校验“角色管理-禁用角色”
     @get_url()
     def test_02_role_manage_disable_role(self):
-        # self.to_resource_dir()
+        #self.to_resource_dir()
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-禁用角色.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+        
+    #校验‘角色管理-删除角色’
+    def test_03_role_manage_delete_role(self):
+        #self.to_resource_dir()
+        app = {"logTest": self.logTest, "driver": self.driver,
+               "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-删除角色.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = AuthorityManagementPage(app)
         page.operate()
