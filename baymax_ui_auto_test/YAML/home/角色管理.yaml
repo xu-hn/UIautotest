@@ -13,9 +13,11 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘角色管理’标签
+  is_time: 0.6
 - operate_type: move_by_offset
   move_to: (0, 0)
   info: 移送鼠标到0,0像素
+  is_time: 0.6
 check:
 - operate_type: get_current_url
   check: current_equal_expect
