@@ -24,4 +24,4 @@ check:
 - element_info: //*[@id="operationPanel"]/div[2]/div/button[4]/span
   find_type: xpath
   info: 检查“添加角色”按钮存在
-  is_time: 10
+  is_time: 3
