@@ -50,7 +50,13 @@ check:
 
   info: 断言“请求处理成功”吐词出现
   
-  is_time: 2
+- element_info: //*[contains(text(),'js_ts')]
+
+  find_type: xpath
+
+  info: 断言“新建的角色出现”
+  
+  
 
 
   
