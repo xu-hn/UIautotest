@@ -7,12 +7,12 @@ testcase:
 - element_info: //*[@test-id="/systemConfig"]
   find_type: xpath
   operate_type: action_chains
-  info: 鼠标悬停到‘数据治理’标签
+  info: 鼠标悬停到‘权限管理’标签
   is_time: 0.6
 - element_info: //*[@test-id="/roleManagement"]
   find_type: xpath
   operate_type: click
-  info: 点击质量分析
+  info: 点击‘角色管理’标签
 - operate_type: move_by_offset
   move_to: (0, 0)
   info: 移送鼠标到0,0像素
