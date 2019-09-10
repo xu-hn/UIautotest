@@ -13,11 +13,9 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘角色管理’标签
-  is_time: 0.6
 - operate_type: move_by_offset
-  move_to: (0, 0)
-  info: 移送鼠标到0,0像素
-  is_time: 0.6
+  move_to: (50, 50)
+  info: 移送鼠标到50,50像素
 check:
 - operate_type: get_current_url
   check: current_equal_expect
@@ -26,4 +24,4 @@ check:
 - element_info: //*[@id="operationPanel"]/div[2]/div/button[4]/span
   find_type: xpath
   info: 检查“添加角色”按钮存在
-  is_time: 3
+  is_time: 1
