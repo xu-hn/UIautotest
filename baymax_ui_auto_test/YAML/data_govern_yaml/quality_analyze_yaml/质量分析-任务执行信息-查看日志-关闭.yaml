@@ -21,8 +21,8 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: initial_test_mode
-  info: 断言“第一行的模板”为 initial_test_mode
+  expect_value: mode_test_initial
+  info: 断言“第一行的模板”为 mode_test_initial
 - operate_type: get_current_url
   check: current_equal_expect
   expect_value: /#/qualityAnalysis/teInformation拼接值后+前host+拼接
