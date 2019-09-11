@@ -4,7 +4,38 @@ testinfo:
   launch: 0
   info: 先进入项目目录
 testcase:
-- element_info: //*[@id="bm-rh-design-outputs-table"]/div[3]//td/div/button/span[contains(text(), "预览")]
+- element_info: //*[@name="initial_project_flow"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_project_flow项目前面的文件夹
+- element_info: //*[@name="initial_project_flow"]/following-sibling::ul[1]//*[@name="Flows"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_project_flow项目Flows
+  is_time: 0.8
+  
+- element_info: //span[text()='mysql_project_dataflow_to_hdfs']
+  find_type: xpath
+  operate_type: click
+  info: 点击mysql_project_dataflow_to_hdfs
+  is_time: 0.8
+  
+- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行明细'按钮
+  is_time: 2
+- element_info: /html/body/ul/li[4]/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行详细'的文字
+  is_time: 0.5
+- element_info: 'tab-项目Outputs '
+  find_type: id
+  operate_type: click
+  info: 点击‘tab-项目Outputs '
+  is_time: 1
+- element_info: //*[@id="bm-rh-design-outputs-table"]/div[4]/div[2]/table/tbody/tr/td[11]/div/button/span[contains(text(), "预览")]
   find_type: xpath
   operate_type: click
   info: 点击‘预览 '按钮
@@ -38,6 +69,6 @@ check:
 - element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[3]/div[text()="23"]
   find_type: xpath
   info: 断言age“23”存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[4]/div[text()="male"]
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[4]/div[text()="boy"]
   find_type: xpath
-  info: 断言gender“male”存在
+  info: 断言gender“boy”存在
