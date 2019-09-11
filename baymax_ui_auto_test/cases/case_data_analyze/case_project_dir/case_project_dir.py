@@ -466,7 +466,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-计划-调度”
-    @get_url( project_dir_dataflow_plan_url)
+    #@get_url( project_dir_dataflow_plan_url)
     def test_a283_project_dir_dataflow_plan_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-计划-调度.yaml"),
