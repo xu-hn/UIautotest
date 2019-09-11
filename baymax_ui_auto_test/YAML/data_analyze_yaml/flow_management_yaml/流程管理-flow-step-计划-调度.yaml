@@ -23,12 +23,13 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击设计列表
-- element_info: //*[contains(text(),'计划')] 
+  is_time: 1
+- element_info: /html/body/ul/li[2]/a
   find_type: xpath
   operate_type: click
   info: 点击计划
-- info: 等待“0.5”秒
-  is_time: 0.5
+- info: 等待“2”秒
+  is_time: 2
 check:
 - element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[2]/div/a/a
   find_type: xpath
