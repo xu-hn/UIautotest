@@ -28,7 +28,7 @@ testcase:
   operate_type: send_keys
   msg: project_dataflow_schedule_+随机数
   info: 输入"调度名称"
-- element_info: //*[@id="bm-hi-s-add-form"]//button/span[text()="确定"]
+- element_info: //*[@id="bm-hippo-schedule-determine"]/span
   find_type: xpath
   operate_type: click
   info: 在schedule_add页，点击‘确定'按钮
