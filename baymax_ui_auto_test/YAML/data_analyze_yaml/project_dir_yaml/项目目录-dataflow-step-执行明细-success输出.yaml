@@ -4,6 +4,32 @@ testinfo:
   launch: 0
   info: 先进入项目目录
 testcase:
+- element_info: //*[@name="initial_project_flow"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_project_flow项目前面的文件夹
+- element_info: //*[@name="initial_project_flow"]/following-sibling::ul[1]//*[@name="Flows"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_project_flow项目Flows
+  is_time: 0.8
+  
+- element_info: //span[text()='mysql_project_dataflow_to_hdfs']
+  find_type: xpath
+  operate_type: click
+  info: 点击mysql_project_dataflow_to_hdfs
+  is_time: 0.8
+  
+- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行明细'按钮
+  is_time: 2
+- element_info: /html/body/ul/li[4]/a
+  find_type: xpath
+  operate_type: click
+  info: 点击‘执行详细'的文字
+  is_time: 0.5
 - element_info: 'tab-项目Outputs '
   find_type: id
   operate_type: click
