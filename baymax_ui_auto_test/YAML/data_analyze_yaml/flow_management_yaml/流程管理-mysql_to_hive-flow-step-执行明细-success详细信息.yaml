@@ -4,16 +4,32 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+- element_info: //*[@id="bm-designTreeMenu"]/span/i
   find_type: xpath
   operate_type: click
-  info: 点击‘执行历史'按钮
+  info: 点击根目录
   is_time: 1
-- element_info: //*[@name="执行详细 "]/a
+- element_info:  //*[@name="initial_flow_dir"]
   find_type: xpath
   operate_type: click
-  info: 点击‘执行详细'的文字
+  info: 点击initial_flow_dir
   is_time: 0.5
+- element_info:  //*[@id="bm-rh-flowManage-table"]//*[contains(text(),'mysql_to_hdfs')]
+  find_type: xpath
+  operate_type: click
+  info: 点击mysql_to_hdfs
+  is_time: 1
+- element_info: //section[@id="bm-rh-design-container"]/div/div/button/span
+  find_type: xpath
+  operate_type: click
+  info: 点击设计列表
+  is_time: 1
+- element_info: /html/body/ul/li[4]/a
+  find_type: xpath
+  operate_type: click
+  info: 点击执行详细
+- info: 等待“2”秒
+  is_time: 2
 check:
 - operate_type: get_current_url
   check: current_contain_expect
