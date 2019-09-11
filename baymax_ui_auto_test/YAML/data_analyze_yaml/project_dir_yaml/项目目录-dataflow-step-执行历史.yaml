@@ -4,12 +4,28 @@ testinfo:
   launch: 0
   info: 先进入项目目录
 testcase:
+- element_info: //*[@name="initial_project_flow"]/preceding-sibling::i[1]
+  find_type: xpath
+  operate_type: click
+  info: 点击 initial_project_flow项目前面的文件夹
+- element_info: //*[@name="initial_project_flow"]/following-sibling::ul[1]//*[@name="Flows"]
+  find_type: xpath
+  operate_type: click
+  info: 点击"initial_project_flow项目Flows
+  is_time: 0.8
+  
+- element_info: //span[text()='mysql_project_dataflow_to_hdfs']
+  find_type: xpath
+  operate_type: click
+  info: 点击mysql_project_dataflow_to_hdfs
+  is_time: 0.8
+  
 - element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
   find_type: xpath
   operate_type: click
   info: 点击‘执行明细'按钮
-  is_time: 1
-- element_info: //*[@name="计划"]/a
+  is_time: 2
+- element_info: /html/body/ul/li[2]/a
   find_type: xpath
   operate_type: click
   info: 点击‘计划'的文字
@@ -30,24 +46,23 @@ check:
   check: current_equal_expect
   expect_value: mysql_project_dataflow_to_hdfs
   info: 断言执行历史的流程名字为“mysql_project_dataflow_to_hdfs”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr/td[5]/div
-  find_type: xpath
-  operate_type: get_text
-  check: time_difference
-  max_time: 20
-  info: 最新的计划创建时间距现在小于“20秒”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
-  find_type: xpath
-  operate_type: get_attr
-  attr: class
-  check: current_contain_expect
-  expect_value: RUNNING
-  info: 断言执行历史的进度为“RUNNING”
-- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
-  find_type: xpath
-  operate_type: refresh_get_attr
-  time_out: 180
-  attr: class
-  check: current_contain_expect
-  expect_value: success
-  info: 断言执行历史的进度最终状态为“success”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr/td[5]/div
+#  find_type: xpath
+ # operate_type: get_text
+ # check: time_difference
+ # max_time: 20
+ # info: 最新的计划创建时间距现在小于“20秒”
+#- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+#  find_type: xpath
+#  operate_type: get_attr
+#  attr: class
+ # check: current_contain_expect
+#  expect_value: RUNNING
+ #- element_info: //*[@id="bm-rh-design-history-table"]/div[3]/table/tbody/tr[1]/td[7]/div/span
+#  find_type: xpath
+#  operate_type: refresh_get_attr
+ # time_out: 180
+#  attr: class
+#  check: current_contain_expect
+ # expect_value: success
+ # info: 断言执行历史的进度最终状态为“success”
