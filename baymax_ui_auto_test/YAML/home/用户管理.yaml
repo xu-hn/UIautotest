@@ -1,0 +1,63 @@
+testinfo:
+- id: 017-user_manager
+  title: 校验“权限管理-角色管理”页面
+  launch: 1
+  info: 成功登录
+testcase:
+- element_info: //*[@test-id="/systemConfig"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘权限管理’标签
+  is_time: 0.6
+- element_info: //*[@test-id="/userManagement"]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘用户管理’标签
+- operate_type: move_by_offset
+  move_to: (50, 50)
+  info: 移送鼠标到50,50像素
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/userManagement拼接值后+前host+拼接
+  info: 检查"质量分析的URL"是否正确
+#- element_info: //*[congtains(text(),'用户名')]
+ # find_type: xpath
+#  info: 检查“用户名”存在
+ # is_time: 1
+- element_info: //input[@placeholder='请填写内容']
+  find_type: xpath
+  info: 检查“用户名的输入框”存在
+  is_time: 1
+- element_info: //i[@class='el-icon-search']
+  find_type: xpath
+  info: 检查“用户名的输入按钮”存在
+  is_time: 1
+#- element_info: //*[congtains(text(),'状态')]
+#  find_type: xpath
+#  info: 检查“状态”存在
+#  is_time: 1  
+- element_info: //*[@class='el-form-item__content']
+  find_type: xpath
+  info: 检查“状态选择栏”存在
+  is_time: 1  
+- element_info: //*[@class='has-gutter']
+  find_type: xpath
+  info: 检查“列表栏”存在
+  is_time: 1  
+- element_info: //span[text()='删除']
+  find_type: xpath
+  info: 检查“删除”按钮存在
+  is_time: 1
+- element_info: //span[text()='启用']
+  find_type: xpath
+  info: 检查“启用”按钮存在
+  is_time: 1
+- element_info: //span[text()='禁用']
+  find_type: xpath
+  info: 检查“禁用”按钮存在
+  is_time: 1
+- element_info: //span[text()='添加用户']
+  find_type: xpath
+  info: 检查“添加用户”按钮存在
+  is_time: 1
