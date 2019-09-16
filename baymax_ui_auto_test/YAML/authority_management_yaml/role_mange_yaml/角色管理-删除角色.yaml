@@ -5,7 +5,7 @@ testinfo:
   info: 先进入角色管理页面
   
 testcase:
-- element_info: //*[@id="bm-com-table-tableList-btn-table"]/div[3]/table/tbody/tr[1]/td[1]/div/label/span/span
+- element_info: //span[text()='js_ts1']/../../../td[1]/div/label/span/span
   find_type: xpath
   operate_type: click
   info: 选择第一个角色名称前的勾选框
@@ -28,3 +28,9 @@ check:
   find_type: xpath
   check: displayed
   info: 断言“删除成功！”吐词出现
+  
+- element_info: //span[text()='js_ts1']
+  find_type: xpath
+  check: contrary
+  check_time: 2
+  info: 断言 被删除的“角色”不存在

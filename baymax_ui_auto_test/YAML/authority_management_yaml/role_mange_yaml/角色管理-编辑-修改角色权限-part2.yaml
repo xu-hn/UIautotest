@@ -1,0 +1,28 @@
+testinfo:
+- id: test_edit_role_name
+  title: test_03_role_edit_role_power_part2
+  launch: 0
+  info: 先进入角色管理页面
+  
+testcase:
+- element_info: //div[4]//*[contains(text(),'js_ts1')]/ancestor::tr//*[contains(text(),'编辑')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘编辑’按钮
+  is_time: 0.5
+  
+- element_info: //span[2][text()='权限管理']
+  find_type: xpath
+  operate_type: click
+  info: 点击权限管理前的‘小三角’按钮
+  is_time: 0.5
+  
+  
+check:
+- element_info: //span[2][text()='角色管理']/../label[@class='el-checkbox is-checked'and @aria-checked='true' ]
+  find_type: xpath
+  #operate_type: get_value
+  #check: current_equal_expect
+ # expect_value: el-checkbox__input is-checked
+  info: 断言 获得角色管理的勾选状态为已勾选
+  is_time: 0.5

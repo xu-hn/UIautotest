@@ -1,6 +1,6 @@
 testinfo:
 
-- id: test_disable_role
+- id: test_01_role_manage_create_role
 
   title: 校验“添加角色”
 
@@ -63,7 +63,7 @@ check:
   expect_value: 已启用
   info: 断言 新建角色的状态为“已启用”  
   
-- element_info: //*[contains(text(),'js_ts')]/ancestor::tr//*[contains(text(),'编辑')]
+- element_info: //*[contains(text(),'js_ts')]/ancestor::tr/td[4]/div/div/span/button/span
   find_type: xpath
   info: 断言 新建角色的‘编辑’按钮存在
 
