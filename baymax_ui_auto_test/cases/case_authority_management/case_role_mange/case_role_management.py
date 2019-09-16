@@ -39,7 +39,7 @@ class RoleManagementTest(ParametrizedTestCase):
             return wrapper
         return decorator
 
-    # 校验“角色管理-新建角色”
+#    校验“角色管理-新建角色”
     @get_url()
     def test_01_role_manage_create_role(self):
         self.to_resource_dir()
@@ -48,20 +48,56 @@ class RoleManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-
-    # 校验“角色管理-禁用角色”
+#     #校验“角色管理-编辑-更改角色名称”
     @get_url()
-    def test_02_role_manage_disable_role(self):
+    def test_02_role_edit_role_name(self):
         #self.to_resource_dir()
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-编辑-修改角色名字.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+#          
+    @get_url()
+    def test_03_role_edit_role_power_part1(self):
+        #self.to_resource_dir()
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-编辑-修改角色权限-part1.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+    def test_03_role_edit_role_power_part2(self):
+        #self.to_resource_dir()
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-编辑-修改角色权限-part2.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+    
+#    # 校验“角色管理-禁用角色”
+    @get_url()
+    def test_04_role_manage_disable_role(self):
+        self.to_resource_dir()
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-禁用角色.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-        
+    #  校验“角色管理-启用角色”   
+    @get_url()
+    def test_05_role_manage_disable_role(self):
+        #self.to_resource_dir()
+        app = {"logTest": self.logTest, "driver": self.driver,
+               "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-启用角色.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+#         
     #校验‘角色管理-删除角色’
-    def test_03_role_manage_delete_role(self):
+    @get_url()
+    def test_06_role_manage_delete_role(self):
         #self.to_resource_dir()
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/authority_management_yaml/role_mange_yaml/角色管理-删除角色.yaml"),
