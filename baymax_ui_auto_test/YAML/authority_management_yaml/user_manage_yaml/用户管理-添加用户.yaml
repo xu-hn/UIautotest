@@ -1,0 +1,128 @@
+testinfo:
+
+- id: test_01_user_manage_create_user
+
+  title: 校验“添加角色”
+
+  launch: 0
+
+  info: 先进入角色管理页面
+
+testcase:
+
+- element_info: //*[contains(text(),'添加用户')]
+
+  find_type: xpath
+
+  operate_type: click
+
+  info: 点击‘添加用户’
+  is_time: 1
+
+- element_info: //label[contains(text(),'姓名')]/../div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: 自动化测试
+  info: 姓名输入‘自动化测试’
+  is_time: 0.5
+
+- element_info: //label[contains(text(),'登录名')]/../div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: yh_ts
+  info: 登录名输入‘yh_ts’
+  is_time: 0.5
+  
+- element_info: //label[contains(text(),'手机号')]/../div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: 13400000000
+  info: 手机号输入‘13400000000’
+  is_time: 0.5
+  
+- element_info: //label[contains(text(),'邮箱')]/../div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: 13400000000@qq.com
+  info: 邮箱输入‘13400000000@qq.com’
+  is_time: 0.5
+  
+- element_info: //label[contains(text(),'密码')]/../div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: 123456
+  info: 密码输入‘123456’
+  is_time: 0.5
+  
+- element_info: //label[contains(text(),'确认密码')]/../div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: 123456
+  info: 确认密码输入‘123456’
+  is_time: 0.5
+
+- element_info: //label[contains(text(),'资源队列')]/../div/div[1]/div[2]/input
+  find_type: xpath
+  operate_type: click
+  info: 点击‘资源队列选择框’
+  is_time: 0.5
+  
+- element_info: //span[contains(text(),'default')]
+  find_type: xpath
+  operate_type: click
+  info: 选择‘default’
+  is_time: 0.5
+  
+- element_info: //label[contains(text(),'资源队列')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘资源队列文字’收起下拉框
+  is_time: 0.5
+    
+- element_info: //span[contains(text(),'确定')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’
+  is_time: 0.5
+
+
+
+check:
+
+- element_info: //*[text()="操作成功"]
+
+  find_type: xpath
+
+  check: displayed
+
+  info: 断言“操作成功”吐词出现
+  
+- element_info: //*[contains(text(),'yh_ts')]
+
+  find_type: xpath
+
+  info: 断言“新建的角色出现”
+  
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[7]/div/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 已启用
+  info: 断言 新建角色的状态为“已启用”  
+  
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[8]//*[contains(text(),'基本信息')]
+#/html/body/div/div/div[1]/div[2]/section/div/div/div/div[1]/div/div/div[4]/div[2]/table/tbody/tr[1]/td[8]/div/div/span[1]/button/span
+  find_type: xpath
+  info: 断言 ‘基本信息’按钮存在
+  
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[8]//*[contains(text(),'权限')]
+  find_type: xpath
+  info: 断言 ‘权限’按钮存在
+  
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[8]//*[contains(text(),'有效期')]
+  find_type: xpath
+  info: 断言 ‘有效期’按钮存在
+
+
+
+  
