@@ -181,7 +181,24 @@ class HomePageTest(ParametrizedTestCase):
     #     page = HomePage(app)
     #     page.operate()
     #     page.check_point()
-
+#校验 “权限管理-用户管理”
+    @get_url()  
+    def test_017a_role_manage(self):
+        self.login()
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/角色管理.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = HomePage(app)
+        page.operate()
+        page.check_point()
+    #校验 “权限管理-用户管理”
+    @get_url()  
+    def test_017b_user_manage(self):
+        #self.login()
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/home/用户管理.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = HomePage(app)
+        page.operate()
+        page.check_point()
     @classmethod
     def setUpClass(cls):
         super(HomePageTest, cls).setUpClass()
