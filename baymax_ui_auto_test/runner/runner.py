@@ -23,6 +23,8 @@ from cases.cases_data_govern.case_schema_analyze.case_schema_analyze import Sche
 from cases.case_data_analyze.case_flow_management.case_flow_management import FlowManagementTest
 from cases.case_data_analyze.case_project_dir.case_project_dir import ProjectDirTest
 from cases.case_authority_management.case_role_mange.case_role_management import RoleManagementTest
+from cases.case_authority_management.case_user_manage.case_user_management import UserManagementTest
+
 import unittest
 from datetime import datetime
 from common.TearDown import mk_file
@@ -40,7 +42,7 @@ def suite_case(who):
                    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest],
         'bayMax': [LoginTest, HomePageTest, OperateDirTest, DataImportTest,  FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
-                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest,RoleManagementTest],
+                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest,RoleManagementTest,UserManagementTest],
         # 'bayMax': [RoleManagementTest],
         'Beiruan': [LoginTest, HomePageTest_Beiruan, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
