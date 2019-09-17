@@ -14,8 +14,8 @@ testcase:
   operate_type: click
   info: 点击质量分析
 - operate_type: move_by_offset
-  move_to: (0, 0)
-  info: 移送鼠标到0,0像素
+  move_to: (50, 50)
+  info: 移送鼠标到50,50像素
 check:
 - operate_type: get_current_url
   check: current_equal_expect
@@ -24,9 +24,9 @@ check:
 - element_info: //button/span[contains(text(), '分析模板')]
   find_type: xpath
   info: 检查“分析模板”按钮是否存在
-- element_info: //*[text()="新建"]
+- element_info: //*[contains(text(),"新建")]
   find_type: xpath
   info: 检查“创建按钮是否存在”
-- element_info: //*[text()="数据集"]
+- element_info: //*[contains(text(),"数据集")]
   find_type: xpath
   info: 检查“数据集”列表关键字是否存在
