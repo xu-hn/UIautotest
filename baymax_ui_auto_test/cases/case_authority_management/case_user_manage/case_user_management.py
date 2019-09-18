@@ -46,6 +46,41 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
+    
+    #校验 ‘用户管理-修改用户信息’    
+    @get_url()
+    def test_02_user_manage_edit_user(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-修改用户信息.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+         
+    #校验 ‘用户管理-修改用户信息’    
+    @get_url()
+    def test_03_user_manage_edit_user_power(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-修改用户权限.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+          
+#      #校验 ‘用户管理-修改用户有效期’    
+    @get_url()
+    def test_04_user_manage_edit_user_term_of_validity(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-修改用户有效期.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+ #校验 ‘用户管理-修改密码有效期’    
+    @get_url()
+    def test_05_user_manage_edit_user_term_of_validity(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-修改密码有效期.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
         
 # ========================================= 提交 end ========================================================================================
 
