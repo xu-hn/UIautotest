@@ -1,8 +1,8 @@
 testinfo:
 
-- id: test_03_user_manage_edit_user_power
+- id: test_04_user_manage_edit_user_term of validity
 
-  title: 校验“用户管理-修改用户权限”
+  title: 校验“用户管理-修改用户有效期”
 
   launch: 0
 
