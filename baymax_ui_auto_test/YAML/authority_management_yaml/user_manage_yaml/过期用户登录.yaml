@@ -1,0 +1,41 @@
+testinfo:
+- id: test_overdue_user_login
+  title: 校验“成功登录”页面
+  launch: 1
+  info: 环境正常
+testcase:
+- element_info: //*[@placeholder="租户"]
+  find_type: xpath
+  operate_type: click
+  info: 点击租户输入框
+- element_info: //*[@placeholder="租户"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: default
+  info: 向租户输入框输入内容
+- element_info: /html/body/div[2]/div[1]/div[1]/ul/li
+  find_type: xpath
+  operate_type: click
+  info: 点击租户的下拉框
+- element_info: //*[@placeholder="用户名"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: UI_yhgq
+  info: 输入账号
+- element_info: //*[@placeholder="密码"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: 123456
+  info: 输入密码
+- element_info: //*[@id="app"]/div/form/div[1]/div[4]/div/button/span
+  find_type: xpath
+  operate_type: click
+  info: 点击确定登录
+check:
+- element_info: //*[contains(text(),"用户帐号已过期")]
+
+  find_type: xpath
+
+  check: displayed
+
+  info: 断言“成功”吐词出现
