@@ -46,7 +46,7 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-    
+     
     #校验 ‘用户管理-修改用户信息’    
     @get_url()
     def test_02_user_manage_edit_user(self):
@@ -55,7 +55,7 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-         
+          
     #校验 ‘用户管理-修改用户信息’    
     @get_url()
     def test_03_user_manage_edit_user_power(self):
@@ -64,7 +64,7 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-          
+           
 #      #校验 ‘用户管理-修改用户有效期’    
     @get_url()
     def test_04_user_manage_edit_user_term_of_validity(self):
@@ -81,6 +81,31 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
+ #校验 ‘用户管理-禁用账户’    
+    def test_06_user_manage_prohibit_account(self):
+        
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-禁用账户.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+#校验 ‘用户管理-禁用账户’    
+    def test_07_user_manage_enable_account(self):
+       
+       app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-启用账户.yaml"),
+              "caseName": sys._getframe().f_code.co_name}
+       page = AuthorityManagementPage(app)
+       page.operate()
+       page.check_point()
+#校验 ‘用户管理-禁用账户’    
+    def test_08_user_manage_delete_account(self):
+      
+       app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-删除账户.yaml"),
+              "caseName": sys._getframe().f_code.co_name}
+       page = AuthorityManagementPage(app)
+       page.operate()
+       page.check_point()
+         
         
 # ========================================= 提交 end ========================================================================================
 
