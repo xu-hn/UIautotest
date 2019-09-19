@@ -1,0 +1,47 @@
+testinfo:
+- id: test_overdue_Password_login
+  title: 校验 ‘密码过期无法登录’
+  launch: 0
+  info: 环境正常
+testcase:
+
+- element_info: //*[@placeholder="租户"]
+  find_type: xpath
+  operate_type: click
+  info: 点击租户输入框
+- element_info: //*[@placeholder="租户"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: default
+  info: 向租户输入框输入内容
+- element_info: /html/body/div[2]/div[1]/div[1]/ul/li
+  find_type: xpath
+  operate_type: click
+  info: 点击租户的下拉框
+- element_info: //*[@placeholder="用户名"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: UI_mmgq
+  info: 输入账号
+- element_info: //*[@placeholder="密码"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: 123456
+  info: 输入密码
+- element_info: //*[@id="app"]/div/form/div[1]/div[4]/div/button/span
+  find_type: xpath
+  operate_type: click
+  info: 点击确定登录
+check:
+- element_info: //*[contains(text(),"用户凭证已过期")]
+
+  find_type: xpath
+
+  check: displayed
+
+  info: 断言“用户凭证已过期”吐词出现
+  
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/login拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
