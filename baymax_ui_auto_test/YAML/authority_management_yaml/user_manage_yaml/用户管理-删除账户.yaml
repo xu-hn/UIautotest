@@ -1,0 +1,73 @@
+testinfo:
+
+- id: test_08_user_manage_delete_account
+
+  title: 校验“用户管理-删除账户”
+
+  launch: 0
+
+  info: 先进入角色管理页面
+
+testcase:
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[1]/div/label/span/span
+#/html/body/div[1]/div/div[1]/div[2]/section/div/div/div/div[1]/div/div/div[3]/table/tbody/tr[1]/td[1]/div/label/span/span
+  find_type: xpath
+  operate_type: click
+  info: 勾选 ‘yh_ts’
+  is_time: 0.5
+
+- element_info: //span[text()='禁用']
+  find_type: xpath
+  operate_type: click
+  info: 点击‘禁用’
+  is_time: 0.5
+
+- element_info: /html/body/div[2]/div/div[3]/button[2]/span          
+
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’
+  is_time: 0.5
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[1]/div/label/span/span
+#/html/body/div[1]/div/div[1]/div[2]/section/div/div/div/div[1]/div/div/div[3]/table/tbody/tr[1]/td[1]/div/label/span/span
+  find_type: xpath
+  operate_type: click
+  info: 勾选 ‘yh_ts’
+  is_time: 0.5
+
+- element_info: //span[text()='删除']
+  find_type: xpath
+  operate_type: click
+  info: 点击‘禁用’
+  is_time: 0.5
+
+- element_info: /html/body/div[2]/div/div[3]/button[2]/span          
+
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’
+  is_time: 0.5
+    
+  
+
+check:
+
+- element_info: //*[contains(text(),"成功")]
+
+  find_type: xpath
+
+  check: displayed
+
+  info: 断言“成功”吐词出现
+  
+- element_info: //*[contains(text(),'yh_ts')]
+
+  find_type: xpath
+  check: contrary
+  check_time: 2
+  info: 断言“被删除的用户不存在”
+  
+
+
+
+  
