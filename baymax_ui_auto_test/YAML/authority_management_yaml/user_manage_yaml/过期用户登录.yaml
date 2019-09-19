@@ -1,7 +1,7 @@
 testinfo:
 - id: test_overdue_user_login
   title: 校验“过期用户无法登录”
-  launch: 1
+  launch: 0
   info: 环境正常
 testcase:
 - element_info: //*[@placeholder="租户"]
