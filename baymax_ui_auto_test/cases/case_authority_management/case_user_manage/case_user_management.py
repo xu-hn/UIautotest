@@ -37,7 +37,7 @@ class UserManagementTest(ParametrizedTestCase):
             return wrapper
         return decorator
     
-    #校验 ‘用户管理-新建用户’
+#     #校验 ‘用户管理-新建用户’
     @get_url()
     def test_01_user_manage_create_user(self):
         self.to_resource_dir()
@@ -46,7 +46,7 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-     
+      
     #校验 ‘用户管理-修改用户信息’    
     @get_url()
     def test_02_user_manage_edit_user(self):
@@ -55,7 +55,7 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-          
+           
     #校验 ‘用户管理-修改用户信息’    
     @get_url()
     def test_03_user_manage_edit_user_power(self):
@@ -64,7 +64,7 @@ class UserManagementTest(ParametrizedTestCase):
         page = AuthorityManagementPage(app)
         page.operate()
         page.check_point()
-           
+            
 #      #校验 ‘用户管理-修改用户有效期’    
     @get_url()
     def test_04_user_manage_edit_user_term_of_validity(self):
@@ -83,7 +83,7 @@ class UserManagementTest(ParametrizedTestCase):
         page.check_point()
  #校验 ‘用户管理-禁用账户’    
     def test_06_user_manage_prohibit_account(self):
-        
+         
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-禁用账户.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = AuthorityManagementPage(app)
@@ -91,20 +91,42 @@ class UserManagementTest(ParametrizedTestCase):
         page.check_point()
 #校验 ‘用户管理-禁用账户’    
     def test_07_user_manage_enable_account(self):
-       
+        
        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-启用账户.yaml"),
               "caseName": sys._getframe().f_code.co_name}
        page = AuthorityManagementPage(app)
        page.operate()
        page.check_point()
-#校验 ‘用户管理-禁用账户’    
+ #校验 ‘用户管理-禁用账户’    
     def test_08_user_manage_delete_account(self):
-      
-       app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-删除账户.yaml"),
-              "caseName": sys._getframe().f_code.co_name}
-       page = AuthorityManagementPage(app)
-       page.operate()
-       page.check_point()
+       
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/用户管理-删除账户.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+  
+#校验 ‘退出登录’    
+    def test_09_login_out(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/退出登录.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+#校验 ‘用户过期-无法登录’    
+    def test_10_overdue_user_login(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/过期用户登录.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
+#校验 ‘密码过期-无法登录’    
+    def test_11_overdue_Password_login(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/authority_management_yaml/user_manage_yaml/过期密码登录.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = AuthorityManagementPage(app)
+        page.operate()
+        page.check_point()
          
         
 # ========================================= 提交 end ========================================================================================
