@@ -1,0 +1,58 @@
+testinfo:
+
+- id: test_05_user_manage_edit_user_term_of_validity
+
+  title: 校验“用户管理-修改密码有效期”
+
+  launch: 0
+
+  info: 先进入角色管理页面
+
+testcase:
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[1]/div/label/span/span
+#/html/body/div[1]/div/div[1]/div[2]/section/div/div/div/div[1]/div/div/div[3]/table/tbody/tr[1]/td[1]/div/label/span/span
+  find_type: xpath
+  operate_type: click
+  info: 勾选 ‘yh_ts’
+  is_time: 0.5
+
+- element_info: //span[text()='启用']
+  find_type: xpath
+  operate_type: click
+  info: 点击‘启用’
+  is_time: 0.5
+
+- element_info: /html/body/div[2]/div/div[3]/button[2]/span          
+
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’
+  is_time: 0.5
+    
+  
+
+check:
+
+- element_info: //*[contains(text(),"修改成功")]
+
+  find_type: xpath
+
+  check: displayed
+
+  info: 断言“修改成功”吐词出现
+  
+- element_info: //*[contains(text(),'yh_ts')]/../../../td[7]/div/span
+
+  find_type: xpath
+  
+  operate_type: get_text
+  
+  check: current_equal_expect
+
+  expect_value: 已启用
+  info: 断言“已启用”
+  
+
+
+
+  
