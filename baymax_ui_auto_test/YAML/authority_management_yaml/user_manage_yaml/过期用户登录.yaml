@@ -1,6 +1,6 @@
 testinfo:
 - id: test_overdue_user_login
-  title: 校验“成功登录”页面
+  title: 校验“过期用户无法登录”
   launch: 1
   info: 环境正常
 testcase:
