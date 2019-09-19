@@ -38,4 +38,9 @@ check:
 
   check: displayed
 
-  info: 断言“成功”吐词出现
+  info: 断言“账户过期”吐词出现
+  
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/login拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
