@@ -1,8 +1,8 @@
 testinfo:
 
-- id: test_05_user_manage_edit_user_term_of_validity
+- id: test_06_user_manage_prohibit_account
 
-  title: 校验“用户管理-修改密码有效期”
+  title: 校验“用户管理-禁用账户”
 
   launch: 0
 
