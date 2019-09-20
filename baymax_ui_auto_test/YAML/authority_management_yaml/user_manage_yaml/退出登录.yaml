@@ -1,0 +1,33 @@
+testinfo:
+- id: test_sign_out
+  title: 校验“退出登录”
+  launch: 1
+  info: 环境正常
+testcase:
+- element_info: //span[@class='el-dropdown-link userinfo-inner el-dropdown-selfdefine']
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘登录名’处
+  is_time: 0.5
+- element_info: //i[@class='icon iconfont icon-ir-logout']
+  find_type: xpath
+  operate_type: click
+  info: 点击‘退出登录’按钮
+  is_time: 0.5
+- element_info: //div[@class='el-message-box__btns']//*[contains(text(),'确定')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘确定’按钮
+  is_time: 1
+
+check:
+- operate_type: get_current_url
+  check: current_contain_expect
+  expect_value: /#/login拼接值后+前host+拼接
+  info: 断言“当前的url”符合预期值
+- element_info: //*[contains(text(),'dir1')]
+  find_type: xpath
+  check: contrary
+  check_time: 2
+  info: 断言“退出的账户不展示”
+
