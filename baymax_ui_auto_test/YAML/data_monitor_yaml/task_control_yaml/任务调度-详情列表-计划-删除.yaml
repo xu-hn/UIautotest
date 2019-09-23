@@ -11,18 +11,32 @@ testcase:
   operate_type: click
   info: 点击“详情列表” 按钮
   is_time: 1
+- element_info: //*[@id="bm-hippo-schedule-list-input-searchTable"]
+  find_type: xpath
+  operate_type: send_keys
+  msg: auto_task
+  info: 搜索框输入   auto_task
+- element_info:   //*[@class='btnClass el-row']//*[@id="bm-hippo-schedule-list-input-searchTable-btn"]
+
+  find_type: xpath
+  operate_type: click
+  info: 点击“搜索” 按钮
+  is_time: 0.5
 - element_info: //*[@id="bm-hippo-schedule-list-table"]/div[3]//td[2]/div/a[contains(text(), "auto_task_")]
   find_type: xpath
   operate_type: get_text
   info: 获取第一个“auto_task_”随机数计划的值
+  is_time: 0.5
 - element_info: //*[@id="bm-hippo-schedule-list-table"]/div[3]//td[2]/div/a[contains(text(), "auto_task_")]/ancestor::td/preceding-sibling::td//label
   find_type: xpath
   operate_type: click
   info: 勾选第一个“auto_task_”随机数的计划
+  is_time: 0.5
 - element_info: bm-hippo-schedule-list-del
   find_type: id
   operate_type: click
   info: 点击“删除”按钮
+  is_time: 0.5
 - element_info: /html/body/div[@aria-label="提示"]//*[contains(text(), "确定")]
   find_type: xpath
   operate_type: click
