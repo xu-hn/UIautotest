@@ -201,14 +201,14 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-flow-新建制作json”
-    @get_url(project_dir_url)
-    def test_a256_project_dir_flow_create_json(self):
-        app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-flow-新建制作json.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = ProjectDirPage(app)
-        page.operate()
-        page.check_point()
+   # @get_url(project_dir_url)
+   # def test_a256_project_dir_flow_create_json(self):
+       # app = {"logTest": self.logTest, "driver": self.driver,
+           #    "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-flow-新建制作json.yaml"),
+           #    "caseName": sys._getframe().f_code.co_name}
+      #  page = ProjectDirPage(app)
+     #   page.operate()
+      #  page.check_point()
 
     # 校验“项目目录-flow-导入”
     @get_url(project_dir_url)
