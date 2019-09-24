@@ -26,22 +26,22 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: READY
-  info: 断言“第一行此时的状态”为 READY
-- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span
-  find_type: xpath
-  check: contrary
-  check_time: 2
-  info: 断言“RUNNING”状态时“执行结果”不存在
-- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[9]/div
-  find_type: xpath
-  operate_type: get_text
-  check: current_equal_expect
-  expect_value: None
-  info: 断言“第一行RUNNING”状态时“数据质量等级”为 空
-- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[10]/div
-  find_type: xpath
-  operate_type: get_text
-  check: current_equal_expect
-  expect_value: None
-  info: 断言“第一行RUNNING”状态时“坏数据占比”为 空
+  expect_value: SUCCEEDED
+  info: 断言“第一行此时的状态”为 SUCCEEDED
+#- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[6]/div/span
+#  find_type: xpath
+#  check: contrary
+#  check_time: 2
+#  info: 断言“RUNNING”状态时“执行结果”不存在
+#- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[9]/div
+#  find_type: xpath
+#  operate_type: get_text
+#  check: current_equal_expect
+#  expect_value: None
+#  info: 断言“第一行RUNNING”状态时“数据质量等级”为 空
+#- element_info: //*[@id="bm-qa-teInformation-table"]/div[3]/table/tbody/tr[1]/td[10]/div
+#  find_type: xpath
+#  operate_type: get_text
+#  check: current_equal_expect
+#  expect_value: None
+#  info: 断言“第一行RUNNING”状态时“坏数据占比”为 空
