@@ -146,14 +146,13 @@ class FlowManagementTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“流程管理-flow-列表-制作json”
-    @get_url(flow_management_url)
-    def test_a177_flow_management_flow_make_json(self):
-        app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_analyze_yaml/flow_management_yaml/流程管理-flow-列表-制作json.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = FlowManagementPage(app)
-        page.operate()
-        page.check_point()
+  # def test_a177_flow_management_flow_make_json(self):
+   #     app = {"logTest": self.logTest, "driver": self.driver,
+      #         "path": PATH("../YAML/data_analyze_yaml/flow_management_yaml/流程管理-flow-列表-制作json.yaml"),
+     #          "caseName": sys._getframe().f_code.co_name}
+    #    page = FlowManagementPage(app)
+     #   page.operate()
+    #    page.check_point()
 
     # 校验“流程管理-flow-导出”
     @get_url(flow_management_url)
