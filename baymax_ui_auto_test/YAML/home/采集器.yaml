@@ -2,7 +2,7 @@ testinfo:
 - id: test006
   title: 校验“采集器”页面
   launch: 1
-  info: 成功登录
+  info: 成功登录了
 testcase:
 - element_info: //*[@test-id="/dataIntegration"]
   find_type: xpath
