@@ -28,6 +28,6 @@ check:
 - element_info: //*[contains(text(),'dir1')]
   find_type: xpath
   check: contrary
-  check_time: 2
+  check_time: 4
   info: 断言“退出的账户不展示”
 
