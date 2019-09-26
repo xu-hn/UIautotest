@@ -79,6 +79,7 @@ class OperateElement():
                 ep.FIND_DOWN: lambda: self.find_element_down(operate),
                 ep.MOVE_SCROLLBAR_BOTTOM: lambda: self.move_scrollbar_bottom(operate),
                 ep.UPLOAD_FILE: lambda: self.upload_file(operate),
+                ep.DOWNLOAD_FILE: lambda: self.download_file(operate),
                 ep.REFRESH_GET_TEXT: lambda: self.refresh_get_text(operate),
                 ep.REFRESH_GET_ATTR: lambda: self.refresh_get_attr(operate),
                 ep.REFRESH_TIME_DIFFERENCE: lambda: self.refresh_time_difference(operate),
@@ -305,6 +306,19 @@ class OperateElement():
         else:
             print(main, "路径不存在！！！")
             return {'result': False}
+    #下载文件  判断路径下文件是否存在
+    def download_file(self,operate):
+        main = "C:/Users/Administrator/Downloads"
+        files = os.listdir(main)
+        print(main)
+        for f in files:
+            if f.endswith('.woven') and (operate["file_name"] in f):
+                print('文件存在')
+                return {'result': True}
+            else:
+                print(main,'路径或文件不存在')
+                return{"result": False}
+        
 
     # 检查元素是否显示
     def displayed(self, operate):
