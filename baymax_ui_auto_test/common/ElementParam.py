@@ -24,6 +24,7 @@ class ElementParam(object):
     FIND_DOWN = "find_down"  # 下拉菜单中向下查找元素
     MOVE_SCROLLBAR_BOTTOM = "move_scrollbar_bottom"  # 移动滚动条到某元素底部
     UPLOAD_FILE = "upload_file"  # 上传文件 使用autoit可执行文件
+    DOWNLOAD_FILE = 'download_file' # 校验下载文件是否存在
     REFRESH_GET_TEXT = "refresh_get_text"  # 刷新页面获取数据
     REFRESH_GET_ATTR = "refresh_get_attr"  # 刷新页面获取属性
     TO_IFRAME = "to_iframe"  # 切换到iframe
