@@ -8,6 +8,7 @@ from PageObject.home.home_page import HomePage
 import sys, os, time
 from common.case_false_rerun import rerun
 from common.login_who import who_login
+from common.OperateFile import remove_path_key_file
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), p)
@@ -259,6 +260,9 @@ class ProjectDirTest(ParametrizedTestCase):
         page = ProjectDirPage(app)
         page.operate()
         page.check_point()
+        #删除指定路径下指定包含名称的所有文件
+        print('重置数据：删除已经下载的文件')
+        remove_path_key_file('dir1','C:\\Users\\Administrator\\Downloads')
 
     # 校验“项目目录-flow-删除”
     @get_url(project_dir_url)
