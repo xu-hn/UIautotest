@@ -375,6 +375,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-计划”
+    @get_url()
     def test_a273_project_dir_dataflow_plan(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-计划.yaml"),
@@ -384,6 +385,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-running详细信息”
+    @get_url()
     def test_a274_project_dir_dataflow_detail_info_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-running详细信息.yaml"),
@@ -393,6 +395,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-running输出”
+    @get_url()
     def test_a275_project_dir_dataflow_export_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-running输出.yaml"),
@@ -402,6 +405,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-running日志”
+    @get_url()
     def test_a276_project_dir_dataflow_log_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-running日志.yaml"),
@@ -411,6 +415,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
         # 校验“项目目录-dataflow-step-执行历史”
+    @get_url()
     def test_a277_project_dir_dataflow_history(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行历史.yaml"),
@@ -420,6 +425,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-success详细信息”
+    @get_url()
     def test_a278_project_dir_dataflow_detail_info_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success详细信息.yaml"),
@@ -429,6 +435,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-success输出”
+    @get_url()
     def test_a279_project_dir_dataflow_export_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success输出.yaml"),
@@ -438,6 +445,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-success输出-预览”
+    @get_url()
     def test_a280_project_dir_dataflow_export_success_preview(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success输出-预览.yaml"),
@@ -447,6 +455,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-success日志”
+    @get_url()
     def test_a281_project_dir_dataflow_log_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success日志.yaml"),
@@ -498,6 +507,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-running日志-schedule”
+    @get_url()
     def test_a286_project_dir_dataflow_step_log_running_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-running日志-schedule.yaml"),
@@ -507,6 +517,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行历史-schedule”
+    @get_url()
     def test_a287_project_dir_dataflow_step_history_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行历史-schedule.yaml"),
@@ -517,6 +528,7 @@ class ProjectDirTest(ParametrizedTestCase):
 
 
         # 校验“项目目录-dataflow-step-执行明细-success详细信息-schedule”
+    @get_url()
     def test_a288_project_dir_dataflow_detail_info_success_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success详细信息-schedule.yaml"),
@@ -526,6 +538,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-success输出-schedule”
+    @get_url()
     def test_a289_project_dir_dataflow_export_success_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success输出-schedule.yaml"),
@@ -535,6 +548,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-success输出-预览-schedule”
+    @get_url()
     def test_a290_project_dir_dataflow_export_success_preview_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success输出-预览-schedule.yaml"),
@@ -544,6 +558,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-dataflow-step-执行明细-success日志-schedule”
+    @get_url()
     def test_a291_project_dir_dataflow_log_success_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-dataflow-step-执行明细-success日志-schedule.yaml"),
@@ -687,6 +702,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-计划”
+    @get_url()
     def test_a305_project_dir_workflow_plan(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-计划.yaml"),
@@ -696,6 +712,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running详细信息”
+    @get_url()
     def test_a306_project_dir_workflow_detail_info_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running详细信息.yaml"),
@@ -705,6 +722,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running输出”
+    @get_url()
     def test_a307_project_dir_workflow_detail_output_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running输出.yaml"),
@@ -714,6 +732,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running日志”
+    @get_url()
     def test_a308_project_dir_workflow_detail_log_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running日志.yaml"),
@@ -723,6 +742,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step执行历史”
+    @get_url()
     def test_a309_project_dir_workflow_step_history(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step执行历史.yaml"),
@@ -733,6 +753,7 @@ class ProjectDirTest(ParametrizedTestCase):
 
 
     # 校验“项目目录-workflow-step-执行明细-success详细信息”
+    @get_url()
     def test_a310_project_dir_workflow_detail_info_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-success详细信息.yaml"),
@@ -742,6 +763,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-success输出”
+    @get_url()
     def test_a311_project_dir_workflow_detail_output_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-success输出.yaml"),
@@ -751,6 +773,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-success日志”
+    @get_url()
     def test_a312_project_dir_workflow_detail_log_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-success日志.yaml"),
@@ -782,6 +805,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running详细信息-schedule”
+    @get_url()
     def test_a315_project_dir_workflow_detail_info_running_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running详细信息-schedule.yaml"),
@@ -791,6 +815,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running输出-schedule”
+    @get_url()
     def test_a316_project_dir_workflow_output_running_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running输出-schedule.yaml"),
@@ -800,6 +825,7 @@ class ProjectDirTest(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running日志-schedule”
+    @get_url()
     def test_a317_project_dir_workflow_log_running_schedule(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running日志-schedule.yaml"),
@@ -810,6 +836,7 @@ class ProjectDirTest(ParametrizedTestCase):
 
 
 #     # 校验“流程管理-workflow-step-执行历史-schedule”
+#     @get_url()
 #     def test_a231_flow_management_workflow_step_history_schedule(self):
 #         app = {"logTest": self.logTest, "driver": self.driver,
 #                "path": PATH("../YAML/data_analyze_yaml/flow_management_yaml/流程管理-workflow-step-执行历史-schedule.yaml"),
@@ -819,6 +846,7 @@ class ProjectDirTest(ParametrizedTestCase):
 #         page.check_point()
 #
 #     # 校验“流程管理-workflow-step-执行明细-success详细信息-schedule”
+#     @get_url()
 #     def test_a232_flow_management_workflow_step_detail_info_success_schedule(self):
 #         app = {"logTest": self.logTest, "driver": self.driver,
 #                "path": PATH("../YAML/data_analyze_yaml/flow_management_yaml/流程管理-workflow-step-执行明细-success详细信息-schedule.yaml"),
@@ -828,6 +856,7 @@ class ProjectDirTest(ParametrizedTestCase):
 #         page.check_point()
 #
 #     # 校验“流程管理-workflow-step-执行明细-success输出-schedule”
+#     @get_url()
 #     def test_a233_flow_management_workflow_step_detail_output_success_schedule(self):
 #         app = {"logTest": self.logTest, "driver": self.driver,
 #                "path": PATH("../YAML/data_analyze_yaml/flow_management_yaml/流程管理-workflow-step-执行明细-success输出-schedule.yaml"),
@@ -837,6 +866,7 @@ class ProjectDirTest(ParametrizedTestCase):
 #         page.check_point()
 #
 #     # 校验“流程管理-workflow-step-执行明细-success日志-schedule”
+#     @get_url()
 #     def test_a234_flow_management_workflow_step_detail_log_success_schedule(self):
 #         app = {"logTest": self.logTest, "driver": self.driver,
 #                "path": PATH("../YAML/data_analyze_yaml/flow_management_yaml/流程管理-workflow-step-执行明细-success日志-schedule.yaml"),
@@ -973,6 +1003,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-计划”
+    @get_url()
     def test_a305_project_dir_workflow_plan(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-计划.yaml"),
@@ -982,6 +1013,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running详细信息”
+    @get_url()
     def test_a306_project_dir_workflow_detail_info_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running详细信息.yaml"),
@@ -991,6 +1023,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running输出”
+    @get_url()
     def test_a307_project_dir_workflow_detail_output_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running输出.yaml"),
@@ -1000,6 +1033,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-running日志”
+    @get_url()
     def test_a308_project_dir_workflow_detail_log_running(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-running日志.yaml"),
@@ -1009,6 +1043,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step执行历史”
+    @get_url()
     def test_a309_project_dir_workflow_step_history(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step执行历史.yaml"),
@@ -1018,6 +1053,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-success详细信息”
+    @get_url()
     def test_a310_project_dir_workflow_detail_info_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-success详细信息.yaml"),
@@ -1027,6 +1063,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-success输出”
+    @get_url()
     def test_a311_project_dir_workflow_detail_output_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-success输出.yaml"),
@@ -1036,6 +1073,7 @@ class ProjectDirTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“项目目录-workflow-step-执行明细-success日志”
+    @get_url()
     def test_a312_project_dir_workflow_detail_log_success(self):
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_analyze_yaml/project_dir_yaml/项目目录-workflow-step-执行明细-success日志.yaml"),
