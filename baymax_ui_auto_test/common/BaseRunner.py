@@ -25,11 +25,15 @@ PATH = lambda p: os.path.abspath(os.path.join(os.path.dirname(__file__), p))
 # driver = webdriver.Chrome(chrome_options=chrome_options)
 
 def get_driver():
-
+    
+    #设置默认下载路径
+    chromeOptions = webdriver.ChromeOptions()
+    prefs = {"download.default_directory":"C:\\Users\\Administrator\\Downloads"}
     # chrome 普通模式
     chromedriver = PATH("../exe/chromedriver.exe")
+    chromeOptions.add_experimental_option("prefs", prefs)
     os.environ["webdriver.chrome.driver"] = chromedriver
-    driver = webdriver.Chrome(chromedriver)
+    driver = webdriver.Chrome(chromedriver,chrome_options=chromeOptions)
 
     # #
     # # firefox 普通模式
