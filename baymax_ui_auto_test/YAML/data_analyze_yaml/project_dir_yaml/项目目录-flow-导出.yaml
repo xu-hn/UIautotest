@@ -14,7 +14,7 @@ testcase:
   info: 点击"initial_auto_project项目Flows
   is_time: 0.8
 #autouidownloadfile
-- element_info: //span[text()='213213123']/../../../td[1]//span
+- element_info: //span[text()='autouidownloadfile']/../../../td[1]//span
   find_type: xpath
   operate_type: click
   info:  勾选“第一行的”flow
