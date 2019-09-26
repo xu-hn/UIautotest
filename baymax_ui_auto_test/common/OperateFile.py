@@ -19,5 +19,11 @@ def mkdir_file(f, method='w+'):
     else:
         print("%s文件已经存在，创建失败" % f)
         pass
-
+#清除指定路径下包含某个字符的所有文件    
+def remove_path_key_file(key,path):
+    ls = os.listdir(path)
+    print(ls)
+    for i in ls :
+        if key in i :
+            os.remove(path+'\\'+i) 
 
