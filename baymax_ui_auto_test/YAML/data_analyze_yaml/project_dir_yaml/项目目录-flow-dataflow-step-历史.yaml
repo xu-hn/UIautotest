@@ -147,12 +147,25 @@ testcase:
   find_type: id
   operate_type: click
   info: 在design页 点击“保存”按钮
-  is_time: 0.5
+  is_time: 1
 check:
 - element_info: //*[text()="success，保存成功！"]
   find_type: xpath
   check: displayed
   info: 断言“success，保存成功！”吐词出现
+  is_time: 0.5
+- element_info: //*[@id="bm-designdrawing-form"]/div[1]/div[1]/div[2]/div/button[2]/span/i
+  find_type: xpath
+  operate_type: click
+  info: 点击历史下拉按钮
+  is_time: 0.5
+ 
+- element_info:  /html/body/ul/li[2]
+
+  find_type: xpath
+  operate_type: click
+  info: 点击历史2
+  is_time: 0.5
 - element_info: //*[@id="bm-designdrawing-form"]//button[1]/span[contains(text(), '历史')]
   find_type: xpath
   operate_type: get_text
