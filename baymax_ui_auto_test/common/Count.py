@@ -34,6 +34,8 @@ def count_info(**kwargs):
         _info['result'] = '通过'
         kwargs['logTest'].checkPointOK(caseName=kwargs["testinfo"][0]["title"],
                                        checkPoint=kwargs["case_name"] + "_" + kwargs["testinfo"][0].get( "msg", " "))
+        _info["img"] = kwargs["logTest"].checkPointNG(driver=kwargs["driver"], caseName=kwargs["testinfo"][0]["title"],#用例通过添加截图
+                                                      checkPoint=kwargs["case_name"] + "_" + kwargs["testinfo"][0].get("msg", " "))#
     elif not kwargs['result']:
         _info['result'] = '失败'
         # 错误截屏的路径
@@ -77,6 +79,7 @@ def writeExcel():
     workbook = xlsxwriter.Workbook(PATH('../Report/' + ElementParam.REPORT_FILE))
     worksheet = workbook.add_worksheet("测试总况")
     worksheet2 = workbook.add_worksheet("测试详情")
+    print
     operateXls = OperateXls(workbook)
     operateXls.init(worksheet, read(PATH("../log/" + ElementParam.SUM_FILE)))
     operateXls.detail(worksheet2, readInfo(PATH("../log/" + ElementParam.INFO_FILE)))
