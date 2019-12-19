@@ -82,8 +82,8 @@ class OperateXls:
         _write_center(worksheet, "F2", '操作步骤 ', self.wd)
         _write_center(worksheet, "G2", '检查点 ', self.wd)
         _write_center(worksheet, "H2", '测试结果 ', self.wd)
-        _write_center(worksheet, "I2", '截图', self.wd)
-
+        _write_center(worksheet, "I2", "看截图往右边拉-》", self.wd)
+        _write_center(worksheet, "J2", '截图', self.wd)#
         temp = 3
         for item in info:
             _write_center(worksheet, "A" + str(temp), item["name"], self.wd)
@@ -132,3 +132,5 @@ def pie(workbook, worksheet):
     chart1.set_title({'name': '测试统计'})
     chart1.set_style(10)
     worksheet.insert_chart('A9', chart1, {'x_offset': 25, 'y_offset': 10})
+    
+   
