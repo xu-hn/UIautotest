@@ -94,6 +94,8 @@ class OperateElement():
                 ep.DRAG_EL: lambda: self.drag_el(operate),
                 ep.DOUBLE_CLICK: lambda: self.double_click_opetate(operate),
                 ep.KEY_OPETATE: lambda: self.key_operate(operate),
+                #新加
+                ep.KEY_PAGE_DOWN:lambda: self.key_page_down(),
 
             }
             return elements[operate['operate_type']]()
@@ -222,6 +224,16 @@ class OperateElement():
     def refresh(self):
         self.driver.refresh()
         return {'result': True}
+    
+    #滑动滚动条至最底部操作
+    def key_page_down(self):
+        #self.element_by(operate).execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        for i in range(5):
+            ActionChains(self.driver).send_keys(Keys.PAGE_DOWN).perform()
+
+        
+        print('滚动条下拉~~~~~~~~~~~~')
+        return{'result': True}
 
     # 刷新页面 直到页面变化或超时 返回最后的text
     def refresh_get_text(self, operate):
@@ -381,6 +393,7 @@ class OperateElement():
             operate['find_type'] == ep.find_elements_by_name or operate['find_type'] == ep.find_elements_by_class_name:
             self.element_by(operate)[operate['index']].send_keys(operate['msg'])
         return {'result': True}
+    
 
     # 点击操作
     def click_opetate(self, operate):
