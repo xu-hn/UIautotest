@@ -19,7 +19,7 @@ testcase:
   info: 点击‘添加角色’
   is_time: 2
 
-- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/form/div[1]/div/div[1]/input
+- element_info: //*[@type="roleName"]
 #//*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/form/div[1]/div/div[1]/input
 
 
@@ -32,13 +32,24 @@ testcase:
   info: 输入‘js_ts’
 
   is_time: 1
+- operate_type: move_by_offset
+  move_to: (150, 150)
+  info: 移送鼠标到200,200像素
+  is_time: 2
+  
+- operate_type: key_page_down
+  is_time: 1
+  info: 下拉
+  
 
-- element_info: //*[text()='确定']
+  
+- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/div[1]/div/div/form/div[3]/div/button[1]/span  
+
   find_type: xpath
 
   operate_type: click
 
-  info: 点击'确定'按钮
+  info: 点击确定按钮
 
 check:
 
