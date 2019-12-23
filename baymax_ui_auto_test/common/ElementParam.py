@@ -39,6 +39,7 @@ class ElementParam(object):
     KEY_OPETATE = "key_operate" # 键盘操作
     REFRESH_TIME_DIFFERENCE = "refresh_time_difference"  # 刷新页面直到时间差小于预期值
     REFRESH_GET_TEXT_IS_EXPECT = "refresh_get_text_is_expect"  # 刷新页面 获取的值符合预期 返回最后的text
+    KEY_PAGE_DOWN ='key_page_down' #下滑 
 
 
     # 错误日志
