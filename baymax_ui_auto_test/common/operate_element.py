@@ -96,6 +96,7 @@ class OperateElement():
                 ep.KEY_OPETATE: lambda: self.key_operate(operate),
                 #新加
                 ep.KEY_PAGE_DOWN:lambda: self.key_page_down(),
+                ep.ZJ_CLICK:lambda : self.zj_click(),
 
             }
             return elements[operate['operate_type']]()
@@ -234,6 +235,8 @@ class OperateElement():
         
         print('滚动条下拉~~~~~~~~~~~~')
         return{'result': True}
+        
+  
 
     # 刷新页面 直到页面变化或超时 返回最后的text
     def refresh_get_text(self, operate):
@@ -421,7 +424,11 @@ class OperateElement():
                 time.sleep(1)
                 self.element_by(operate)[operate['index']].click()
                 return {'result': True}
-
+    #直接鼠标左键
+    def zj_click(self):
+        action =ActionChains(self.driver)
+        action.click().perform()
+        return {'result': True}
     # 双击操作
     def double_click_opetate(self, operate):
         action_chains = ActionChains(self.driver)
