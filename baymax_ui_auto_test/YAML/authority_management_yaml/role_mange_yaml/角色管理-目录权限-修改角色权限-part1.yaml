@@ -25,6 +25,7 @@ testcase:
   is_time: 1
 - operate_type: zj_click
   is_time: 0.5
+  info: 鼠标左键点击~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - operate_type: key_page_down
   is_time: 1
   info: 下拉
