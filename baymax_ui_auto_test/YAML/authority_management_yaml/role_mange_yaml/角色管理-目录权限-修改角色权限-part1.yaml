@@ -1,0 +1,61 @@
+testinfo:
+- id: test_03_role_edit_role_power_part1
+  title: 校验“编辑-修改名字”
+  launch: 0
+  info: 先进入角色管理页面
+  
+testcase:
+- element_info: //div[4]//*[contains(text(),'js_ts1')]/ancestor::tr//*[contains(text(),'目录权限')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘目录权限’按钮
+  is_time: 0.5
+  
+  #/html/body/div[1]/div/div[1]/div[2]/section/div/div/div/div[2]/div/div[2]/div/div/div/div/form/div[2]/div/div/div[5]/div[1]/span[1]
+  #/html/body/div[1]/div/div[1]/div[2]/section/div/div/div/div[2]/div/div[2]/div/div/div/div/form/div[2]/div/div/div[5]/div[1]/span[2]
+#- element_info: //span[2][text()='权限管理']
+#  find_type: xpath
+#  operate_type: click
+#  info: 点击权限管理前的‘小三角’按钮
+#  is_time: 0.5
+  #//*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/div[1]/div/div/form/div[2]/div/div/div/div[8]/div[2]/div[2]/div[1]/label/span/span
+- operate_type: move_by_offset
+  move_to: (150, 150)
+  info: 移送鼠标到150,150像素
+  is_time: 1
+- operate_type: zj_click
+  is_time: 0.5
+- operate_type: key_page_down
+  is_time: 1
+  info: 下拉
+- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/div[1]/div/div/form/div[2]/div/div/div/div[8]/div[2]/div[2]/div[1]/label/span/span
+#//*[text()='角色管理']/ancestor::div[1]/label/span
+  #span/span
+  find_type: xpath
+  operate_type: click
+  info: 点击角色管理前的‘勾选框’按钮
+  is_time: 0.5
+  
+
+    
+- element_info: //*[text()='确定']
+  find_type: xpath
+  operate_type: click
+  info: 点击'确定'按钮
+  
+check:
+- element_info: //*[text()="请求处理成功"]
+  find_type: xpath
+  check: displayed
+  info: 断言“请求处理成功”吐词出现
+
+- element_info: //*[contains(text(),'js_ts1')]/ancestor::td/following-sibling::td[1]/div/span
+  find_type: xpath
+  operate_type: get_text
+  check: current_equal_expect
+  expect_value: 已启用
+  info: 断言 角色的状态为“已启用”  
+  
+- element_info: //*[contains(text(),'js_ts1')]/ancestor::tr//*[contains(text(),'目录权限')]
+  find_type: xpath
+  info: 断言 角色的‘目录权限’按钮存在
