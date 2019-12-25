@@ -41,6 +41,7 @@ class ElementParam(object):
     REFRESH_GET_TEXT_IS_EXPECT = "refresh_get_text_is_expect"  # 刷新页面 获取的值符合预期 返回最后的text
     KEY_PAGE_DOWN ='key_page_down' #下滑 
     ZJ_CLICK='zj_click'#直接单击
+    IS_SELECTED='is_selected'#判断勾选框
 
 
     # 错误日志
