@@ -229,7 +229,7 @@ class OperateElement():
     #滑动滚动条至最底部操作
     def key_page_down(self):
         #self.element_by(operate).execute_script("window.scrollTo(0,document.body.scrollHeight);")
-        for i in range(5):
+        for i in range(15):
             ActionChains(self.driver).send_keys(Keys.PAGE_DOWN).perform()
 
         
