@@ -9,7 +9,7 @@ import os
 def getYaml(path):
     try:
         with open(path, encoding='utf-8') as f:
-            x = yaml.load(f)
+            x = yaml.load(f,Loader=yaml.FullLoader)
             return [True, x]
     except FileNotFoundError as msg:
         print("==用例文件不存在==:::::", msg)
