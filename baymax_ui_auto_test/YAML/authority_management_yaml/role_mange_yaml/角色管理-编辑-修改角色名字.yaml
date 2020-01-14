@@ -11,25 +11,33 @@ testcase:
   info: 点击‘编辑’按钮
   is_time: 0.5
   
-- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/form/div[1]/div/div/input
+- element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/div[1]/div/div/form/div[1]/div/div/input
   find_type: xpath
   operate_type: send_keys
   msg: 1
   info: 更改角色名称
   is_time: 0.5
-  
+- operate_type: move_by_offset
+  move_to: (155, 155)
+  info: 移送鼠标到200,200像素
+  is_time: 2
+- operate_type: zj_click
+  is_time: 1
+  info: 直接点击
+- operate_type: key_page_down
+  is_time: 1
+  info: 下拉  
 - element_info: //*[text()='确定']
   find_type: xpath
 
   operate_type: click
 
   info: 点击'确定'按钮
-  
+- operate_type: refresh
+  info: 刷新  
+
 check:
-- element_info: //*[text()="请求处理成功"]
-  find_type: xpath
-  check: displayed
-  info: 断言“请求处理成功”吐词出现
+
 - element_info: //*[contains(text(),'js_ts1')]
 
   find_type: xpath
@@ -42,6 +50,10 @@ check:
   expect_value: 已启用
   info: 断言 角色的状态为“已启用”  
   
-- element_info: //div[4]//*[contains(text(),'js_ts')]/ancestor::tr//*[contains(text(),'编辑')]
+- element_info: //div[4]//*[contains(text(),'js_ts')]/ancestor::tr//*[contains(text(),'编辑目录')]
   find_type: xpath
-  info: 断言 角色的‘编辑’按钮存在
+  info: 断言 角色的‘编辑目录’按钮存在
+ 
+- element_info: //div[4]//*[contains(text(),'js_ts')]/ancestor::tr//*[contains(text(),'编辑资源')]
+  find_type: xpath
+  info: 断言 角色的‘编辑资源’按钮存在
