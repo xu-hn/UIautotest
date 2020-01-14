@@ -1,6 +1,6 @@
 testinfo:
 - id: test_edit_role_name
-  title: test_03_role_edit_role_power_part2
+  title: 校验角色管理为已勾选状态
   launch: 0
   info: 先进入角色管理页面
   
