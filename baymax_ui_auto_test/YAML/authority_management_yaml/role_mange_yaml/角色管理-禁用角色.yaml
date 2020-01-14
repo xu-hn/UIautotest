@@ -19,7 +19,7 @@ testcase:
   info: 弹出的提示框中点击'确定'按钮
   is_time: 0.5
 check:
-- element_info: //*[text()="修改成功！"]
+- element_info: //*[contains(text(),"成功")]
   find_type: xpath
   check: displayed
   info: 断言“修改成功！”吐词出现
