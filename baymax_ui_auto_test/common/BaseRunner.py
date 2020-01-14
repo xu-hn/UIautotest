@@ -49,8 +49,9 @@ def get_driver():
     driver.maximize_window()  # 将浏览器最大化
     # driver = webdriver.Chrome()
     driver.get(ElementParam.URL)
-    el = WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_id("bm-login"))
-    who = el.get_attribute('name')
+    #el = WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_id("bm-login"))
+    #who = el.get_attribute('name')
+    who ='bayMax'
     return driver, who
 
 #原理：写好testcase，然后用testloader加载testcase到testsuite，然后由testrunner运行testsuite，运行的结果保存在texttestresult中
