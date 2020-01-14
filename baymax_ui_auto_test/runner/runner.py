@@ -35,7 +35,7 @@ from common.Email import send
 def suite_case(who):
     '''根据当前测试环境的ui包 判断执行某个测试用例集合'''
     suite = unittest.TestSuite()
-    Check_module = {
+    Check_module1 = {
         # FileManagementTest 文件管理
         'Dam': [LoginTest, HomePageTest_Dam, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
@@ -43,6 +43,29 @@ def suite_case(who):
         'bayMax': [LoginTest, HomePageTest, OperateDirTest, DataImportTest,  FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
                    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest,RoleManagementTest,UserManagementTest],
+        # 'bayMax': [RoleManagementTest],
+        'Beiruan': [LoginTest, HomePageTest_Beiruan, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
+                   CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
+                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest],
+        'Cab': [LoginTest, HomePageTest_Cab, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
+                   CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
+                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest],
+        'Cad': [LoginTest, HomePageTest_Cad, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
+                   CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
+                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest],
+        'ShuBo': [LoginTest, HomePageTest_Shubo, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
+                   CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
+                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest],
+        'YinPao': [LoginTest, HomePageTest_Yinpao, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
+                   CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
+                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest],
+    }
+    Check_module = {
+        # FileManagementTest 文件管理
+        'Dam': [LoginTest, HomePageTest_Dam, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
+                   CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
+                   BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest],
+        'bayMax': [LoginTest,RoleManagementTest],
         # 'bayMax': [RoleManagementTest],
         'Beiruan': [LoginTest, HomePageTest_Beiruan, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
