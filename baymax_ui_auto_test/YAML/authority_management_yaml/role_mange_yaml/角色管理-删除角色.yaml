@@ -24,7 +24,7 @@ testcase:
 #删除成功！
 
 check:
-- element_info: //*[text()="删除成功！"]
+- element_info: //*[contains(text(),"成功")]
   find_type: xpath
   check: displayed
   info: 断言“删除成功！”吐词出现
