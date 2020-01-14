@@ -33,13 +33,17 @@ testcase:
 
   is_time: 1
 - operate_type: move_by_offset
-  move_to: (150, 150)
+  move_to: (155, 155)
   info: 移送鼠标到200,200像素
   is_time: 2
-  
+- operate_type: zj_click
+  is_time: 1
 - operate_type: key_page_down
   is_time: 1
   info: 下拉
+
+  
+
   
 
   
