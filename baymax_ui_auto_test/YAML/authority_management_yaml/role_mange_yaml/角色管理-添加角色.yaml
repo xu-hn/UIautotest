@@ -38,15 +38,10 @@ testcase:
   is_time: 2
 - operate_type: zj_click
   is_time: 1
+  info: 直接点击
 - operate_type: key_page_down
   is_time: 1
   info: 下拉
-
-  
-
-  
-
-  
 - element_info: //*[@id="roleManagement"]/div[2]/div/div[2]/div/div/div/div/div[1]/div/div/form/div[3]/div/button[1]/span  
 
   find_type: xpath
@@ -57,7 +52,7 @@ testcase:
 
 check:
 
-- element_info: //*[text()="请求处理成功"]
+- element_info: //*[contains(text(),"成功")]
 
   find_type: xpath
 
