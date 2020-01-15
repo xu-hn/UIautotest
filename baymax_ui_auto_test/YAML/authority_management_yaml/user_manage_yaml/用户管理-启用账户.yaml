@@ -33,7 +33,7 @@ testcase:
 
 check:
 
-- element_info: //*[contains(text(),"修改成功")]
+- element_info: //*[contains(text(),"成功")]
 
   find_type: xpath
 
