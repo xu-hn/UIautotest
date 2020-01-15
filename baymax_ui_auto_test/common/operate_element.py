@@ -97,6 +97,7 @@ class OperateElement():
                 #新加
                 ep.KEY_PAGE_DOWN:lambda: self.key_page_down(),
                 ep.ZJ_CLICK:lambda : self.zj_click(),
+                ep.KEY_ENTER:lambda : key_enter(),
 
             }
             return elements[operate['operate_type']]()
@@ -234,6 +235,16 @@ class OperateElement():
 
         
         print('滚动条下拉~~~~~~~~~~~~')
+        return{'result': True}
+        
+    #键盘enter
+    def key_enter(self):
+        #self.element_by(operate).execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        
+        ActionChains(self.driver).send_keys(Keys.ENTER).perform()
+
+        
+        print('回车键')
         return{'result': True}
         
   
