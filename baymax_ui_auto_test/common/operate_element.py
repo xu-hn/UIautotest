@@ -97,7 +97,7 @@ class OperateElement():
                 #新加
                 ep.KEY_PAGE_DOWN:lambda: self.key_page_down(),
                 ep.ZJ_CLICK:lambda : self.zj_click(),
-                ep.KEY_ENTER:lambda : key_enter(),
+                ep.KEY_ENTER:lambda : self.key_enter(),
 
             }
             return elements[operate['operate_type']]()
