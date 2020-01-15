@@ -89,7 +89,7 @@ testcase:
 
 check:
 
-- element_info: //*[text()="操作成功"]
+- element_info: //*[contains(text(),"成功")]
 
   find_type: xpath
 
