@@ -42,6 +42,7 @@ class ElementParam(object):
     KEY_PAGE_DOWN ='key_page_down' #下滑 
     ZJ_CLICK='zj_click'#直接单击
     IS_SELECTED='is_selected'#判断勾选框
+    KEY_ENTER='key_enter' #键盘回车
 
 
     # 错误日志
