@@ -65,7 +65,7 @@ def suite_case(who):
         'Dam': [LoginTest, HomePageTest_Dam, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
                    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest],
-        'bayMax': [LoginTest,RoleManagementTest],
+        'bayMax': [LoginTest,RoleManagementTest,UserManagementTest],
         # 'bayMax': [RoleManagementTest],
         'Beiruan': [LoginTest, HomePageTest_Beiruan, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
