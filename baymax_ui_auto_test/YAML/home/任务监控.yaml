@@ -1,21 +1,23 @@
 testinfo:
 - id: test013
-  title: 校验“任务监控”页面
+  title: 校验“任务监控”页面#
   launch: 1
   info: 成功登录
 testcase:
 - element_info: //*[@test-id="/dataMonitoring"]
   find_type: xpath
   operate_type: action_chains
-  info: 鼠标悬停到‘数据监控’标签
+  info: 鼠标悬停到‘数据监控’标签 ##
   is_time: 0.5
 - element_info: //*[@test-id="/hippo/taskControl"]
   find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘任务’标签
+  is_time: 1
+- element_info: //*[@test-id="/hippo/taskControl" and text() = '任务监控']
+  find_type: xpath
   operate_type: click
-  info: 点击任务监控
-- operate_type: move_by_offset
-  move_to: (0, 0)
-  info: 移送鼠标到0,0像素
+  info: 点击 ‘任务监控’
 check:
 - operate_type: get_current_url
   check: current_equal_expect
