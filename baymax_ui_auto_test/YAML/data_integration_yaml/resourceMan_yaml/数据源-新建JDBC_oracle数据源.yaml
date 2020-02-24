@@ -1,8 +1,8 @@
 testinfo:
 - id: test_b002
-  title: 校验“数据源-新建JDBC_oracle数据源”
+  title: 校验“数据源-新建JDBC_oracle的数据源”
   launch: 0
-  info: 先进入资源目录
+  info: 先进入'资源'目录
 testcase:
 - element_info: //*[@name="数据源"]/preceding-sibling::i[1]
   find_type: xpath
@@ -11,7 +11,7 @@ testcase:
 - element_info: //em[@name="auto_DataSource"]
   find_type: xpath
   operate_type: click
-  info: 点击‘auto_DataSource'的文字
+  info: 点击‘auto_DataSource'文字
 - element_info: bm-ch-resMan-resourceman-create-button
   find_type: id
   operate_type: click
@@ -65,6 +65,7 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击‘确定按钮’按钮
+  is_time: 0.5
 check:
 - element_info: bm-ch-resMan-resourceman-create-button
   find_type: id
@@ -73,8 +74,4 @@ check:
   find_type: xpath
   v_index: 0
   info: 断言“新建的JDBC_oracle数据源存在”出现
-- element_info: //*[@id="bm-ch-resourceMan-table"]/div[3]/table/tbody/tr/td[4]/div
-  find_type: xpath
-  operate_type: get_text
-  check: time_difference
-  info: 断言“新建的JDBC_oracle数据源存在”出现
+
