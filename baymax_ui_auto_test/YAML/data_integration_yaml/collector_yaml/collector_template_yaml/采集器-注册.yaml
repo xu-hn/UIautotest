@@ -38,11 +38,11 @@ check:
   find_type: xpath
   operate_type: get_text
   check: time_difference
-  max_time: 5
-  info: 断言“新建的采集器”与现在的时间差小于5秒
+  max_time: 120
+  info: 断言“新建的采集器”与现在的时间差小于120秒
 - element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui']/ancestor::td/following-sibling::td[5]/div
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: 在线
-  info: 断言“新建的采集器”状态为在线
+  expect_value: 离线
+  info: 断言“新建的采集器”状态为离线
