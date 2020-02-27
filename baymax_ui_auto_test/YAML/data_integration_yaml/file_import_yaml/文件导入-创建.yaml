@@ -17,8 +17,8 @@ testcase:
 - element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]//input[@placeholder="请输入名称"]
   find_type: xpath
   operate_type: send_keys
-  msg: ftp_info4_twac
-  info: 数据源查询输入“ftp_info4_twac”
+  msg: ftp_info4_twac2
+  info: 数据源查询输入“ftp_info4_twac2”
 - element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]//button
   find_type: xpath
   operate_type: click
