@@ -13,11 +13,11 @@ testcase:
   operate_type: click
   info: 点击‘movo_to_HDFSdataset'的文字
   is_time: 1
-- element_info: //div[3]//tr//div/span[contains(text(), "HDFSDBdataset_")]
+- element_info: //div[3]//tr//div/span[contains(text(), "HDFSDBds")]
   find_type: xpaths
   index: 0
   operate_type: get_text
-  info: 获取列表中第一条'HDFSDBdataset_'是title
+  info: 获取列表中第一条'HDFSDBds'是title
 - element_info: //*[@id="bm-ch-resourceMan-table"]/div[4]//span[contains(text(), "查看")]
   find_type: xpaths
   index: 0

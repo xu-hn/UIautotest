@@ -12,7 +12,7 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击‘auto_dataset'的文字
-- element_info: //div[3]//tr//div/span[contains(text(), "DBdataset_")]
+- element_info: //div[3]//tr//div/span[contains(text(), "DB_oracle_dataset")]
   find_type: xpaths
   index: -1
   operate_type: get_text

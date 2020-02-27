@@ -34,10 +34,10 @@ testcase:
   operate_type: click
   is_time: 0.2
   info: 点击‘数据库类型’下拉框
-- element_info: hive_driver
+- element_info: auto_hive
   find_type: name
   operate_type: click
-  info: 点击‘hive_driver’下拉框选项
+  info: 点击‘auto_hive’下拉框选项
 - element_info: bm-ch-resMan-dbsource-attributes-user-input
   find_type: name
   operate_type: send_keys

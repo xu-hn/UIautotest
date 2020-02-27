@@ -35,32 +35,32 @@ testcase:
 - element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]//input[@placeholder="请输入名称"]
   find_type: xpath
   operate_type: send_keys
-  msg: dbs_oracle_info3
-  info: 在搜索框中输入数据的名字“dbs_oracle_info3”
+  msg: dbs_oracle_info10
+  info: 在搜索框中输入数据的名字“dbs_oracle_info10”
 - element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-temp"]//input[@placeholder="请输入名称"]/following-sibling::div/button
   find_type: xpath
   operate_type: click
   info: 点击 输入框后面的搜索按钮
   is_time: 1
-- element_info: //*[contains(text(), 'dbs_oracle_info3')]/ancestor::td/preceding-sibling::td[1]
+- element_info: //*[contains(text(), 'dbs_oracle_info10')]/ancestor::td/preceding-sibling::td[1]
   find_type: xpath
   operate_type: click
-  info: 勾选列表中'dbs_oracle_info3'数据源
+  info: 勾选列表中'dbs_oracle_info10'数据源
 - element_info: bm-ch-resMan-dbdataset-submitDataSource-dataSource-ok
   find_type: name
   operate_type: click
-  is_time: 0.8
+  is_time: 5
   info: 点击‘确定’按钮
 - element_info: bm-sh-r-data-db1-storageConfigurations-table-select
   find_type: name
   operate_type: click
   is_time: 0.5
   info: 点击‘选择表’输入框
-- element_info: C_IN_1
+- element_info: MERCE_ALG
   find_type: name
   operate_type: click
   info: 点击‘选择表’输入框
-  is_time: 0.5
+  is_time: 5
 - element_info: bm-ch-resMan-dbdataset-submitDataSource-save-ok
   find_type: name
   operate_type: click

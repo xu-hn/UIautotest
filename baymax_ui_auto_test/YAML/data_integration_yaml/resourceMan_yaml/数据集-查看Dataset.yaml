@@ -12,22 +12,22 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击‘auto_dataset'的文字
-  is_time: 1
+  is_time: 5
 - element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]/input
   find_type: xpath
   operate_type: send_keys
-  msg: DB_oracle_dataset
-  info: 搜索输入框输入‘DB_oracle_dataset'文字
+  msg: auto_oracle_ds
+  info: 搜索输入框输入‘auto_oracle_ds'文字
 - element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]//button
   find_type: xpath
   operate_type: click
   is_time: 1
   info: 点击搜索按钮
-- element_info: //div[3]//tr//div/span[contains(text(), "DB_oracle_dataset")]
+- element_info: //div[3]//tr//div/span[contains(text(), "auto_oracle_ds")]
   find_type: xpaths
   index: 0
   operate_type: get_text
-  info: 获取列表中第一条'DB_oracle_dataset'是title
+  info: 获取列表中第一条'auto_oracle_ds'是title
 - element_info: //*[@id="bm-ch-resourceMan-table"]/div[4]//span[contains(text(), "查看")]
   find_type: xpaths
   index: 0

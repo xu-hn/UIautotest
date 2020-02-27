@@ -44,10 +44,10 @@ testcase:
   operate_type: click
   info: 点击 弹框中 树的‘auto_initial_data_source’文字
   is_time: 1
-- element_info: //*[contains(text(), 'dbs_mysql_info5')]/ancestor::td/preceding-sibling::td[1]
+- element_info: //*[contains(text(), 'dbs_mysql_info10')]/ancestor::td/preceding-sibling::td[1]
   find_type: xpath
   operate_type: click
-  info: 勾选列表中'dbs_mysql_info5'数据源
+  info: 勾选列表中'dbs_mysql_info10'数据源
 - element_info: bm-ch-resMan-dbdataset-submitDataSource-dataSource-ok
   find_type: name
   operate_type: click
