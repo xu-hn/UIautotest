@@ -7,6 +7,7 @@ testcase:
 - info: “等待1秒”
   is_time: 1
 - element_info: //*[@id="bm-ch-syschronization-table"]/div[3]//tr[1]/td[1]//span
+  
   find_type: xpath
   operate_type: click
   info: 在数据导入首页‘勾选’第一条任务
