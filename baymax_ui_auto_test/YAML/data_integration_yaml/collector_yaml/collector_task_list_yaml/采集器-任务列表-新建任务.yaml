@@ -35,18 +35,22 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-数据源”文件夹按钮
+  is_time: 0.5
 - element_info: //*[@id="dataTree"]//*[@name="default"]/preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-default”文件夹按钮
+  is_time: 0.5
 - element_info: //*[@id="dataTree"]//*[@name="autoui83"]
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-autoui83”文字
+  is_time: 0.5
 - element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[text()="dbs_collector_mysql_info"]/ancestor::td/preceding-sibling::td//label
   find_type: xpath
   operate_type: click
   info: 勾选“dbs_collector_mysql_info”数据源
+  is_time: 0.5
 - element_info: bm-ch-step1Form-datasource-ok
   find_type: name
   operate_type: click
