@@ -4,10 +4,10 @@ testinfo:
   launch: 0
   info: 先进入"采集器任务列表"目录
 testcase:
-- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]/table/tbody/tr[1]/td[4]/div/a
+- element_info: //*[contains(text(),'c_1_in')]
   find_type: xpath
   operate_type: click
-  info: 点击‘第一行导入任务'的同步对象
+  info: 点击同步对象 c_1_in
   is_time: 0.5
 check:
 - element_info: //section[@id="bm-ch-col-tsakList-tmp"]//span[text()="数据源中的表预览"]
