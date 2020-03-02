@@ -4,6 +4,22 @@ testinfo:
   launch: 0
   info: 先进入"采集器详细信息"页
 testcase:
+- element_info: //*[@test-id="/dataIntegration"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘数据集成’标签
+  is_time: 0.5
+- element_info: //*[@test-id="/collector"]
+  find_type: xpath
+  operate_type: click
+  info: 点击采集器
+- operate_type: move_by_offset
+  move_to: (0, 0)
+  info: 移送鼠标到0,0像素
+- element_info: //span[text()="c83"]
+  find_type: xpath
+  operate_type: click
+  info: 点击名称为‘c83’的采集器 进入采集器详情信息页
 - is_time: 1
   info: 刷新页面后等待1秒
 - element_info: //button/span[contains(text(), "采集器详细信息")]
@@ -11,7 +27,7 @@ testcase:
   operate_type: click
   info: 点击‘采集器详细信息'按钮
   is_time: 0.5
-- element_info: //li/a[contains(text(), "采集器任务列表")]
+- element_info: //*[contains(text(), "采集器任务列表")]
   find_type: xpath
   operate_type: click
   info: 点击"采集器任务列表"按钮 进入 采集器任务列表
