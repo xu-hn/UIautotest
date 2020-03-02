@@ -7,17 +7,17 @@ testcase:
 - element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]/input
   find_type: xpath
   operate_type: send_keys
-  msg: cjqrw
-  info: 输入框输入“cjqrw”文字
+  msg: cjq_rw
+  info: 输入框输入“cjq_rw”文字
 - element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]//button
   find_type: xpath
   operate_type: click
   info: 点击“搜索”按钮
   is_time: 1
-- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[4]//a[contains(text(), 'cjqrw')]//ancestor::td/following-sibling::td//a[contains(text(), '执行列表')]
+- element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[4]//a[contains(text(), 'cjq_rw')]//ancestor::td/following-sibling::td//a[contains(text(), '执行列表')]
   find_type: xpath
   operate_type: click
-  info: 点击名称为“cjqrw”任务的“执行列表”
+  info: 点击名称为“cjq_rw”任务的“执行列表”
   is_time: 0.5
 - element_info: //td/div/a[contains(text(), "查看日志")]
   find_type: xpaths
