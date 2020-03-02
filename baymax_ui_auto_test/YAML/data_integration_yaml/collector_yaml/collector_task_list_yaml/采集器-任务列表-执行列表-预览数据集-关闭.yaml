@@ -7,8 +7,8 @@ testcase:
 - element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]/input
   find_type: xpath
   operate_type: send_keys
-  msg: cjqrw
-  info: 输入框输入“cjqrw”文字
+  msg: cjq_rw
+  info: 输入框输入“cjq_rw”文字
 - element_info: //*[@name="bm-ch-col-tasklist-searchListTable-search-select"]//button
   find_type: xpath
   operate_type: click

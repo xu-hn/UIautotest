@@ -4,8 +4,7 @@ testinfo:
   launch: 0
   info: 先进入"采集器"
 testcase:
-- is_time: 1
-  info: 刷新页面后等待1秒
+
 - element_info: //span[text()="c83"]
   find_type: xpath
   operate_type: click

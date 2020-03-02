@@ -4,10 +4,10 @@ testinfo:
   launch: 0
   info: 先进入"采集器"
 testcase:
-- element_info: //td[not(contains(@class,"hidden"))]/div[text()="dbs_collector_mysql_info5"]/ancestor::td/following-sibling::td[7]/div
+- element_info: //td[not(contains(@class,"hidden"))]/div[text()="dbs_collector_mysql_info"]/ancestor::td/following-sibling::td[7]/div
   find_type: xpath
   operate_type: get_text
-  info: 获取数据源“dbs_collector_mysql_info5” 最后同步时间
+  info: 获取数据源“dbs_collector_mysql_info” 最后同步时间
 - element_info: //div[text()="dbs_collector_mysql_info5"]//ancestor::td/following-sibling::td[not(contains(@class,"hidden"))]//button/span
   find_type: xpath
   operate_type: click
