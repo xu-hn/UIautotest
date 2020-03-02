@@ -43,10 +43,10 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-autoui83”文字
-- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[text()="dbs_collector_mysql_info5"]/ancestor::td/preceding-sibling::td//label
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[text()="dbs_collector_mysql_info"]/ancestor::td/preceding-sibling::td//label
   find_type: xpath
   operate_type: click
-  info: 勾选“dbs_collector_mysql_info5”数据源
+  info: 勾选“dbs_collector_mysql_info”数据源
 - element_info: bm-ch-step1Form-datasource-ok
   find_type: name
   operate_type: click
@@ -61,12 +61,12 @@ testcase:
   operate_type: send_keys
   msg: c_1_in
   info: 表选择输入框中输入 c_1_in
-  is_time: 1
-- element_info: //li/span[text()="c_1_in"]
-  find_type: xpath
-  operate_type: click
-  info: 点击表 C_IN_1
-  is_time: 1
+  is_time: 2
+#- element_info: //li/span[text()="c_1_in"]
+ # find_type: xpath
+#  operate_type: click
+ # info: 点击表 C_IN_1
+ # is_time: 1
 - element_info: //*[text()="下一步"]
   find_type: xpath
   operate_type: click
@@ -102,11 +102,16 @@ testcase:
   operate_type: click
   info: 数据目的页，点击“下一步”
   is_time: 0.5
-- element_info: bm-ch-step3Form-autoMatch-button
+- element_info: bm-ch-step3Form-allMatch-button
   find_type: name
   operate_type: click
-  info: 点击自动匹配
+  info: 点击原样匹配
   is_time: 0.5
+- element_info: //*[@aria-label="提示"]//*[contains(text(),'确定')]
+  find_type: xpath
+  operate_type: click
+  info: 点击确定按钮
+  is_time: 0.5  
 - element_info: //*[text()="下一步"]
   find_type: xpath
   operate_type: click
