@@ -66,8 +66,9 @@ def suite_case(who):
         'Dam': [LoginTest, HomePageTest_Dam, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
                    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest],
-        'bayMax': [LoginTest,HomePageTest,OperateDirTest,DataImportTest,FileImportTest,CollectorTemplateTest,CollectorimportDataTest,CollectorTaskListTest,RoleManagementTest,UserManagementTest],
-        #'bayMax': [OperationalMonitoringTest],
+        'bayMax': [LoginTest,HomePageTest,OperateDirTest,DataImportTest,FileImportTest,CollectorTemplateTest,CollectorimportDataTest,CollectorTaskListTest,TaskControlTest,RoleManagementTest,UserManagementTest],
+        #OperationalMonitoringTest
+        #'bayMax': [TaskControlTest],
         'Beiruan': [LoginTest, HomePageTest_Beiruan, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
                    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest],
