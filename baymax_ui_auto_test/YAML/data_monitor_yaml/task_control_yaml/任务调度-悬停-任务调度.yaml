@@ -11,6 +11,11 @@ testcase:
   operate_type: action_chains
   info: 鼠标悬停在"数据监控"
   is_time: 1
+- element_info: //*[@id="childNav"]//*[text()="任务"]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停在"任务"
+  is_time: 1
 - element_info: //*[@id="childNav"]//*[text()="任务监控"]
   find_type: xpath
   operate_type: action_chains
