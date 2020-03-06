@@ -65,7 +65,7 @@ check:
   operate_type: get_attr
   attr: class
   check: current_equal_expect
-  expect_value: el-tag processedClass el-tag--READY
+  expect_value: processedClass el-tag el-tag--READY el-tag--light
   info: 断言“第一条的执行状态”READY
 - operate_type: get_current_url
   check: current_equal_expect
