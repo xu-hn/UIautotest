@@ -40,7 +40,7 @@ class TaskControlTest(ParametrizedTestCase):
                 rerun(self, to_url, func)
             return wrapper
         return decorator
-
+    
     # 校验“任务监控-任务完成情况-详情”
     @get_url()
     def test_a095_taskControl_completion_detail(self):
@@ -51,7 +51,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+    
     # 校验“任务监控-任务完成情况-详情-归类信息”
     @get_url(task_control_url)
     def test_a096_taskControl_completion_detail_categorize_information(self):
@@ -61,7 +61,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+ 
     # 校验“任务监控-任务完成情况-详情-概率分析”
     @get_url(task_control_url)
     def test_a097_taskControl_completion_detail_probability_analysis(self):
@@ -71,7 +71,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+ 
     # 校验“任务监控-任务完成情况-运行中”
     @get_url(task_control_url)
     def test_a098_taskControl_completion_detail_run(self):
@@ -81,7 +81,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+ 
     # 校验“任务监控-任务完成情况-等待”
     @get_url(task_control_url)
     def test_a099_taskControl_completion_detail_ready(self):
@@ -91,7 +91,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+ 
     # 校验“任务监控-任务完成情况-成功”
     @get_url(task_control_url)
     def test_a100_taskControl_completion_detail_success(self):
@@ -101,16 +101,17 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
+    
 
     # 校验“任务监控-任务完成情况-成功-删除”
-    @get_url(task_control_url)
-    def test_a101_taskControl_completion_detail_success_delete(self):
-        app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_monitor_yaml/task_control_yaml/任务监控-任务完成情况-成功-删除.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = TaskControlPage(app)
-        page.operate()
-        page.check_point()
+#     @get_url(task_control_url)
+#     def test_a101_taskControl_completion_detail_success_delete(self):
+#         app = {"logTest": self.logTest, "driver": self.driver,
+#                "path": PATH("../YAML/data_monitor_yaml/task_control_yaml/任务监控-任务完成情况-成功-删除.yaml"),
+#                "caseName": sys._getframe().f_code.co_name}
+#         page = TaskControlPage(app)
+#         page.operate()
+#         page.check_point()
 
     # 校验“任务监控-任务完成情况-失败”
     @get_url(task_control_url)
@@ -121,17 +122,17 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
-    # 校验“任务监控-任务完成情况-失败-删除”
-    @get_url(task_control_url)
-    def test_a103_taskControl_completion_detail_fail_delete(self):
-        app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_monitor_yaml/task_control_yaml/任务监控-任务完成情况-失败-删除.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = TaskControlPage(app)
-        page.operate()
-        page.check_point()
-
+# 
+#     # 校验“任务监控-任务完成情况-失败-删除”
+#     @get_url(task_control_url)
+#     def test_a103_taskControl_completion_detail_fail_delete(self):
+#         app = {"logTest": self.logTest, "driver": self.driver,
+#                "path": PATH("../YAML/data_monitor_yaml/task_control_yaml/任务监控-任务完成情况-失败-删除.yaml"),
+#                "caseName": sys._getframe().f_code.co_name}
+#         page = TaskControlPage(app)
+#         page.operate()
+#         page.check_point()
+# 
     # 校验“任务监控-任务完成情况-杀死”
     @get_url(task_control_url)
     def test_a104_taskControl_completion_detail_kill(self):
@@ -141,7 +142,16 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+    # 校验“任务监控-任务完成情况-超时”
+    @get_url(task_control_url)
+    def test_a104_taskControl_completion_timeout(self):
+        app = {"logTest": self.logTest, "driver": self.driver,
+               "path": PATH("../YAML/data_monitor_yaml/task_control_yaml/任务监控-任务完成情况-超时.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = TaskControlPage(app)
+        page.operate()
+        page.check_point()
+# 
     # 校验“任务监控-任务完成情况-未知”
     @get_url(task_control_url)
     def test_a105_taskControl_completion_detail_unknown(self):
@@ -151,8 +161,10 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+      
+# 
     # 校验“任务调度-详情列表-计划”
+    
     @get_url(task_control_url)
     def test_a106_taskScheduler_detailList_plan(self):
         app = {"logTest": self.logTest, "driver": self.driver,
@@ -161,7 +173,8 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+        
+# 
     # 校验“任务调度-详情列表-计划-创建”
     @get_url(task_control_url)
     def test_a107_taskScheduler_detailList_plan_create(self):
@@ -171,7 +184,8 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+        
+# 
     # 校验“任务调度-详情列表-计划-停止”
     @get_url(task_control_url)
     def test_a108_taskScheduler_detailList_plan_stop(self):
@@ -181,7 +195,9 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+        
+        
+# 
     # 校验“任务调度-详情列表-计划-启动”
     @get_url(task_control_url)
     def test_a109_taskScheduler_detailList_plan_start(self):
@@ -191,7 +207,9 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+        
+        
+# 
     # 校验“任务调度-详情列表-计划-删除”
     @get_url(task_control_url)
     def test_a110_taskScheduler_detailList_plan_delete(self):
@@ -201,7 +219,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+# 
     # 校验“任务调度-详情列表-执行”
     @get_url(task_control_url)
     def test_a111_taskScheduler_detailList_execute(self):
@@ -211,7 +229,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+# 
     # 校验“任务调度-详情列表-执行-重启”
     @get_url(task_control_url)
     def test_a112_taskScheduler_detailList_execute_rerun(self):
@@ -221,7 +239,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+# 
     # 校验“任务调度-详情列表-执行-停止”
     @get_url(task_control_url)
     def test_a113_taskScheduler_detailList_execute_stop(self):
@@ -231,7 +249,9 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+        
+        
+# 
     # 校验“任务调度-详情列表-执行-删除”
     @get_url(task_control_url)
     def test_a114_taskScheduler_detailList_execute_delete(self):
@@ -241,7 +261,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+# 
     # 校验“任务调度-详细分析”
     @get_url(task_control_url)
     def test_a115_taskScheduler_detail_analyze(self):
@@ -261,7 +281,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+#  
     # 校验“任务警告-详情列表-告警信息”
     @get_url(task_control_url)
     def test_a117_taskWarning_detail_warning_info(self):
@@ -271,7 +291,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+ 
     # 校验“任务警告-详情列表-告警规则”
     @get_url(task_control_url)
     def test_a118_taskWarning_detail_warning_rule(self):
@@ -281,7 +301,9 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+        
+        
+# 
     # 校验“任务警告-详情列表-告警规则-创建”
     @get_url(task_control_url)
     def test_a119_taskWarning_detail_warning_rule_create(self):
@@ -291,7 +313,7 @@ class TaskControlTest(ParametrizedTestCase):
         page = TaskControlPage(app)
         page.operate()
         page.check_point()
-
+ 
     # 校验“任务警告-详情列表-告警规则-删除”
     @get_url(task_control_url)
     def test_a120_taskWarning_detail_warning_rule_delete(self):
