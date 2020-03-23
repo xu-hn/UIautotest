@@ -4,11 +4,11 @@ testinfo:
   launch: 1
   info: 环境正常
 testcase:
-- element_info: //*[@placeholder="请选择"]
+- element_info: //*[@id="app"]/div/div/div[2]/div/form/div[1]/div/div/div/input
   find_type: xpath
   operate_type: click
   info: 点击租户输入框
-- element_info: //*[@placeholder="请选择"]
+- element_info: //*[@id="app"]/div/div/div[2]/div/form/div[1]/div/div/div/input
   find_type: xpath
   operate_type: send_keys
 #  msg: autoui
@@ -28,7 +28,7 @@ testcase:
   operate_type: send_keys
   msg: 123456
   info: 输入密码
-- element_info: 确定
+- element_info: login.login
   find_type: name
   operate_type: click
   info: 点击确定登录
