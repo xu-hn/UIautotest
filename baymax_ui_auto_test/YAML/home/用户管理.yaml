@@ -1,6 +1,6 @@
 testinfo:
 - id: 017-user_manager
-  title: 校验“权限管理-角色管理”页面
+  title: 校验“权限管理-用户管理”页面
   launch: 1
   info: 成功登录
 testcase:
@@ -19,7 +19,7 @@ testcase:
 check:
 - operate_type: get_current_url
   check: current_equal_expect
-  expect_value: /#/roleManagement拼接值后+前host+拼接
+  expect_value: /#/userManagement拼接值后+前host+拼接
   info: 检查"质量分析的URL"是否正确
 #- element_info: //*[congtains(text(),'用户名')]
  # find_type: xpath
