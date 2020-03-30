@@ -4,18 +4,18 @@ testinfo:
   launch: 1
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+- element_info: //*[@name="Standards"]/preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据标准’文件夹图标
 check:
-- element_info: a
+- element_info: auto_UI_a
   find_type: name
   operate_type: is_displayed
   check: displayed
-  info: 断言“文件夹a”可见
-- element_info: b
+  info: 断言“文件夹auto_UI_a”可见
+- element_info: auto_UI_b
   find_type: name
   operate_type: is_displayed
   check: displayed
-  info: 断言“文件夹b”可见
+  info: 断言“文件夹auto_UI_b”可见
