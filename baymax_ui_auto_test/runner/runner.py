@@ -70,7 +70,7 @@ def suite_case(who):
 #     }
     Check_module = {
       
-        'bayMax': [HomePageTest]
+        'bayMax': [LoginTest,HomePageTest]
 #         
     }
     cases = map(ParametrizedTestCase.parametrize, Check_module[who])
