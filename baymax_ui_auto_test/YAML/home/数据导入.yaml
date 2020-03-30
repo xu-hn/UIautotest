@@ -14,10 +14,10 @@ testcase:
   operate_type: click
   info: 点击数据导入
 - operate_type: move_by_offset
-  move_to: (0, 0)
-  info: 移送鼠标到0,0像素
+  move_to: (100, 100)
+  info: 移送鼠标到100,100像素
 check:
-- element_info: //*[text()="创建"]
+- element_info: //*[contains(text(),"新建")]
   find_type: xpath
   info: 检查“创建按钮是否存在”
 - element_info: //*[contains(text(),'数据集')]
