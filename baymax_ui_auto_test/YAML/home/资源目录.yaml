@@ -13,23 +13,24 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击资源目录
+  is_time: 0.5
 - operate_type: move_by_offset
   move_to: (0, 0)
   info: 移送鼠标到0,0像素
   is_time: 1
 check:
-- element_info: 数据源
+- element_info: Datasources
   find_type: name
   info: 检查“数据源按钮是否存在”
-- element_info: 元数据
+- element_info: Schemas
   find_type: name
   info: 检查“元数据按钮是否存在”
-- element_info: 数据集
+- element_info: Datasets
   find_type: name
   info: 检查“数据集按钮是否存在”
-- element_info: 数据标准
+- element_info: Standards
   find_type: name
   info: 检查“数据标准按钮是否存在”
-- element_info: //*[contains(text(),'目录')]
+- element_info: //*[contains(text(),'资源目录')]
   find_type: xpath
   info: 检查“目录按钮是否存在”
