@@ -21,9 +21,9 @@ check:
   check: current_equal_expect
   expect_value: /#/design拼接值后+前host+拼接
   info: 检查"流程管理的URL"是否正确
-- element_info: //button/span[contains(text(), '目录')]
+- element_info: //*[contains(text(), '流程目录')]
   find_type: xpath
   info: 检查“目录”按钮是否存在
-- element_info: //*[@id="nav2"]/div/div[1]/ul/li/ul[1]/li/span/em[@name="根目录"]
+- element_info: //*[contains(text(), '根目录')]
   find_type: xpath
   info: 检查“根目录”树是否存在
