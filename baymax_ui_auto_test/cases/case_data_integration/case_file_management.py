@@ -165,7 +165,7 @@ class FileManagementTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“数据导入-下载”任务
-    @get_url('http://192.168.1.83:8515/#/dataMan')
+    @get_url('http://192.168.1.84:8515/#/dataMan')
     def test_a050_data_import_download(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/data_integration_yaml/file_management_yaml/文件管理-下载.yaml"),
                "caseName": sys._getframe().f_code.co_name}
@@ -174,7 +174,7 @@ class FileManagementTest_SSSS(ParametrizedTestCase):
         page.check_point()
 
     # 校验“数据导入-下载”任务
-    @get_url('http://192.168.1.83:8515/#/dataMan')
+    @get_url('http://192.168.1.84:8515/#/dataMan')
     def test_a051_data_import_download(self):
         app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/data_integration_yaml/file_management_yaml/文件管理-下载.yaml"),
                "caseName": sys._getframe().f_code.co_name}
