@@ -7,7 +7,7 @@ testcase:
 - element_info: //*[@test-id="/systemConfig"]
   find_type: xpath
   operate_type: action_chains
-  info: 鼠标悬停到‘权限管理’标签
+  info: 鼠标悬停到‘系统管理’标签
   is_time: 0.6
 - element_info: //*[@test-id="/userManagement"]
   find_type: xpath
