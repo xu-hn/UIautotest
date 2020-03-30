@@ -19,8 +19,8 @@ testcase:
 check:
 - operate_type: get_current_url
   check: current_equal_expect
-  expect_value: /#/userManagement拼接值后+前host+拼接
-  info: 检查"质量分析的URL"是否正确
+  expect_value: /#/roleManagement拼接值后+前host+拼接
+  info: 检查"角色管理的URL"是否正确
 - element_info: //*[contains(text(),'添加角色')]
   find_type: xpath
   info: 检查“添加角色”按钮存在
