@@ -77,9 +77,9 @@ class ElementParam(object):
 
     # URL = 'http://192.168.1.81:8515/#/login'
     # HOST = 'http://192.168.1.81:8515'
-    # #测试83环境
-    URL = 'http://192.168.1.83:8515/#/login'
-    HOST = 'http://192.168.1.83:8515'
+    # #测试84环境
+    URL = 'http://192.168.1.84:8515/#/login'
+    HOST = 'http://192.168.1.84:8515'
 
     # 页面url
     #资源目录
@@ -110,9 +110,10 @@ class ElementParam(object):
     # 数据分析
     FLOW_MANAGEMENT_URL = HOST + "/#/design"  # 流程管理 url
 
-
+    #实时计算
+    TASK_ADMINISTRATION_URL = HOST +"/#/jobManage" # 作业管理url
 
     #脚本版本
-    VERSION = '2020-01-14'
+    VERSION = '2020-03-30'
 
 
