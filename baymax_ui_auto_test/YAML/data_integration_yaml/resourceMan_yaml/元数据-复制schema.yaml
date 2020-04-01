@@ -4,14 +4,15 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="元数据"]/preceding-sibling::i[1]
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[1]/li/i
   find_type: xpath
   operate_type: click
   info: 点击‘元数据’文件夹图标
-- element_info: auto_schema
-  find_type: name
+  is_time: 1
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[1]/li/ul/li[4]/em/span
+  find_type: xpath
   operate_type: click
-  info: 点击‘auto_schema'的文字
+  info: 点击‘auto_UI'的文字
 - element_info: '//*[@class="dn-content"]//*[@class="el-loading-mask" and @style="display: none;"]'
   find_type: xpath
   info: 等待加载圈消失
