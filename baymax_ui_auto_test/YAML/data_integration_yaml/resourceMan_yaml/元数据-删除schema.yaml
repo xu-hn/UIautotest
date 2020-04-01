@@ -4,7 +4,7 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="元数据"]/preceding-sibling::i[1]
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[1]/li/i
   find_type: xpath
   operate_type: click
   info: 点击‘元数据’文件夹图标
