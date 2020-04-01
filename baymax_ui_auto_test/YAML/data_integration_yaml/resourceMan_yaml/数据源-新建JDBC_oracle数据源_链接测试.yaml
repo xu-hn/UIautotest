@@ -12,6 +12,7 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘auto_UI'的文字
+  is_time: 0.5
 - element_info: bm-ch-resMan-resourceman-create-button
   find_type: id
   operate_type: click
