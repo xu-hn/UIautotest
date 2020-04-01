@@ -1,0 +1,5 @@
+迁移测试环境 数据如下：
+
+数据标准：文件夹 auto_UI_a   auto_UI_b
+数据源： auto_UI
+数据驱动：auto_mysql auto_hive auto_oracle
