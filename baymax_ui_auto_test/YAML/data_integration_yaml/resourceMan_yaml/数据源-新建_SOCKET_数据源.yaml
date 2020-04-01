@@ -4,14 +4,14 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据源"]/preceding-sibling::i[1]
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/i
   find_type: xpath
   operate_type: click
   info: 点击‘数据源'文件夹图标
-- element_info: //em[@name="auto_DataSource"]
+- element_info: //em[@name="auto_UI"]
   find_type: xpath
   operate_type: click
-  info: 点击‘auto_DataSource'的文字
+  info: 点击‘auto_UI'的文字
 - element_info: bm-ch-resMan-resourceman-create-button
   find_type: id
   operate_type: click
@@ -41,6 +41,7 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击‘确定’按钮
+  is_time: 0.5
 check:
 - element_info: bm-ch-resMan-resourceman-create-button
   find_type: id
