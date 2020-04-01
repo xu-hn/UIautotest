@@ -4,29 +4,29 @@ import sys
 sys.path.append("..")     #3层 格式照抄
 from common.BaseRunner import ParametrizedTestCase, get_driver
 from cases.case_home.case_home_page_click import HomePageTest
-# from cases.case_home.case_home_page_for_dam import HomePageTest_Dam
-# from cases.case_home.case_home_page_for_Beiruan import HomePageTest_Beiruan
-# from cases.case_home.case_home_page_cab import HomePageTest_Cab
-# from cases.case_home.case_home_page_for_cad import HomePageTest_Cad
-# from cases.case_home.case_home_page_for_yinpao import HomePageTest_Yinpao
-# from cases.case_home.case_home_page_for_shubo import HomePageTest_Shubo
+from cases.case_home.case_home_page_for_dam import HomePageTest_Dam
+from cases.case_home.case_home_page_for_Beiruan import HomePageTest_Beiruan
+from cases.case_home.case_home_page_cab import HomePageTest_Cab
+from cases.case_home.case_home_page_for_cad import HomePageTest_Cad
+from cases.case_home.case_home_page_for_yinpao import HomePageTest_Yinpao
+from cases.case_home.case_home_page_for_shubo import HomePageTest_Shubo
 from cases.case_login import LoginTest
 from cases.case_data_integration.case_resourceMan.case_operate_dir import OperateDirTest
-# from cases.case_data_integration.case_data_import import DataImportTest
-# from cases.case_data_integration.case_file_management import FileManagementTest
-# from cases.case_data_integration.case_collector.case_collector import CollectorTemplateTest, CollectorimportDataTest, CollectorTaskListTest
-# from cases.case_data_integration.case_file_import.case_file_import import FileImportTest
-# from cases.case_data_monitor.case_operational_monitoring.case_operational_monitoring import OperationalMonitoringTest
-# from cases.case_data_monitor.case_task_control.case_task_control import TaskControlTest
-# from cases.cases_data_govern.case_quality_analyze.case_quality_analyze import QualityAnalyzeTest
-# from cases.cases_data_govern.case_blood_analyze.case_blood_analyze import BloodAnalyzeTest
-# from cases.cases_data_govern.case_schema_analyze.case_schema_analyze import SchemaAnalyzeTest
-# from cases.case_data_analyze.case_flow_management.case_flow_management import FlowManagementTest
-# from cases.case_data_analyze.case_project_dir.case_project_dir import ProjectDirTest
-# #from cases.case_authority_management.case_role_mange.case_role_management import RoleManagementTest
-# #from cases.case_authority_management.case_user_manage.case_user_management import UserManagementTest
-#实时计算          
-#from cases.case_real_time_computation.case_task_administration.case_task_administration  import TaskAdministrationTest #作业管理
+from cases.case_data_integration.case_data_import import DataImportTest
+from cases.case_data_integration.case_file_management import FileManagementTest
+from cases.case_data_integration.case_collector.case_collector import CollectorTemplateTest, CollectorimportDataTest, CollectorTaskListTest
+from cases.case_data_integration.case_file_import.case_file_import import FileImportTest
+from cases.case_data_monitor.case_operational_monitoring.case_operational_monitoring import OperationalMonitoringTest
+from cases.case_data_monitor.case_task_control.case_task_control import TaskControlTest
+from cases.cases_data_govern.case_quality_analyze.case_quality_analyze import QualityAnalyzeTest
+from cases.cases_data_govern.case_blood_analyze.case_blood_analyze import BloodAnalyzeTest
+from cases.cases_data_govern.case_schema_analyze.case_schema_analyze import SchemaAnalyzeTest
+from cases.case_data_analyze.case_flow_management.case_flow_management import FlowManagementTest
+from cases.case_data_analyze.case_project_dir.case_project_dir import ProjectDirTest
+from cases.case_authority_management.case_role_mange.case_role_management import RoleManagementTest
+from cases.case_authority_management.case_user_manage.case_user_management import UserManagementTest
+# 实时计算          
+from cases.case_real_time_computation.case_task_administration.case_task_administration  import TaskAdministrationTest #作业管理
 #from cases.case_real_time_computation.case_task_operation.case_task_operation import TaskOperation#作业运维
 #from cases.case_real_time_computation.case_task_template.case_task_template import TaskTemplate#作业模板
 #from cases.case_real_time_computation.case_interactive_query.case_interactive_query import InteractiveQuery#交互式查询
@@ -70,7 +70,11 @@ def suite_case(who):
 #     }
     Check_module = {
       
-        'bayMax': [LoginTest,HomePageTest]
+        #'bayMax': [LoginTest,HomePageTest]
+        'bayMax': [LoginTest, HomePageTest, OperateDirTest, DataImportTest,  FileImportTest, 
+                   CollectorTemplateTest,CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest,
+                    TaskControlTest, QualityAnalyzeTest,BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, 
+                    ProjectDirTest,RoleManagementTest,UserManagementTest]
 #         
     }
     cases = map(ParametrizedTestCase.parametrize, Check_module[who])
