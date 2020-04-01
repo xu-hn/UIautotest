@@ -4,14 +4,15 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="元数据"]/preceding-sibling::i[1]
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[1]/li/i
   find_type: xpath
   operate_type: click
   info: 点击‘元数据’文件夹图标
-- element_info: auto_schema
-  find_type: name
+  is_time: 1
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[1]/li/ul/li[4]/em/span
+  find_type: xpath
   operate_type: click
-  info: 点击‘auto_schema'的文字
+  info: 点击‘auto_UI'的文字
 - element_info: //tr//*[contains(text(), "schema_")]
   find_type: xpaths
   index: -1
@@ -28,7 +29,7 @@ testcase:
   operate_type: click
   info: 点击‘移动'按钮
   is_time: 0.7
-- element_info: //*[@id="dataTree"]//*[@name="元数据"]/preceding-sibling::i[1]
+- element_info: //*[@id="dataTree"]/div/ul/li/ul/li/i
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-元数据”文件夹按钮
@@ -37,13 +38,15 @@ testcase:
   operate_type: click
   info: 点击“弹出树-move_to”文字
 - element_info: bm-ch-resourceMan-submitResourceTree-ResourceTree-ok
+                #/html/body/div[2]/div/div[3]/button[2]/span
   find_type: name
   operate_type: click
   info: 点击弹出树的‘确定'按钮
-- element_info: //div[@aria-label="提示"]//*[contains(text(), "确定")]
+  is_time: 1
+- element_info: //*[@aria-label="提示"]//*[contains(text(),'ok')]
   find_type: xpath
   operate_type: click
-  info: 点击‘确定'按钮
+  info: 点击‘ok'按钮
   is_time: 0.8
 - element_info: //*[@id="bm-ch-nav2"]//em[@name="move_to"]
   find_type: xpath
