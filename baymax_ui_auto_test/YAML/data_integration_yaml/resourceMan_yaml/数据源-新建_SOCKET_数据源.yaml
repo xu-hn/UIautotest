@@ -8,7 +8,7 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘数据源'文件夹图标
-- element_info: //em[@name="auto_UI"]
+- element_info: //*em[@name="auto_UI"]
   find_type: xpath
   operate_type: click
   info: 点击‘auto_UI'的文字
