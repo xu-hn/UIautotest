@@ -4,14 +4,14 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据源"]/preceding-sibling::i[1]
+- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[3]/li/i
   find_type: xpath
   operate_type: click
   info: 点击‘数据源'文件夹图标
-- element_info: //em[@name="auto_DataSource"]
+- element_info: //em[@name="auto_UI"]
   find_type: xpath
   operate_type: click
-  info: 点击‘auto_DataSource'的文字
+  info: 点击‘auto_UI'的文字
   is_time: 1
 - element_info: //tr//*[contains(text(), "JDBC")]
   find_type: xpaths
@@ -28,13 +28,13 @@ testcase:
   operate_type: click
   info: 点击‘删除'按钮
   is_time: 0.7
-- element_info: //*[contains(text(), "确定")]
+- element_info: //*[contains(text(), "OK")]
   find_type: xpaths
   index: -1
   operate_type: click
-  info: 点击‘确定'按钮
+  info: 点击‘OK'按钮
 check:
-- element_info: //*[contains(text(), "恭喜你，删除已成功")]
+- element_info: //*[contains(text(), "成功")]
   find_type: xpath
   info: 断言“恭喜你，删除已成功！”出现
 - element_info: //*[contains(text(), "%s")]+随机数
