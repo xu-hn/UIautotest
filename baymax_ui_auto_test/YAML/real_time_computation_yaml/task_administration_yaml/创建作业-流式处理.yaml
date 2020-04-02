@@ -1,0 +1,62 @@
+testinfo:
+- id: test_06_set_up_task
+  title: 创建作业-流式处理
+  launch: 1
+  info: 环境正常
+testcase:
+- element_info: //*[contains(text(),'创建作业')]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘创建作业’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'流式处理')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘流式处理’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'作业配置')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘作业配置’按钮
+  is_time: 0.5
+- element_info: //*[@id="bm-main"]/section/div/div/section/div/div/section/div/div[1]/form/div/div[1]/div/div[1]/input
+  find_type: xpath
+  operate_type: send_keys
+  msg: auto_zygl
+  info: 点击‘作业配置’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'保存')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘保存’按钮
+  is_time: 0.5
+
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/jobManage拼接值后+前host+拼接
+  info: 检查"创建作业后的跳转"是否正确  
+
+- element_info: //*[contains(text(),'auto_zygl')]
+  find_type: xpath
+  info: 校验新创建的作业存在
+  
+- element_info: //*[contains(text(),'新建')]
+  find_type: xpath
+  info: 校验‘创建作业’ 按钮 存在
+  
+- element_info: //*[contains(text(),'刷新')]
+  find_type: xpath
+  info: 校验‘刷新’ 按钮 存在
+  
+- element_info: //*[contains(text(),'名称')]
+  find_type: xpath
+  info: 校验‘名称’ 列 存在
+
+- element_info: //*[contains(text(),'类型')]
+  find_type: xpath
+  info: 校验‘类型’ 列 存在  
+  
+- element_info: //*[contains(text(),'操作')]
+  find_type: xpath
+  info: 校验‘操作’ 列 存在

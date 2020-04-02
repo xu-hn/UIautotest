@@ -1,0 +1,61 @@
+testinfo:
+- id: test_03_task_dispose
+  title: 创建作业-作业配置页面校验
+  launch: 1
+  info: 进入‘作业管理’页面
+testcase:
+- element_info: //*[contains(text(),'创建作业')]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘创建作业’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'流式处理')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘流式处理’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'作业配置')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘作业配置’标签
+  is_time: 0.5
+
+
+
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/jobManage/jobDetail/configure/拼接值后+前host+拼接
+  info: 检查"创建作业的URL"是否正确  
+  
+- element_info: //*[contains(text(),'名称')]
+  find_type: xpath
+  info: 校验‘名称’  存在
+  
+- element_info: //*[contains(text(),'描述')]
+  find_type: xpath
+  info: 校验‘描述’ 按钮 存在
+  
+- element_info: //*[contains(text(),'检查点')]
+  find_type: xpath
+  info: 校验‘检查点’  存在
+
+- element_info: //*[contains(text(),'失败重试')]
+  find_type: xpath
+  info: 校验‘失败重试’  存在  
+  
+- element_info: //*[contains(text(),'状态存储')]
+  find_type: xpath
+  info: 校验‘状态存储’  存在
+  
+- element_info: //*[contains(text(),'允许延迟')]
+  find_type: xpath
+  info: 校验‘允许延迟’  存在
+ 
+- element_info: //*[contains(text(),'保存')]
+  find_type: xpath
+  info: 校验‘保存’ 按钮 存在
+  
+- element_info: //*[contains(text(),'取消')]
+  find_type: xpath
+  info: 校验‘取消’ 按钮 存在

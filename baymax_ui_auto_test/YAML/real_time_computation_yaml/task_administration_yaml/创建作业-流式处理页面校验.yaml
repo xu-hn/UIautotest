@@ -1,0 +1,55 @@
+testinfo:
+- id: test_02_set_up_task
+  title: 创建作业-流式处理页面校验
+  launch: 1
+  info: 进入‘作业管理’页面
+testcase:
+- element_info: //*[contains(text(),'创建作业')]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘创建作业’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'流式处理')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘流式处理’按钮
+  is_time: 0.5
+
+
+check:
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/jobManage/jobDetail/description拼接值后+前host+拼接
+  info: 检查"创建作业的URL"是否正确  
+  
+- element_info: //*[contains(text(),'作业描述')]
+  find_type: xpath
+  info: 校验‘作业描述’ 按钮 存在
+  
+- element_info: //*[contains(text(),'作业配置')]
+  find_type: xpath
+  info: 校验‘作业配置’ 按钮 存在
+  
+- element_info: //*[contains(text(),'编辑')]
+  find_type: xpath
+  info: 校验‘编辑’ 按钮 存在
+
+- element_info: //*[contains(text(),'模板')]
+  find_type: xpath
+  info: 校验‘模板’ 按钮 存在  
+  
+- element_info: //*[contains(text(),'数据表描述')]
+  find_type: xpath
+  info: 校验‘数据表描述’ 标签 存在
+  
+- element_info: //*[contains(text(),'表配置')]
+  find_type: xpath
+  info: 校验‘表配置’ 标签 存在
+ 
+- element_info: //*[contains(text(),'数据集配置')]
+  find_type: xpath
+  info: 校验‘数据集配置’ 标签 存在
+  
+- element_info: //*[contains(text(),'返回')]
+  find_type: xpath
+  info: 校验‘返回’ 按钮 存在
