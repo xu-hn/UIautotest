@@ -26,7 +26,7 @@ from cases.case_data_analyze.case_project_dir.case_project_dir import ProjectDir
 from cases.case_authority_management.case_role_mange.case_role_management import RoleManagementTest
 from cases.case_authority_management.case_user_manage.case_user_management import UserManagementTest
 # 实时计算          
-from cases.case_real_time_computation.case_task_administration.case_task_administration  import TaskAdministrationTest #作业管理
+#from cases.case_real_time_computation.case_task_administration.case_task_administration  import TaskAdministrationTest #作业管理
 #from cases.case_real_time_computation.case_task_operation.case_task_operation import TaskOperation#作业运维
 #from cases.case_real_time_computation.case_task_template.case_task_template import TaskTemplate#作业模板
 #from cases.case_real_time_computation.case_interactive_query.case_interactive_query import InteractiveQuery#交互式查询
