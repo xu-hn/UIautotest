@@ -111,6 +111,22 @@ class TaskAdministrationTest(ParametrizedTestCase):
         page = TaskAdministrationPage(app)
         page.operate()
         page.check_point()
+#校验“作业管理-流式处理-insert校验”
+    @get_url(T_A_U)
+    def test_09_set_up_task_insert(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/real_time_computation_yaml/task_administration_yaml/创建作业-流式处理-insert校验.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = TaskAdministrationPage(app)
+        page.operate()
+        page.check_point()
+#校验“作业管理-提交”
+    @get_url(T_A_U)
+    def test_10_Submission(self):
+        app = {"logTest": self.logTest, "driver": self.driver, "path": PATH("../YAML/real_time_computation_yaml/task_administration_yaml/作业管理-提交.yaml"),
+               "caseName": sys._getframe().f_code.co_name}
+        page = TaskAdministrationPage(app)
+        page.operate()
+        page.check_point()
 # ========================================= 提交 end ========================================================================================
 
 
