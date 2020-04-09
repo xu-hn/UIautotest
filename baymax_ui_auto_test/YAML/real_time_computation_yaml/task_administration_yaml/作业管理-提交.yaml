@@ -1,0 +1,37 @@
+testinfo:
+- id: test_10_Submission
+  title: 作业管理-提交
+  launch: 1
+  info: 环境正常
+testcase:
+- element_info: //*[contains(text(),'auto_zygl_insert')]/../../..//*[contains(text(),'提交')]
+  find_type: xpath
+  operate_type: click
+  info: 点击auto_zygl_insert的‘提交’按钮
+  is_time: 0.5
+
+- element_info: //*[@id="bm-main"]/section/div/div/section/div[2]/div/div[3]/div/button[1]/span
+  find_type: xpath
+  operate_type: click
+  info: 点击‘提交’按钮
+  is_time: 0.5
+  
+- element_info: //*[contains(text(),'实时计算')]
+  find_type: xpath
+  operate_type: action_chains
+  info: 鼠标悬停到‘实时计算’按钮
+  is_time: 0.5
+- element_info: //*[contains(text(),'作业运维')]
+  find_type: xpath
+  operate_type: click
+  info: 点击‘作业运维’按钮
+  is_time: 0.5
+
+
+check:
+  
+  
+- element_info: //*[contains(text(),'auto_zygl_insert')]
+  find_type: xpath
+  info: 校验‘auto_zygl_insert’作业 存在
+  
