@@ -78,8 +78,8 @@ class ElementParam(object):
     # URL = 'http://192.168.1.81:8515/#/login'
     # HOST = 'http://192.168.1.81:8515'
     # #测试84环境
-    URL = 'http://192.168.1.84:8515/#/login'
-    HOST = 'http://192.168.1.84:8515'
+    URL = 'http://192.168.1.82:8515/#/login'
+    HOST = 'http://192.168.1.82:8515'
 
     # 页面url
     #资源目录
