@@ -4,14 +4,16 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据集")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据集'文件夹图标
-- element_info: auto_dataset
-  find_type: name
+  is_time: 1
+- element_info: //*[contains(text(),"数据集")]/../..//*[contains(text(),'auto_dataset')]
+  find_type: xpath
   operate_type: click
   info: 点击‘auto_dataset'的文字
+  is_time: 0.7
 - element_info: //div[3]//tr//div/span[contains(text(), "DB_oracle_dataset")]
   find_type: xpaths
   index: -1
@@ -28,7 +30,9 @@ testcase:
   operate_type: click
   info: 点击‘移动'按钮
   is_time: 0.7
-- element_info: //*[@id="dataTree"]//*[@name="数据集"]/preceding-sibling::i[1]
+  
+  
+- element_info: //*[@id="dataTree"]//*[@name="Datasets"]/preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-数据集”文件夹按钮
