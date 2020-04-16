@@ -36,7 +36,6 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击‘auto_oracle’下拉框选项
-- element_info: bm-ch-resMan-dbsource-attributes-host-input
   find_type: name
   operate_type: send_keys
   msg: info3
