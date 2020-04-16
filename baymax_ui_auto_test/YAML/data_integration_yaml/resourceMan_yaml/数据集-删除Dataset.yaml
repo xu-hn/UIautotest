@@ -4,12 +4,12 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据集")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据集'文件夹图标
-- element_info: movo_to_dataset
-  find_type: name
+- element_info: //*[contains(text(),"数据集")]/../..//*[contains(text(),'movo_to_dataset')]
+  find_type: xpath
   operate_type: click
   info: 点击‘movo_to_dataset'的文字
 - element_info: '//*[@id="bm-ch-res-table"]//*[@class="el-loading-mask"and @style="display: none;"]'
