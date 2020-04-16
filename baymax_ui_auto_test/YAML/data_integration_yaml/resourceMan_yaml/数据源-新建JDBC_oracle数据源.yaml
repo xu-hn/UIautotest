@@ -4,11 +4,11 @@ testinfo:
   launch: 0
   info: 先进入'资源'目录
 testcase:
-- element_info: //*[@name="数据源"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据源")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据源'文件夹图标
-- element_info: //em[@name="auto_DataSource"]
+- element_info: //*[contains(text(),"数据源")]/../..//*[contains(text(),'auto_DataSource')]
   find_type: xpath
   operate_type: click
   info: 点击‘auto_DataSource'文字
@@ -36,6 +36,8 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击‘auto_oracle’下拉框选项
+  
+- element_info:  bm-ch-resMan-dbsource-attributes-host-input 
   find_type: name
   operate_type: send_keys
   msg: info3
