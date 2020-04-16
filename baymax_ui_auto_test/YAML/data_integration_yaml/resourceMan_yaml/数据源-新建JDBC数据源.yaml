@@ -5,16 +5,19 @@ testinfo:
   info: 先进入资源目录
 testcase:
 
-- element_info: /html/body/div/div/div/div[2]/section/div/div/section/div[1]/form/div[2]/ul/li/ul[3]/li/i
+- element_info: //*[contains(text(),"数据源")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据源'文件夹图标
-- element_info: //em[@name="auto_UI"]
+  is_time: 1
+  
+- element_info: //*[contains(text(),"数据源")]/../..//*[contains(text(),'auto_UI')]
   find_type: xpath
   operate_type: click
   info: 点击‘auto_UI'的文字
-- element_info: bm-ch-resMan-resourceman-create-button
-  find_type: id
+  is_time: 0.5
+- element_info: //*[contains(text(),"新建")]
+  find_type: xpath
   operate_type: click
   info: 点击‘新建’按钮
   is_time: 0.5
