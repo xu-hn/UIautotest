@@ -1,5 +1,5 @@
 testinfo:
-- id: test_b030_create_Oracle_Dataset
+- id: test_a031a_create_Oracle_Dataset
   title: 校验“新建oracle-dataset”页面
   launch: 0
   info: 先进入资源目录
