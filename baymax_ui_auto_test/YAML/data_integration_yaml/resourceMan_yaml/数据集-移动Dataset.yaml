@@ -1,5 +1,5 @@
 testinfo:
-- id: test031
+- id: test_a031b_move_Dataset
   title: 校验“数据集-移动Dataset”页面
   launch: 0
   info: 先进入资源目录
