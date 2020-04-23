@@ -6,7 +6,7 @@ testinfo:
 testcase:
 - info: 等待1秒
   is_time: 1
-- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据集")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据集'文件夹图标
