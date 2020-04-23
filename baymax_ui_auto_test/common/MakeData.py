@@ -134,10 +134,31 @@ requests.post(url=sjbz_url,json=ysj_json1,headers=header1)
 ysj_json2 = {"name":"move_to","resType":"schema_dir","parentId":"c747d105-18b6-440c-ad57-96d05ac3b238"}
 requests.post(url=sjbz_url,json=ysj_json2,headers=header1)
 
+ysj_json3 = {"name":"auto_initial_schema","resType":"schema_dir","parentId":"c747d105-18b6-440c-ad57-96d05ac3b238"}
+requests.post(url=sjbz_url,json=ysj_json3,headers=header1)
+
+#元数据
+ysjsj_url =host+'/api/schemas'
+ysjsj_json = {"id":"","name":"schema_id_name_age_gender","description":"","fields":[{"name":"id","type":"string","description":""},{"name":"name","type":"string","description":""},{"name":"age","type":"string","description":""}],"resource":{"id":"8e6232ba-ee6b-49dc-8d50-1bae32178443"}}
+requests.post(url=ysjsj_url,json=ysjsj_json,headers=dir_header)
 
 #数据集文件夹
 sjj_json = {"name":"auto_dataset","resType":"dataset_dir","parentId":"ef76b3b6-0f48-47a2-82e7-fb5eb3f2baab"}
 requests.post(url=sjbz_url,json=sjj_json,headers=header1)
+
+
+sjj_json2 = {"name":"movo_to_dataset","resType":"dataset_dir","parentId":"ef76b3b6-0f48-47a2-82e7-fb5eb3f2baab"}
+requests.post(url=sjbz_url,json=sjj_json2,headers=header1)
+
+sjj_json3 = {"name":"auto_HDFSdataset","resType":"dataset_dir","parentId":"ef76b3b6-0f48-47a2-82e7-fb5eb3f2baab"}
+requests.post(url=sjbz_url,json=sjj_json3,headers=header1)
+
+#数据集    有问题
+##sjjsj_url= host+"/api/datasets"
+#sjjsj_json={"id":"","name":"auto_oracle_ds","description":"","expiredPeriod":0,"storage":"JDBC","storageConfigurations":{"name":"dbs_oracle_info10","table":"MERCE_ALG","schema":"","jarPath":"ojdbc7.jar","catalog":"","DBType":"Oracle Thin","batchsize":10000,"version":"9i","url":"jdbc:oracle:thin:@info3:1521:orcl","database":"orcl","password":"AES(3cde4fd05c58aee9937bfb2db12c9a91)","driver":"oracle.jdbc.driver.OracleDriver","port":"1521","host":"info3","chineseName":"","user":"carpo","dateToTimestamp":"false","username":"carpo","resType":"DB","id":"66c062bc-cd07-470b-9a28-ed944f48663f"},"schema":{"name":"auto_oracle_ds_MERCE_ALG","fields":[{"name":"ID","type":"string"},{"name":"CREATE_TIME","type":"date"},{"name":"CREATOR","type":"string"},{"name":"DESCRIPTION","type":"string"},{"name":"ENABLED","type":"double"},{"name":"EXPIRED_TIME","type":"double"},{"name":"LAST_MODIFIED_TIME","type":"date"},{"name":"LAST_MODIFIER","type":"string"},{"name":"MODULE_VERSION","type":"double"},{"name":"NAME","type":"string"},{"name":"OWNER","type":"string"},{"name":"VERSION","type":"double"},{"name":"TENANT_ID","type":"string"}],"resource":{"id":"c747d105-18b6-440c-ad57-96d05ac3b238"},"projectEntity":{"id":""}},"schemaVersion":"","resource":{"id":"c36777b4-b22c-4ab8-b3ab-48ee719b2e19"}}
+#rp=requests.post(url=sjjsj_url,json=sjjsj_json,headers=dir_header).text
+#print(rp)
+
 
 #----------------------------------------上传依赖包--------------------------------------------------------
 '''
