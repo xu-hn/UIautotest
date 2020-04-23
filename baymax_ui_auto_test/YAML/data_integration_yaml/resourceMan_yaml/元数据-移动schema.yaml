@@ -4,12 +4,12 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[1]/li/i
+- element_info: //*[contains(text(),'元数据')]/../../i
   find_type: xpath
   operate_type: click
   info: 点击‘元数据’文件夹图标
   is_time: 1
-- element_info: //*[@id="bm-com-datatree-secondNav-table"]/ul/li/ul[1]/li/ul/li[4]/em/span
+- element_info: //*[contains(text(),'auto_UI')]
   find_type: xpath
   operate_type: click
   info: 点击‘auto_UI'的文字
