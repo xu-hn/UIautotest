@@ -4,7 +4,7 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据标准")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据标准'文件夹图标
@@ -28,7 +28,7 @@ testcase:
   operate_type: click
   info: 点击‘移动'按钮
   is_time: 0.7
-- element_info: //*[@id="dataTree"]//*[@name="数据标准"]/preceding-sibling::i[1]
+- element_info: //*[@id="dataTree"]//*[contains(text(),"数据标准")]/../../i
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-数据标准”文件夹按钮
@@ -40,7 +40,7 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击弹出树的‘确定'按钮
-- element_info: //div[@aria-label="提示"]//*[contains(text(), "确定")]
+- element_info: //div[@aria-label="提示"]//*[contains(text(), "确定")]|//*[contains(text(), "OK")]
   find_type: xpath
   operate_type: click
   info: 点击‘确定'按钮
