@@ -4,7 +4,7 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据标准"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据标准")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据标准'文件夹图标
@@ -22,8 +22,8 @@ testcase:
   operate_type: click
   info: 点击新建下拉菜单中的‘标准’按钮
   is_time: 1
-- element_info: name
-  find_type: name
+- element_info: //*[contains(text(),"名称")]/../div/div/input
+  find_type: xpath
   operate_type: send_keys
   msg: Standard_+随机数
   info: 输入Standard名称
