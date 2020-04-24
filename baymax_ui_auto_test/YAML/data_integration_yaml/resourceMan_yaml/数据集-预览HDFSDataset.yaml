@@ -1,5 +1,5 @@
 testinfo:
-- id: test038
+- id: test_a037_preview_HDFSDataset
   title: 校验“数据集-预览Dataset”页面
   launch: 0
   info: 先进入资源目录
@@ -10,28 +10,28 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘数据集'文件夹图标
-- element_info: auto_initial_dataset
+- element_info: auto_HDFSdataset
   find_type: name
   operate_type: click
-  info: 点击‘auto_initial_dataset'的文字
+  info: 点击‘auto_HDFSdataset'的文字
   is_time: 1
-- element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]/input
-  find_type: xpath
-  operate_type: send_keys
-  msg: flow_to_id_name_age_gender
-  info: 在搜索框输入“flow_to_id_name_age_gender”
-- element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]//button
-  find_type: xpath
-  operate_type: click
-  info: 点击‘搜索'按钮
-  is_time: 1
+#- element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]/input
+#  find_type: xpath
+#  operate_type: send_keys
+#  msg: flow_to_id_name_age_gender
+#  info: 在搜索框输入“flow_to_id_name_age_gender”
+#- element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]//button
+#  find_type: xpath
+#  operate_type: click
+#  info: 点击‘搜索'按钮
+#  is_time: 1
 - element_info: //div[@id="bm-ch-resourceMan-table"]/div[4]//*[contains(text(), "预览")]
   find_type: xpaths
   index: -1
   operate_type: click
   info: 点击列表中最后一条'DBdataset'的 预览按钮
 check:
-- element_info: /html/body/div/div/div/span[text()='数据集预览']
+- element_info: /html/body/div/div/div/span[text()='预览数据集']
   find_type: xpath
   check: displayed
   info: 断言“数据集预览”标题出现
@@ -47,10 +47,6 @@ check:
   find_type: xpath
   check: displayed
   info: 断言“age”列出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='gender']
-  find_type: xpath
-  check: displayed
-  info: 断言“gender”列出现
 - element_info: //tbody/tr/td/div[contains(text(),'xiaoming')]
   find_type: xpath
   check: displayed
@@ -59,11 +55,11 @@ check:
   find_type: xpath
   check: displayed
   info: 断言“确定”按钮出现
-- element_info: //button/span[text()="刷新"]
+- element_info: //button/span[contains(text(),"刷新")]
   find_type: xpath
   check: displayed
   info: 断言“刷新”按钮出现
-- element_info: //button/span[text()="取消"]
+- element_info: //button/span[contains(text(),"取消")]
   find_type: xpath
   check: displayed
   info: 断言“取消”按钮出现
