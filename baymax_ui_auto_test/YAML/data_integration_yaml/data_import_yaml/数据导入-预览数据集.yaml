@@ -11,30 +11,23 @@ testcase:
   operate_type: click
   info: 在数据导入首页‘勾选’第一条任务
 check:
-- element_info: /html/body/div/div/div/span[text()='数据集预览']
+- element_info: /html/body/div/div/div/span[text()='预览数据集']
   find_type: xpath
   check: displayed
   info: 断言“数据集预览”标题出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='id']
+- element_info: //*[contains(text(),"ID")]
   find_type: xpath
   check: displayed
   info: 断言“id”列出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='name']
+- element_info: //*[contains(text(),"NAME")]
   find_type: xpath
   check: displayed
   info: 断言“name”列出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='age']
+- element_info: //*[contains(text(),"VERSION")]
   find_type: xpath
   check: displayed
-  info: 断言“age”列出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='gender']
-  find_type: xpath
-  check: displayed
-  info: 断言“gender”列出现
-- element_info: //tbody/tr/td/div[contains(text(),'xiaoming')]
-  find_type: xpath
-  check: displayed
-  info: 断言“xiaoming”列出现
+  info: 断言“VERSION”列出现
+
 - element_info: //button/span[text()="确定"]
   find_type: xpath
   check: displayed
