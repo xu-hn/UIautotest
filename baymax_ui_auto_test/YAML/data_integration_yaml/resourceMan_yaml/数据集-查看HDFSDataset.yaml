@@ -4,7 +4,7 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据集"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据集")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据集'文件夹图标
@@ -13,13 +13,14 @@ testcase:
   operate_type: click
   info: 点击‘movo_to_HDFSdataset'的文字
   is_time: 1
-- element_info: //div[3]//tr//div/span[contains(text(), "HDFSDBds")]
+- element_info: //div[3]//tr//div/span[contains(text(), "HDFSDB")]
   find_type: xpaths
   index: 0
   operate_type: get_text
-  info: 获取列表中第一条'HDFSDBds'是title
+  info: 获取列表中第一条'HDFSDB'是title
+  is_time: 1
 - element_info: //*[@id="bm-ch-resourceMan-table"]/div[4]//span[contains(text(), "查看")]
-  find_type: xpaths
+  find_type: xpath
   index: 0
   operate_type: click
   info: 点击列表中第一条'HDFSDBdataset'的 查看按钮
