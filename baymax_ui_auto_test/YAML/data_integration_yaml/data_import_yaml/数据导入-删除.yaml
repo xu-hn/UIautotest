@@ -20,17 +20,18 @@ testcase:
   operate_type: click
   info: 在数据导入页，点击‘删除'按钮
   is_time: 0.5
-- element_info: //div[@aria-label="提示"]//span[contains(text(), "确定")]
+- element_info: //*[@aria-label="提示"]//span[contains(text(), "确定")]|//*[contains(text(), "OK")]
   find_type: xpath
   operate_type: click
   info: 点击“确定” 按钮
-  is_time: 0.5
+  is_time: 2
+  
 check:
-- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]//*[contains(text(), "%s")]+随机数
+- element_info: //*[contains(text(), "%s")]+随机数
   find_type: xpath
   v_index: 0
   check: contrary
-  check_time: 1
+  check_time: 5
   info: 断言“已删除的数据导入任务” 不存在
 - element_info: bm-ch-syschronization-table
   find_type: id
