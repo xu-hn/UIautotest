@@ -67,33 +67,34 @@ testcase:
   operate_type: click
   info: 点击数据集“选择”按钮（数据源输入框后面的放大镜按钮）
   is_time: 0.5
-- element_info: //*[@id="dataTree"]//*[@name="数据集"]/preceding-sibling::i[1]
+- element_info: //*[@id="dataTree"]//*[@name='Datasets']/../i
   find_type: xpath
   operate_type: click
   info: 点击“弹出树-数据集”文件夹按钮
-- element_info: //*[@id="dataTree"]//em[@name="auto_initial_dataset"]
-  find_type: xpath
-  operate_type: click
-  info: 点击“弹出树-auto_initial_dataset”文字
+#- element_info: //*[@id="dataTree"]//em[@name="auto_initial_dataset"]
+ # find_type: xpath
+ # operate_type: click
+ # info: 点击“弹出树-auto_initial_dataset”文字
 - element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]/input
   find_type: xpath
   operate_type: send_keys
-  msg: import_id_name_age_gender
-  info: 输入框输入“import_id_name_age_gender”文字
+  msg: DB_oracle_dataset 
+  info: 输入框输入“DB_oracle_dataset”文字
 - element_info: //*[@name="ch-components-dataSourceInq-dataSourceInquire-search-table-data"]//button
   find_type: xpath
   operate_type: click
   info: 点击“搜索”按钮
   is_time: 1
-- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[contains(text(), 'import_id_name_age_gender')]/ancestor::td/preceding-sibling::td[1]
+- element_info: //*[@id="ch-components-dataSourceInq-dataSourceInquire-table"]/div[3]//*[contains(text(), 'DB_oracle_dataset')]/ancestor::td/preceding-sibling::td[1]
   find_type: xpath
   operate_type: click
-  info: 勾选列表中import_id_name_age_gender 数据集
+  info: 勾选列表中DB_oracle_dataset 数据集
+  is_time: 2
 - element_info: bm-ch-step2Form-dataset-ok
   find_type: name
   operate_type: click
   info: 点击弹出树的‘确定'按钮
-  is_time: 0.5
+  is_time: 3
 - element_info: //*[text()="下一步"]
   find_type: xpath
   operate_type: click
@@ -103,12 +104,14 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘原样匹配’按钮
-  is_time: 0.5
-- element_info: //*[@aria-label="提示"]//*[contains(text(), '确定')]
+  is_time: 1
+  #/html/body/div[5]/div/div[3]/button[2]/span
+- element_info: //*[@aria-label="提示"]//*[contains(text(), '确定')]|//*[@aria-label="提示"]//*[contains(text(), 'OK')]
   find_type: xpath
   operate_type: click
   info: 点击弹出树的‘确定'按钮
   is_time: 0.5
+
 - element_info: //*[text()="下一步"]
   find_type: xpath
   operate_type: click
