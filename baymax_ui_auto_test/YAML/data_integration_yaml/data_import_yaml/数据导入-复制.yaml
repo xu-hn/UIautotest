@@ -24,22 +24,22 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 在数据来源页面，点击‘下一步’按钮
-  is_time: 0.5
+  is_time: 2
 - element_info: //*[text()="下一步"]
   find_type: xpath
   operate_type: click
   info: 在数据目的页，点击‘下一步’按钮
-  is_time: 0.5
+  is_time: 2
 - element_info: //*[text()="下一步"]
   find_type: xpath
   operate_type: click
   info: 在字段映射页，点击‘下一步’按钮
-  is_time: 0.5
+  is_time: 1
 - element_info: //*[text()="下一步"]
   find_type: xpath
   operate_type: click
   info: 在任务设置页，点击‘下一步’按钮
-  is_time: 0.5
+  is_time: 1
 - element_info: //*[text()="下一步"]/ancestor::button/following-sibling::button[1]
   find_type: xpath
   operate_type: click
