@@ -6,7 +6,7 @@ testinfo:
 testcase:
 - info: “等待1秒”
   is_time: 1
-- element_info: //*[@id="bm-ch-syschronization-table"]/div[3]//tr[1]/td[1]//span
+- element_info: //*[contains(text(),"data_import")]/../../../td[1]//span
   find_type: xpath
   operate_type: click
   info: 在数据导入首页‘勾选’第一条任务
@@ -14,12 +14,8 @@ testcase:
   find_type: id
   operate_type: click
   info: 在数据导入页，点击‘启用'按钮
-  is_time: 0.5
 check:
-- element_info: //*[text()="恭喜你，任务已启用！"]
-  find_type: xpath
-  check: displayed
-  info: 断言“恭喜你，任务已启用！”吐词出现
+
 - element_info:  //*[@id="bm-ch-syschronization-table"]/div[3]//tr[1]/td[8]/div/div
   find_type: xpath
   operate_type: get_text
