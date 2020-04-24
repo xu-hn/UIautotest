@@ -41,7 +41,7 @@ testcase:
   operate_type: send_keys
   msg: 1
   info: 在 标准配置 弹框 编号 列中 输入“1”
-- element_info: //div[@aria-label="标准配置"]//button/span[contains(text(), "确定")]
+- element_info: //div[@aria-label="标准配置"]//button/span[contains(text(), "确定")|//span[contains(text(),"ok")]]
   find_type: xpath
   operate_type: click
   info: 在 标准配置 弹框 中 点击“确定”按钮
