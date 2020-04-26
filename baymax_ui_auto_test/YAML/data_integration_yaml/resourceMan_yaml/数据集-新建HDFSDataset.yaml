@@ -4,6 +4,7 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
+
 - element_info:  //*[contains(text(),"数据集")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
