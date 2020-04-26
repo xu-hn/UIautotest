@@ -14,19 +14,19 @@ testcase:
   find_type: id
   operate_type: click
   info: 在采集器首页，点击‘删除'按钮
-  is_time: 0.5
-- element_info: /html/body/div[@aria-label="提示"]//*[contains(text(), '确定')]
+  is_time: 2
+- element_info: //*[@aria-label="提示"]//span[contains(text(), '确定') or contains(text(),"OK")]
   find_type: xpath
   operate_type: click
   info: 点击确定按钮
-  is_time: 1
+  is_time: 4
 check:
 - element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui_edit']
   find_type: xpath
   check: contrary
   check_time: 1
   info: 断言“新建的采集器名称存在”
-- element_info: //*[text()='恭喜你，删除已成功！']
-  find_type: xpath
-  info: 有‘恭喜你，删除已成功！’吐词出现
+#- element_info: //*[contains(text(),'成功')]
+#  find_type: xpath
+ # info: 有‘恭喜你，删除已成功！’吐词出现
 
