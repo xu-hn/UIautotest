@@ -1,0 +1,30 @@
+testinfo:
+- id: test092
+  title: 运维监控-数据源状态-查看全部_详情
+  launch: 0
+  info: 先进入"运维监控-数据源状态-查看全部"页面
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[contains(text(),"数据源状态监控")]/..//*[contains(text(),"详情")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“详情” 按钮
+  is_time: 1
+check:
+- element_info: bm-hippo-data-statuslist-searchInput
+  find_type: id
+  check: displayed
+  info: 断言“筛选输入框”存在
+- element_info: bm-hippo-data-statuslist-del
+  find_type: id
+  check: displayed
+  info: 删除按钮存在
+- operate_type: get_current_url
+  check: current_equal_expect
+  expect_value: /#/hippo/data/statuslist拼接值后+前host+拼接
+  info: 断言“当前获取的url”与预期的相等
+- element_info: //td//*[text()="SUCCEEDED"]
+  find_type: xpath
+  check: displayed
+  info: 存在状态“SUCCEEDED”
