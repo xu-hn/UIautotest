@@ -42,56 +42,57 @@ class OperationalMonitoringTest(ParametrizedTestCase):
         return decorator
 
     # 校验“运维监控-集群详情-页面校验”
-    @get_url()
-    def test_a089_operational_monitoring_cluster_detail(self):
-        self.to_resource_dir()
-        app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-集群详情-页面校验.yaml"),
-               "caseName": sys._getframe().f_code.co_name}
-        page = OperationalMonitoringPage(app)
-        page.operate()
-        page.check_point()
-
+#     @get_url()
+#     def test_a089_operational_monitoring_cluster_detail(self):
+#         self.to_resource_dir()
+#         app = {"logTest": self.logTest, "driver": self.driver,
+#                "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-集群详情-页面校验.yaml"),
+#                "caseName": sys._getframe().f_code.co_name}
+#         page = OperationalMonitoringPage(app)
+#         page.operate()
+#         page.check_point()
+    
     # 校验“运维监控-节点状态-详情分析”
-    @get_url(operational_url)
+    @get_url()#operational_url
     def test_a90_operational_monitoring_detail_analyze(self):
+        self.to_resource_dir()
         app = {"logTest": self.logTest, "driver": self.driver,
                "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-节点状态-详情分析.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = OperationalMonitoringPage(app)
         page.operate()
         page.check_point()
-
-    # 校验“运维监控-数据源状态-查看全部”
+    
+    # 校验“运维监控-数据源状态”
     @get_url(operational_url)
     def test_a91_operational_monitoring_detail_view(self):
         app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-数据源状态-查看全部.yaml"),
+               "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-数据源状态.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = OperationalMonitoringPage(app)
         page.operate()
         page.check_point()
-
-    # 校验“运维监控-数据源状态-查看全部_详情”
+    
+    # 校验“运维监控-数据源状态_详情”
     @get_url()
     def test_a92_operational_monitoring_detail_view_detail(self):
         app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-数据源状态-查看全部_详情.yaml"),
+               "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-数据源状态_详情.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = OperationalMonitoringPage(app)
         page.operate()
         page.check_point()
-
-    # 校验“运维监控-数据源状态-查看全部_详情_返回”
+    
+    # 校验“运维监控-数据源状态_详情_数据源点击”
     @get_url(operational_url)
     def test_a93_operational_monitoring_detail_view_detail_back(self):
         app = {"logTest": self.logTest, "driver": self.driver,
-               "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-数据源状态-查看全部_详情_返回.yaml"),
+               "path": PATH("../YAML/data_monitor_yaml/operational_monitoring_yaml/运维监控-数据源状态_详情_数据源点击.yaml"),
                "caseName": sys._getframe().f_code.co_name}
         page = OperationalMonitoringPage(app)
         page.operate()
         page.check_point()
-
+    
     # 校验“运维监控-数据源状态-查看全部_详情_删除”
     @get_url(operational_url)
     def test_a94_operational_monitoring_detail_view_detail_delete(self):
@@ -101,7 +102,7 @@ class OperationalMonitoringTest(ParametrizedTestCase):
         page = OperationalMonitoringPage(app)
         page.operate()
         page.check_point()
-
+    
     @classmethod
     def setUpClass(cls):
         super(OperationalMonitoringTest, cls).setUpClass()
