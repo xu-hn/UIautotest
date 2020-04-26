@@ -70,6 +70,9 @@ testcase:
   operate_type: click
   info: 点击‘确定’按钮
   is_time: 0.5
+  
+  
+  
 check:
 - element_info: //*[@id="bm-ch-resourceMan-table"]/div[3]//span[text()="%s"]+随机数
   find_type: xpath
