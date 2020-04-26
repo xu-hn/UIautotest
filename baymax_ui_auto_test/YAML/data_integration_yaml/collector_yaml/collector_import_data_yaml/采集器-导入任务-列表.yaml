@@ -4,12 +4,12 @@ testinfo:
   launch: 0
   info: 先进入"采集器"目录
 testcase:
-- element_info: //button//span[contains(text(), '采集器 ')]
+- element_info: //button//*[contains(text(), '采集器')]
   find_type: xpath
   operate_type: click
   info: 在采集器首页，点击‘采集器'按钮
   is_time: 0.5
-- element_info: //li[2]/a[text()='导入任务']
+- element_info: //li[2]/a[text()='导入']
   find_type: xpath
   operate_type: click
   info: 点击‘导入任务'按钮
