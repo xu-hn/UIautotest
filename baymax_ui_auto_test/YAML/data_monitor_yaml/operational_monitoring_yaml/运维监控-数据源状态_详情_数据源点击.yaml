@@ -1,0 +1,42 @@
+testinfo:
+- id: test093
+  title: 运维监控-数据源状态_详情_数据源点击
+  launch: 0
+  info: 先进入"运维监控"目录
+testcase:
+- info: “等待1秒”
+  is_time: 1
+- element_info: //*[contains(text(),"数据源状态监控")]/..//*[contains(text(),"详情")]
+  find_type: xpath
+  operate_type: click
+  info: 在“数据源状态”上点击“详情” 按钮
+  is_time: 1
+- element_info: bm-hippo-data-statuslist-searchInput
+  find_type: id
+  operate_type: send_keys
+  msg: dbs_oracle_info10
+  info: 搜索框 输入dbs_oracle_info10
+  is_time: 1
+- element_info: bm-hippo-data-statuslist-searchInput-btn
+  find_type: id
+  operate_type: click
+  info: 点击“搜索” 按钮
+  is_time: 1
+- element_info: //*[contains(text(),"dbs_oracle_info10")]
+  find_type: xpath
+  operate_type: click
+  info: 点击“数据源名称” 按钮
+  is_time: 1
+check:
+- element_info: //*[contains(text(),"数据库类型")]
+  find_type: xpath
+  check: displayed
+  info: 断言“数据库类型”存在
+- element_info: //*[contains(text(),"确定")]
+  find_type: xpath
+  check: displayed
+  info: 断言“确定”存在
+- element_info: //*[contains(text(),"取消")]
+  find_type: xpath
+  check: displayed
+  info: 断言“取消”存在
