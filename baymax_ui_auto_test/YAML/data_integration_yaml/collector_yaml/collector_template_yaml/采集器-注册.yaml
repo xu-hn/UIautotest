@@ -40,9 +40,10 @@ check:
   check: time_difference
   max_time: 120
   info: 断言“新建的采集器”与现在的时间差小于120秒
+  is_time: 2
 - element_info: //*[@id="bm-ch-collector-template-table"]//div[text()='collector_autoui']/ancestor::td/following-sibling::td[5]/div
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: Offline
-  info: 断言“新建的采集器”状态为Offline
+  expect_value: 离线
+  info: 断言“新建的采集器”状态为离线
