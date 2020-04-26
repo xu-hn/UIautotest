@@ -40,7 +40,7 @@ testcase:
   find_type: name
   operate_type: click
   info: 点击弹出树的‘确定'按钮
-- element_info: //div[@aria-label="提示"]//*[contains(text(), "确定")]
+- element_info: //div[@aria-label="提示"]//*[contains(text(), "确定")]|//*[contains(text(), "OK")]
   find_type: xpath
   operate_type: click
   info: 点击‘确定'按钮
