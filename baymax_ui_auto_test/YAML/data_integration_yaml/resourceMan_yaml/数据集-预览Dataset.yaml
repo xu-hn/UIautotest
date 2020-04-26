@@ -8,16 +8,16 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击‘数据集'文件夹图标
-- element_info: //*[contains(text(),"数据集")]/../..//*[contains(text(),'auto_initial_dataset')]
+- element_info: //*[contains(text(),"数据集")]/../..//*[contains(text(),'auto_dataset')]
   find_type: xpath
   operate_type: click
-  info: 点击‘auto_initial_dataset'的文字
+  info: 点击‘auto_dataset'的文字
   is_time: 1
 - element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]/input
   find_type: xpath
   operate_type: send_keys
-  msg: import_mysql_c_1_in
-  info: 在搜索框输入“import_mysql_c_1_in”
+  msg: DB_oracle_dataset
+  info: 在搜索框输入“DB_oracle_dataset”
 - element_info: //*[@name="ch-ch-resourceMan-standard-resourceMan-search-date-data"]//button
   find_type: xpath
   operate_type: click
@@ -28,32 +28,26 @@ testcase:
   index: -1
   operate_type: click
   info: 点击列表中最后一条'DBdataset'的 预览按钮
+  is_time: 4
 check:
 - element_info: //*[text()='预览数据集']
   find_type: xpath
   check: displayed
   info: 断言“预览数据集”标题出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='id']
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='ID']
   find_type: xpath
   check: displayed
   info: 断言“id”列出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='name']
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='NAME']
   find_type: xpath
   check: displayed
   info: 断言“name”列出现
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='age']
+- element_info: //*[@id="comCollTaskDatasetDialogDiv"]/div//thead//div[text()='TENANT_ID']
   find_type: xpath
   check: displayed
-  info: 断言“age”列出现
+  info: 断言“TENANT_ID”列出现
 
-- element_info: //tbody/tr/td/div[contains(text(),'xiaoming')]
-  find_type: xpath
-  check: displayed
-  info: 断言“xiaoming”列出现
-- element_info: //button/span[text()="确定"]
-  find_type: xpath
-  check: displayed
-  info: 断言“确定”按钮出现
+
 - element_info: //*[contains(text(),"刷新")]
   find_type: xpath
   check: displayed
