@@ -16,10 +16,10 @@ check:
   find_type: xpath
   check: displayed
   info: 断言“采集器”按钮存在
-- element_info: //*[text()= "autoui83"]/ancestor::td/following-sibling::td/div/div[text()= "在线"]
+- element_info: //*[text()= "c1"]/ancestor::td/following-sibling::td/div/div[text()= "在线"]
   find_type: xpath
   check: displayed
-  info: 存在“autoui83”且状态为在线
+  info: 存在“c1”且状态为在线
 - operate_type: get_current_url
   check: current_equal_expect
   expect_value: /#/collector/collectorTemplate拼接值后+前host+拼接
