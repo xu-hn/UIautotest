@@ -11,7 +11,7 @@ testcase:
   operate_type: click
   info: 在“节点状态监控”上点击“集群服务组件详情” 按钮
   is_time: 1
-- element_info: "bm-hippo-nodeMonitor"
+- element_info: "wrapper"
   find_type: id
   operate_type: to_iframe
   info: 切换到内嵌 iframe
