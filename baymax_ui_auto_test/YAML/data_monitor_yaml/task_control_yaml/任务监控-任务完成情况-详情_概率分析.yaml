@@ -6,10 +6,10 @@ testinfo:
 testcase:
 - info: “等待1秒”
   is_time: 1
-- element_info: //*[text()="查看详情分析"]
+- element_info: //*[text()="查看详细分析"]
   find_type: xpath
   operate_type: click
-  info: 在“任务完成情况”上点击“查看详情分析” 按钮
+  info: 在“任务完成情况”上点击“查看详细分析” 按钮
   is_time: 1
 - element_info: //*[@id="bm-hippo-task-task"]//*[text()="概率分析"]
   find_type: xpath
