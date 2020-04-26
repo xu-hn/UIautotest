@@ -43,7 +43,7 @@ testcase:
   operate_type: click
   info: 点击弹出树的‘确定'按钮
   is_time: 1
-- element_info: //*[@aria-label="提示"]//*[contains(text(),'ok')]|//*[contains(text(),'确定')]
+- element_info: //*[@aria-label="提示"]//*[contains(text(),'OK') or contains(text(),'确定')]
   find_type: xpath
   operate_type: click
   info: 点击‘确定'按钮
