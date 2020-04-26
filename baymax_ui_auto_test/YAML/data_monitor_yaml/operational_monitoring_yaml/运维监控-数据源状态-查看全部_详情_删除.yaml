@@ -6,26 +6,23 @@ testinfo:
 testcase:
 - info: “等待1秒”
   is_time: 1
-- element_info: //*[text()="查看全部"]
+
+- element_info: //*[contains(text(),"数据源状态监控")]/..//*[contains(text(),"详情")]
   find_type: xpath
-  operate_type: click
-  info: 在“数据源状态”上点击“查看全部” 按钮
-  is_time: 1
-- element_info: bm-hippo-data-status-draw-datasource-detail
-  find_type: id
   operate_type: click
   info: 点击“详情” 按钮
   is_time: 1
 - element_info: bm-hippo-data-statuslist-searchInput
   find_type: id
   operate_type: send_keys
-  msg: 0
-  info: 筛选输入框里输入“0”
+  msg: dbs_oracle_info10
+  info: 搜索框 输入dbs_oracle_info10
+  is_time: 1
 - element_info: bm-hippo-data-statuslist-searchInput-btn
   find_type: id
   operate_type: click
   info: 点击“搜索” 按钮
-  is_time: 0.3
+  is_time: 1
 - element_info: //*[@id="bm-hippo-data-statuslist-table"]/div[3]//tr[1]/td//label
   find_type: xpath
   operate_type: click
@@ -39,7 +36,7 @@ testcase:
   operate_type: click
   info: 点击删除按钮
 check:
-- element_info: //*[text()="恭喜你，删除已成功！"]
+- element_info: //*[contains(text(),"成功")]
   find_type: xpath
   check: displayed
   info: 断言“恭喜你，删除已成功！”吐词出现
