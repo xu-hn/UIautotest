@@ -4,11 +4,12 @@ testinfo:
   launch: 0
   info: 先进入资源目录
 testcase:
-- element_info: //*[@name="数据源"]/preceding-sibling::i[1]
+- element_info: //*[contains(text(),"数据源")]/../preceding-sibling::i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘数据源'文件夹图标
-- element_info: //em[@name="auto_UI"]
+  is_time: 1
+- element_info: //*[contains(text(),"数据源")]/../..//*[contains(text(),'auto_UI')]
   find_type: xpath
   operate_type: click
   info: 点击‘auto_UI'的文字
