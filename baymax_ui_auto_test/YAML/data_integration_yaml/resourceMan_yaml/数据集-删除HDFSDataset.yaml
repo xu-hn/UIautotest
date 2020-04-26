@@ -42,4 +42,4 @@ check:
   v_index: 0
   check: contrary
   info: 断言“此条DBdataset_”被删除
-  check_time: 0.5
+  check_time: 10
