@@ -44,5 +44,5 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: 离线
-  info: 断言“新建的采集器”状态为离线
+  expect_value: Offline
+  info: 断言“新建的采集器”状态为Offline
