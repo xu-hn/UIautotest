@@ -32,6 +32,6 @@ check:
 - element_info: //*[text()="错误日志"]
   find_type: xpath
   info: 错误日志 出现
-- element_info: //*[text()="加载更多......"]
+- element_info: //*[contains(text(),"加载更多")]
   find_type: xpath
   info: 加载更多...... 出现
