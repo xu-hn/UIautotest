@@ -16,7 +16,7 @@ testcase:
   info: 在采集器任务列表，点击“停用”按钮
   is_time: 0.5
 check:
-- element_info: //*[text()="恭喜你，任务已停用！"]
+- element_info: //*[contains(text(),"成功")]
   find_type: xpath
   check: displayed
   info: 断言“恭喜你，任务已停用！”吐词出现
