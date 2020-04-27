@@ -27,21 +27,21 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: 地址
-  info: 断言有“地址” 存在
+  expect_value: Ip
+  info: 断言有“Ip” 存在
 - element_info: //label[@for="viewStatus"]
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: 运行状态
-  info: 断言有“运行状态” 存在
+  expect_value: 处理状态
+  info: 断言有“处理状态” 存在
 - element_info: //label[@for="jdk"]
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
   expect_value: 工具包版本
   info: 断言有“工具包版本” 存在
-- element_info: //header[contains(text(), "日志信息--")]
+- element_info: //header[contains(text(), "日志")]
   find_type: xpath
   check: displayed
-  info: 断言‘日志信息--'存在
+  info: 断言‘日志'存在
