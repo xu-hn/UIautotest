@@ -16,10 +16,10 @@ testcase:
   info: 在采集器任务列表，点击‘启用'按钮
   is_time: 0.5
 check:
-- element_info: //*[text()="恭喜你，任务已启用！"]
+- element_info: //*[contains(text(),"成功")]
   find_type: xpath
   check: displayed
-  info: 断言“恭喜你，任务已启用！”吐词出现
+  info: 断言“成功！”吐词出现
 - element_info: //*[@id="bm-ch-collector-detailTaskList-table"]/div[3]//tr[1]/td[7]/div/div
   find_type: xpath
   operate_type: get_text
