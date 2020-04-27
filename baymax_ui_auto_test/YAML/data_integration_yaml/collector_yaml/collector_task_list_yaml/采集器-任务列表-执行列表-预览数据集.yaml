@@ -20,7 +20,7 @@ testcase:
   info: 点击‘第一行导入任务'的预览
   is_time: 0.5
 check:
-- element_info: //span[text()='数据集预览']
+- element_info: //span[text()='预览数据集']
   find_type: xpath
   info: ‘数据集预览’弹出被打开
 - element_info: /html/body/div[2]/div/div[3]/div/button[2]/span
