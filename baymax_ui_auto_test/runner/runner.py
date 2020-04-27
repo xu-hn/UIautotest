@@ -71,9 +71,9 @@ def suite_case(who):
 #                    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest],
 #     }
     Check_module = {
-      
-        #'bayMax': [LoginTest,HomePageTest，OperateDirTest]
-        'bayMax': [LoginTest,HomePageTest,OperateDirTest,FileImportTest]
+        #数据监控先不改了
+        'bayMax': [LoginTest,HomePageTest，OperateDirTest,DataImportTest,FileImportTest,CollectorTemplateTest,CollectorTaskListTest,OperationalMonitoringTest]
+        #'bayMax': [CollectorimportDataTest]
 #         
     }
     cases = map(ParametrizedTestCase.parametrize, Check_module[who])
