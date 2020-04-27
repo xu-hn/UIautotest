@@ -19,13 +19,13 @@ testcase:
   operate_type: click
   info: 点击‘第一行导入任务'的预览
   is_time: 0.5
-- element_info: //span[text()='数据集预览']/following-sibling::button
+- element_info: //*[@id="bm-com-collTask-dataset-dialog"]/div/div[1]/button/i
   find_type: xpath
   operate_type: click
   info: 点击‘数据集预览’右上角的关闭按钮
   is_time: 0.5
 check:
-- element_info: /html/body/div/div/div]/span[text()='数据集预览']
+- element_info: /html/body/div/div/div]/span[text()='预览数据集']
   find_type: xpath
   check: contrary
   check_time: 1
