@@ -16,10 +16,10 @@ testcase:
 - operate_type: move_by_offset
   move_to: (0, 0)
   info: 移送鼠标到0,0像素
-- element_info: //span[text()="c83"]
+- element_info: //span[text()="c1"]
   find_type: xpath
   operate_type: click
-  info: 点击名称为‘c83’的采集器 进入采集器详情信息页
+  info: 点击名称为‘c1’的采集器 进入采集器详情信息页
 - is_time: 1
   info: 刷新页面后等待1秒
 - element_info: //button/span[contains(text(), "采集器详细信息")]
