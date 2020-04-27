@@ -25,7 +25,7 @@ testcase:
   info: 点击‘数据集预览’取消按钮
   is_time: 0.5
 check:
-- element_info: /html/body/div/div/div]/span[text()='数据集预览']
+- element_info: /html/body/div/div/div]/span[text()='预览数据集']
   find_type: xpath
   check: contrary
   check_time: 1
