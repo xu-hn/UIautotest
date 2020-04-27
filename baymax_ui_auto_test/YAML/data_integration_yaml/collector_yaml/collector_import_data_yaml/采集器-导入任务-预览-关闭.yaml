@@ -11,7 +11,7 @@ testcase:
   operate_type: click
   info: 点击‘第一行导入任务'的预览
   is_time: 0.5
-- element_info: //*[@id="bm-com-collTask-dataset-dialog"]//*[text()='数据集预览']/following-sibling::button
+- element_info: //*[@id="bm-com-collTask-dataset-dialog"]//*[text()='预览数据集']/following-sibling::button
   find_type: xpath
   operate_type: click
   info: 点击‘数据集预览’右上角的关闭按钮
