@@ -87,9 +87,9 @@ class ElementParam(object):
 
     #采集器页面
     IMPORT_DATA_URL = HOST + "/#/collector/importData"  # 导入任务页
-    VIEW_URL = HOST + "/#/collector/c83/view/10c7da46-8552-47cc-9b96-38b69a337ed5"  #采集器autoui83 详细信息页
-    TASK_LIST_URL = HOST + "/#/collector/c83/taskList/10c7da46-8552-47cc-9b96-38b69a337ed5"  #采集器autoui83 任务列表页
-    DIR_URL = HOST + "/#/collector/c83/dir/10c7da46-8552-47cc-9b96-38b69a337ed5"      #采集器autoui83 资源目录页
+    VIEW_URL = HOST + "/#/collector/c1/view/52f3809f-a537-42b4-ab6c-11239c23d369"  #采集器autoui83 详细信息页
+    TASK_LIST_URL = HOST + "/#/collector/c1/taskList/52f3809f-a537-42b4-ab6c-11239c23d369"  #采集器autoui83 任务列表页
+    DIR_URL = HOST + "/#/collector/c1/dir/52f3809f-a537-42b4-ab6c-11239c23d369"      #采集器autoui83 资源目录页
 
     # 数据监控
     OPERATIONAL_URL = HOST + "/#/hippo/index"  # 运维管控
