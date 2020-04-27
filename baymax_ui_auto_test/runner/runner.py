@@ -72,7 +72,7 @@ def suite_case(who):
 #     }
     Check_module = {
         #数据监控先不改了
-        'bayMax': [LoginTest,HomePageTest，OperateDirTest,DataImportTest,FileImportTest,CollectorTemplateTest,CollectorTaskListTest,OperationalMonitoringTest]
+        'bayMax': [LoginTest,HomePageTest，OperateDirTest,DataImportTest,FileImportTest,CollectorTemplateTest,CollectorTaskListTest,CollectorimportDataTest,OperationalMonitoringTest]
         #'bayMax': [CollectorimportDataTest]
 #         
     }
