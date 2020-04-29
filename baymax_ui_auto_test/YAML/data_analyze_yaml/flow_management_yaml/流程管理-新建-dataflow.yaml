@@ -4,14 +4,14 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+- element_info: //*[@name="Flows"]
   find_type: xpath
   operate_type: click
   info: 点击‘根目录'文件夹图标
-- element_info: //em[@name="auto_flow"]
-  find_type: xpath
-  operate_type: click
-  info: 点击‘auto_flow'的文字
+#- element_info: //em[@name="auto_flow"]
+#  find_type: xpath
+#  operate_type: click
+#  info: 点击‘auto_flow'的文字
 - element_info: addFlowBtn
   find_type: name
   operate_type: click
@@ -22,7 +22,7 @@ testcase:
   operate_type: send_keys
   msg: data_flow_+随机数
   info: 输入data_flow名称
-- element_info: //*[@id="bm-addflow-dialog-form"]//input[@placeholder="请选择流程类型"]
+- element_info: //*[@id="bm-addflow-dialog-form"]//input[@placeholder="请选择流程类型"]|//input[@placeholder="Select"]
   find_type: xpath
   operate_type: click
   info: 点击‘流程类型'弹出下拉菜单
@@ -37,7 +37,7 @@ testcase:
   operate_type: click
   info: 点击‘确定’按钮
 check:
-- element_info: //*[text()="恭喜你，新增已成功！"]
+- element_info: //*[contains(text(),"成功")]
   find_type: xpath
   check: displayed
   info: 断言“恭喜你，新增已成功！”吐词出现
