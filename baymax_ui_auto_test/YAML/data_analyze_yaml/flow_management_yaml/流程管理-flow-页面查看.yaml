@@ -4,14 +4,11 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+- element_info: //*[@name="Flows"]
   find_type: xpath
   operate_type: click
   info: 点击‘根目录'文件夹图标
-- element_info: //em[@name="auto_flow"]
-  find_type: xpath
-  operate_type: click
-  info: 点击‘auto_flow'的文字
+
 - element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
   find_type: xpath
   operate_type: get_text
