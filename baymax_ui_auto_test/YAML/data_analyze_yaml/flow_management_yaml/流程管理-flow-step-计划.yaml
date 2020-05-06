@@ -27,12 +27,12 @@ check:
   check: current_equal_expect
   expect_value: 一次性
   info: 断言计划的流程名字为“一次性”
-- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[5]/div
-  find_type: xpath
-  operate_type: get_text
-  check: time_difference
-  max_time: 10
-  info: 最新的计划创建时间距现在小于“10秒”
+#- element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td[5]/div
+#  find_type: xpath
+ # operate_type: get_text
+#  check: time_difference
+#  max_time: 10
+#  info: 最新的计划创建时间距现在小于“10秒”
 - element_info: //*[@id="bm-rh-design-plan-table"]/div[3]/table/tbody/tr[1]/td/div/a[2]/button/span[text()="执行列表"]
   find_type: xpath
   info: 断言列表中存在“执行列表”
