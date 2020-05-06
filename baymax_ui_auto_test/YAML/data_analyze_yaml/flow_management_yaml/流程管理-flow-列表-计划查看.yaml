@@ -1,43 +1,40 @@
 testinfo:
 - id: test_a175
-  title: 校验“流程管理-flow-列表-计划查看”
+  title: 校验“流程管理-flow-列表-调度查看”
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@name="根目录"]/preceding-sibling::i[1]
+- element_info: //*[@name="Flows"]
   find_type: xpath
   operate_type: click
   info: 点击‘根目录'文件夹图标
-- element_info: //em[@name="auto_flow"]
-  find_type: xpath
-  operate_type: click
-  info: 点击‘auto_flow'的文字
+
 - element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
   find_type: xpath
   operate_type: get_text
   info:  获取列表“第一行的”名字
   is_time: 0.5
-- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td/div/span[text()="计划"]
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[4]/div[2]/table/tbody/tr[1]/td[8]/div/span
   find_type: xpath
   operate_type: click
-  info:  点击“第一行”flow的计划
+  info:  点击“第一行”flow的调度
   is_time: 0.5
 check:
-- element_info: primaryBtn
-  find_type: name
-  info: 按钮‘计划’存在
-- element_info: newPlan
-  find_type: name
-  info: 按钮‘创建’存在
-- element_info: enablePlan
-  find_type: name
-  info: 按钮‘启动’存在
-- element_info: disablePlan
-  find_type: name
-  info: 按钮‘停止’存在
-- element_info: delTable
-  find_type: name
-  info: 按钮‘删除’存在
+- element_info: //*[contains(text(),"名称")]
+  find_type: xpath
+  info: 按钮‘名称’存在
+- element_info: //*[contains(text(),"处理状态")]
+  find_type: xpath
+  info: 按钮‘处理状态’存在
+- element_info: //*[contains(text(),"流程")]
+  find_type: xpath
+  info: 按钮‘流程’存在
+- element_info: //*[contains(text(),"创建时间")]
+  find_type: xpath
+  info: 按钮‘创建时间’存在
+- element_info: //*[contains(text(),"创建人")]
+  find_type: xpath
+  info: 按钮‘创建人’存在
 - operate_type: get_current_url
   check: current_contain_expect
   expect_value: /#/design/plan/拼接值后+前host+拼接
