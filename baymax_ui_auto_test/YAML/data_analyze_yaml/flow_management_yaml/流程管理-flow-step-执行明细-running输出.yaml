@@ -4,14 +4,11 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@id="bm-designTreeMenu"]/span/i
+- element_info: //*[@name="Flows"]
   find_type: xpath
   operate_type: click
   info: 点击根目录文件夹图标
-- element_info: auto_flow
-  find_type: name
-  operate_type: click
-  info: 点击“auto_flow”名字
+
 - element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
   find_type: xpath
   operate_type: click
@@ -26,10 +23,10 @@ testcase:
   find_type: xpath
   operate_type: click
   info: 点击"执行详细"标签
-- element_info: 'tab-输出 '
-  find_type: id
+- element_info: //*[contains(text(),'输出')]
+  find_type: xpath
   operate_type: click
-  info: 点击‘tab-输出 '
+  info: 点击‘输出'
   is_time: 1
 check:
 - operate_type: get_current_url
