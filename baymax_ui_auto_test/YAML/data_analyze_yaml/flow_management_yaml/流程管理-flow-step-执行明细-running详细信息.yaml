@@ -9,7 +9,7 @@ testcase:
   operate_type: click
   info: 点击‘计划'按钮
   is_time: 1
-- element_info: //*[@name="执行详细 "]/a
+- element_info: //*[contains(text(),"执行详细")]
   find_type: xpath
   operate_type: click
   info: 点击‘执行详细'的文字
@@ -41,5 +41,5 @@ check:
   find_type: xpath
   operate_type: get_text
   check: current_equal_expect
-  expect_value: 状态
+  expect_value: 处理状态
   info: 详情信息存在“状态”列
