@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
-list2 = ['true','true','true','true','true','true','true','true','false']#注掉
+list2 = ['true','true','true','true','true','true','true','true','true','true','false']#注掉
 class OperateXls:
     def __init__(self, wd):
         self.wd = wd
