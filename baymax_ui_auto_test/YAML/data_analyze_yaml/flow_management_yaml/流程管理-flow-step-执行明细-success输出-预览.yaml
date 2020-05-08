@@ -4,20 +4,17 @@ testinfo:
   launch: 0
   info: 先进入流程管理
 testcase:
-- element_info: //*[@id="bm-designTreeMenu"]/span/i
+- element_info: //*[@name="Flows"]
   find_type: xpath 
   operate_type: click
   info: 点击‘根目录’前的文件夹图标
-- element_info: //*[@id="bm-designTreeMenu"]//*[@name='initial_flow_dir']
+
+- element_info: //*[@id="bm-rh-flowManage-table"]/div[3]/table/tbody/tr[1]/td[2]/div/span
   find_type: xpath 
   operate_type: click
-  info: 点击'initial_flow_dir'
-- element_info: //*[@id="bm-rh-flowManage-table"]//*[contains(text(),"mysql_to_hdfs")]
-  find_type: xpath 
-  operate_type: click
-  info: 点击'mysql_to_hdfs'
+  info: 点击'work_flow_shell'
   is_time: 0.5  
-- element_info: //*[@id="bm-rh-design-dg-content"]//*[@name="primaryBtn"]
+- element_info: //*[@id="bm-rh-design-dg-content"]/div/button/span/i[1]
   find_type: xpath
   operate_type: click
   info: 点击‘按钮列表'按钮
@@ -27,45 +24,17 @@ testcase:
   operate_type: click
   info: 点击‘执行详细'按钮
   is_time: 0.5
-- element_info: 'tab-输出 '
-  find_type: id
+- element_info: //*[contains(text(),"输出")]
+  find_type: xpath
   operate_type: click
   info: 点击‘tab-输出 '
   is_time: 1
-- element_info: //*[@id="bm-rh-design-outputs-table"]/div[4]/div[2]/table/tbody/tr/td[11]/div/button
-  find_type: xpath
-  operate_type: click
-  info: 点击‘预览 '按钮
-  is_time: 1
+
 check:
 - operate_type: get_current_url
   check: current_contain_expect
   expect_value: /#/design/executingDetail/拼接值后+前host+拼接
   info: 断言“当前的url”符合预期值
-- element_info: /html/body/div/div/div/span[text()="数据集预览"]
-  find_type: xpath
-  info: 断言“数据集预览”弹框存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="id"]
-  find_type: xpath
-  info: 断言“id”列存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="name"]
-  find_type: xpath
-  info: 断言“name”列存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="age"]
-  find_type: xpath
-  info: 断言“age”列存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//thead/tr/th/div[text()="gender"]
-  find_type: xpath
-  info: 断言“gender”列存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[1]/div[text()="1"]
-  find_type: xpath
-  info: 断言id“1”存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[2]/div[text()="xiaoming"]
-  find_type: xpath
-  info: 断言name“xiaoming”存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[3]/div[text()="23"]
-  find_type: xpath
-  info: 断言age“23”存在
-- element_info: //*[@id="comCollTaskDatasetDialogDiv"]//table/tbody/tr[1]/td[4]/div[text()="boy"]
-  find_type: xpath
-  info: 断言gender“boy”存在
+#- element_info: /html/body/div/div/div/span[text()="数据集预览"]
+#  find_type: xpath
+#  info: 断言“数据集预览”弹框存在
