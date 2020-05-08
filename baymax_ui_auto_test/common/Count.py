@@ -32,10 +32,10 @@ def count_info(**kwargs):
 
     if kwargs['result']:
         _info['result'] = '通过'
-        kwargs['logTest'].checkPointOK(caseName=kwargs["testinfo"][0]["title"],
-                                       checkPoint=kwargs["case_name"] + "_" + kwargs["testinfo"][0].get( "msg", " "))
-        _info["img"] = kwargs["logTest"].checkPointNG(driver=kwargs["driver"], caseName=kwargs["testinfo"][0]["title"],#用例通过添加截图
-                                                      checkPoint=kwargs["case_name"] + "_" + kwargs["testinfo"][0].get("msg", " "))#
+      #  kwargs['logTest'].checkPointOK(caseName=kwargs["testinfo"][0]["title"],
+      #                                 checkPoint=kwargs["case_name"] + "_" + kwargs["testinfo"][0].get( "msg", " "))
+       # _info["img"] = kwargs["logTest"].checkPointNG(driver=kwargs["driver"], caseName=kwargs["testinfo"][0]["title"],#用例通过添加截图
+         #                                             checkPoint=kwargs["case_name"] + "_" + kwargs["testinfo"][0].get("msg", " "))#
     elif not kwargs['result']:
         _info['result'] = '失败'
         # 错误截屏的路径
