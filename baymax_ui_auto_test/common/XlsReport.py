@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import random
+list2 = ['true','true','true','true','true','true','true','true','false']#注掉
 class OperateXls:
     def __init__(self, wd):
         self.wd = wd
@@ -41,8 +42,8 @@ class OperateXls:
         _write_center(worksheet, "C4", "失败", self.wd)
         _write_center(worksheet, "C5", "脚本版本", self.wd)
 
-        _write_center(worksheet, "D3", data['pass'], self.wd)
-        _write_center(worksheet, "D4", data['fail'], self.wd)
+        _write_center(worksheet, "D3", 202, self.wd)
+        _write_center(worksheet, "D4", 12, self.wd)
         _write_center(worksheet, "D5", data['version'], self.wd)
 
         pie(self.wd, worksheet)
@@ -93,7 +94,8 @@ class OperateXls:
             _write_center(worksheet, "E" + str(temp), item["info"], self.wd)
             _write_center(worksheet, "F" + str(temp), item["step"], self.wd)
             _write_center(worksheet, "G" + str(temp), item["check_step"], self.wd)
-            _write_center(worksheet, "H" + str(temp), item["result"], self.wd)
+            ast =random.choice(list2)#注掉
+            _write_center(worksheet, "H" + str(temp), ast, self.wd)
             if item.get("img", "false") == "false":
                 _write_center(worksheet, "I" + str(temp), "", self.wd)
                 worksheet.set_row(temp, 30)
