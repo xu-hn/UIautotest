@@ -54,6 +54,13 @@ def suite_case(who):
 #                 #   CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
 #                #    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest, ProjectDirTest,RoleManagementTest,UserManagementTest],
 #         #'bayMax': [TaskAdministrationTest],
+          #Bbtransaction 币币交易
+          #TradingWizard 交易魔法师
+          #Assets 交易魔法师
+          #Order 订单
+          #Personalcenter   个人中心
+          'Thdax':[LoginTest,HomePageTest,Bbtransaction,TradingWizard,Assets,Order,Personalcenter]
+
 #         'Beiruan': [LoginTest, HomePageTest_Beiruan, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
 #                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
 #                    BloodAnalyzeTest, SchemaAnalyzeTest, FlowManagementTest],
