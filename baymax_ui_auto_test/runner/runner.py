@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*- 
-#
 import sys
 sys.path.append("..")     #3层 格式照抄
 from common.BaseRunner import ParametrizedTestCase, get_driver
