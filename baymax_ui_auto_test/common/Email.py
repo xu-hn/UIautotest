@@ -47,7 +47,7 @@ def send_mail(**kwargs):
 
 
 def send():
-    to_addr = ['jinbo.guo@inforefiner.com','kexin.zhang@inforefiner.com' ,'zhiming.wang@inforefiner.com',"haonan.xu@inforefiner.com"]
+    to_addr = ['350152004@qq.com']
     #to_addr = ["haonan.xu@inforefiner.com"]
 
     # to_addr = ['bingjie.gu@inforefiner.com', "anchong.wang@inforefiner.com"]
