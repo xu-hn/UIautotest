@@ -47,16 +47,16 @@ def send_mail(**kwargs):
 
 
 def send():
-    to_addr = ['350152004@qq.com']
+    to_addr = ['xhn350152004@163.com']
     #to_addr = ["haonan.xu@inforefiner.com"]
 
     # to_addr = ['bingjie.gu@inforefiner.com', "anchong.wang@inforefiner.com"]
     mail_host = "smtp.163.com"
-    mail_user = "ruifan_test@163.com"
-    mail_pass = "ruifantest2018"
+    mail_user = "xhn350152004@163.com"
+    mail_pass = "a7524589"
     port = "465"
     header_msg = "Baymax_ui_自动化测试报告"
-    attach = "Dear all:\n   附件中是本次Baymax_UI自动化执行的详细报告，有问题请随时联系！"
+    attach = "Dear all:\n   附件中是本次THDex自动化执行的详细报告，有问题请随时联系！"
     report = PATH("../Report/Report.xlsx")
     send_mail(to_addr=to_addr, mail_host=mail_host, mail_user=mail_user, port=port, mail_pass=mail_pass, header_msg=header_msg, report=report, attach=attach, report_name="ui测试报告.xlsx")
 
