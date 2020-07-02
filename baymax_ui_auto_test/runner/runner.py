@@ -58,7 +58,7 @@ def suite_case(who):
           #Assets 交易魔法师
           #Order 订单
           #Personalcenter   个人中心
-          'Thdax':[LoginTest,HomePageTest,Bbtransaction,TradingWizard,Assets,Order,Personalcenter]
+    #'Thdax':[LoginTest,HomePageTest,Bbtransaction,TradingWizard,Assets,Order,Personalcenter]
 
 #         'Beiruan': [LoginTest, HomePageTest_Beiruan, OperateDirTest, DataImportTest, FileImportTest, CollectorTemplateTest,
 #                    CollectorimportDataTest, CollectorTaskListTest, OperationalMonitoringTest, TaskControlTest, QualityAnalyzeTest,
@@ -78,7 +78,7 @@ def suite_case(who):
 #     }
     Check_module = {
         #数据监控先不改了
-        'bayMax': [LoginTest,HomePageTest,OperateDirTest,DataImportTest,FileImportTest,CollectorTemplateTest,CollectorTaskListTest,CollectorimportDataTest,OperationalMonitoringTest,FlowManagementTest]
+        'Thdax':[LoginTest,HomePageTest,Bbtransaction,TradingWizard,Assets,Order,Personalcenter]
         #'bayMax': [FlowManagementTest]
 #         
     }
